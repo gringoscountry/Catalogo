@@ -1,0 +1,2570 @@
+﻿<!-- Desenvolvido com AIVOX | arthurr7070.github.io/AIVOX-LEADING -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gringo's — Catálogo de Produtos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>if('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
+<style>
+/* AIVOX | Desenvolvido com o sistema AIVOX */
+
+:root {
+  --black:  #0F0F0F;
+  --white:  #FFFFFF;
+  --cream:  #F7F4EF;
+  --gold:   #B8924A;
+  --gold-lt:#D4AA6A;
+  --gold-dk:#8C6E18;
+  --gray:   #6B6B6B;
+  --border: #E8E2D9;
+  --ff-h:   'DM Serif Display', serif;
+  --ff-big: 'Bebas Neue', sans-serif;
+  --ff-b:   'DM Sans', sans-serif;
+  --ease:   cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-b);background:var(--white);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+
+/* ── TOPBAR ─────────────────────────────── */
+.topbar{
+  background:var(--black);
+  color:var(--white);
+  text-align:center;
+  padding:11px 20px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.08em;
+}
+.topbar strong{color:var(--gold-lt);}
+
+/* ── HEADER ─────────────────────────────── */
+header{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:0 56px;
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 1px 16px rgba(0,0,0,.05);
+}
+.logo-wrap{display:flex;flex-direction:column;}
+.logo-main{font-family:var(--ff-h);font-size:20px;color:var(--black);}
+.logo-tag{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:2px;}
+.hdr-nav{display:flex;align-items:center;gap:32px;}
+.hdr-link{font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--gray);transition:color .2s;}
+.hdr-link:hover{color:var(--black);}
+.hdr-cta{
+  background:var(--gold);
+  color:var(--white);
+  border:none;
+  padding:10px 24px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .2s;
+  text-decoration:none;
+  display:inline-block;
+}
+.hdr-cta:hover{background:var(--gold-lt);}
+
+/* ── HERO CATÁLOGO ──────────────────────── */
+.cat-hero{
+  background:var(--black);
+  padding:80px 56px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cat-hero::before{
+  content:'CATÁLOGO';
+  position:absolute;
+  font-family:var(--ff-big);
+  font-size:clamp(100px,18vw,240px);
+  color:rgba(255,255,255,.03);
+  letter-spacing:.1em;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.cat-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid rgba(184,146,74,.35);
+  padding:6px 18px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:24px;
+}
+.cat-hero-title{
+  font-family:var(--ff-h);
+  font-size:clamp(36px,5vw,72px);
+  color:var(--white);
+  line-height:1.05;
+  margin-bottom:18px;
+}
+.cat-hero-title em{font-style:italic;color:var(--gold);}
+.cat-hero-sub{
+  font-size:16px;
+  color:rgba(255,255,255,.5);
+  font-weight:300;
+  line-height:1.7;
+  max-width:520px;
+  margin:0 auto 40px;
+}
+.cat-stats{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+.cat-stat{text-align:center;}
+.cat-stat-num{font-family:var(--ff-big);font-size:40px;color:var(--gold);line-height:1;}
+.cat-stat-label{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;}
+.cat-stat-sep{width:1px;height:48px;background:rgba(255,255,255,.1);}
+
+/* ── MARQUEE ─────────────────────────────── */
+.marquee-wrap{
+  background:var(--gold);
+  padding:14px 0;
+  overflow:hidden;
+}
+.marquee-track{
+  display:flex;
+  gap:0;
+  animation:marquee 20s linear infinite;
+  width:max-content;
+}
+.marquee-item{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:0 28px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.6);
+  white-space:nowrap;
+}
+.marquee-dot{width:4px;height:4px;border-radius:50%;background:rgba(0,0,0,.4);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ── FILTROS ─────────────────────────────── */
+.filter-bar{
+  background:var(--cream);
+  border-bottom:1px solid var(--border);
+  padding:20px 56px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.filter-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-right:8px;}
+.filter-btn{
+  padding:8px 20px;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.06em;
+  border:1px solid var(--border);
+  background:var(--white);
+  cursor:pointer;
+  transition:all .2s;
+  color:var(--gray);
+  font-family:var(--ff-b);
+}
+.filter-btn:hover,.filter-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+.filter-count{margin-left:auto;font-size:12px;color:var(--gray);}
+.filter-count strong{color:var(--gold);}
+
+/* ── GRID CATÁLOGO ──────────────────────── */
+.sec{padding:72px 0;}
+.wrap{max-width:1400px;margin:0 auto;padding:0 56px;}
+
+.sec-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:48px;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.sec-label{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--gold);}
+.sec-title{
+  font-family:var(--ff-h);
+  font-size:clamp(28px,3vw,42px);
+  line-height:1.1;
+  color:var(--black);
+}
+.sec-title em{font-style:italic;color:var(--gold);}
+
+/* Grid de páginas */
+.catalog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  background:var(--border);
+}
+.catalog-item{
+  background:var(--white);
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  aspect-ratio:2/3;
+}
+.catalog-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--ease);
+  display:block;
+}
+.catalog-item:hover img{transform:scale(1.04);}
+.catalog-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, transparent 50%, rgba(15,15,15,.85) 100%);
+  opacity:0;
+  transition:opacity .35s var(--ease);
+  display:flex;
+  align-items:flex-end;
+  padding:24px;
+}
+.catalog-item:hover .catalog-overlay{opacity:1;}
+.overlay-content{color:var(--white);}
+.overlay-num{
+  font-family:var(--ff-big);
+  font-size:48px;
+  color:var(--gold);
+  line-height:1;
+  opacity:.7;
+}
+.overlay-label{font-size:13px;font-weight:600;margin-top:4px;letter-spacing:.04em;}
+.overlay-sub{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px;}
+
+/* Tag canto superior */
+.page-badge{
+  position:absolute;
+  top:16px;
+  left:16px;
+  background:var(--gold);
+  color:var(--white);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:4px 10px;
+  z-index:2;
+}
+
+/* ── LIGHTBOX ────────────────────────────── */
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.95);
+  z-index:1000;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.lightbox.open{display:flex;}
+.lb-inner{
+  position:relative;
+  max-width:600px;
+  width:100%;
+  max-height:95vh;
+}
+.lb-inner img{
+  width:100%;
+  height:auto;
+  max-height:90vh;
+  object-fit:contain;
+  display:block;
+}
+.lb-close{
+  position:absolute;
+  top:-44px;
+  right:0;
+  background:none;
+  border:1px solid rgba(255,255,255,.3);
+  color:var(--white);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:8px 16px;
+  cursor:pointer;
+  transition:all .2s;
+  font-family:var(--ff-b);
+}
+.lb-close:hover{background:var(--white);color:var(--black);}
+.lb-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  color:var(--white);
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-size:18px;
+  transition:all .2s;
+  backdrop-filter:blur(4px);
+}
+.lb-nav:hover{background:var(--gold);border-color:var(--gold);}
+.lb-prev{left:-60px;}
+.lb-next{right:-60px;}
+.lb-counter{
+  position:absolute;
+  bottom:-36px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:12px;
+  color:rgba(255,255,255,.5);
+  letter-spacing:.12em;
+  white-space:nowrap;
+  font-family:var(--ff-big);
+}
+
+/* ── DESTAQUES GRADE EDITORIAL ──────────── */
+.editorial-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:2px;
+  background:var(--border);
+  margin-bottom:2px;
+}
+.editorial-grid-right{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  gap:2px;
+  background:var(--border);
+}
+
+/* ── CTA BANNER ──────────────────────────── */
+.cta-banner{
+  background:var(--black);
+  padding:80px 56px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-banner::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.cta-pre{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.cta-title{
+  font-family:var(--ff-h);
+  font-size:clamp(30px,4vw,54px);
+  color:var(--white);
+  line-height:1.1;
+  margin-bottom:14px;
+}
+.cta-title em{font-style:italic;color:var(--gold);}
+.cta-sub{font-size:16px;color:rgba(255,255,255,.5);line-height:1.75;font-weight:300;max-width:500px;margin:0 auto 40px;}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.btn-whats{
+  background:#25D366;
+  color:var(--white);
+  border:none;
+  padding:16px 36px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.06em;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:all .25s var(--ease);
+  text-decoration:none;
+  font-family:var(--ff-b);
+}
+.btn-whats:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.3);}
+.btn-ghost{
+  background:transparent;
+  color:var(--white);
+  border:1px solid rgba(255,255,255,.25);
+  padding:15px 32px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.06em;
+  cursor:pointer;
+  transition:all .2s;
+  font-family:var(--ff-b);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+}
+.btn-ghost:hover{border-color:var(--white);}
+
+/* ── FOOTER ──────────────────────────────── */
+footer{
+  background:var(--black);
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:48px 56px 32px;
+}
+.footer-inner{
+  max-width:1400px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.footer-logo{font-family:var(--ff-h);font-size:18px;color:var(--white);}
+.footer-logo span{color:var(--gold);}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.06em;}
+.footer-aivox{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:.1em;text-transform:uppercase;}
+
+/* ── SELETOR DE QUANTIDADE ─────────────────── */
+.qty-bar{
+  position:absolute;bottom:0;left:0;right:0;
+  background:rgba(15,15,15,.93);
+  backdrop-filter:blur(8px);
+  padding:10px 12px;z-index:3;
+  transform:translateY(100%);
+  transition:transform .28s var(--ease);
+}
+.catalog-item:hover .qty-bar,.qty-bar.has-qty{transform:translateY(0);}
+.qty-bar.has-qty{background:rgba(184,146,74,.97);}
+.qty-sizes-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5px 10px;
+}
+.qty-size-row{display:flex;align-items:center;gap:4px;}
+.qty-size-lbl{
+  font-size:10px;font-weight:700;letter-spacing:.06em;
+  color:rgba(255,255,255,.85);min-width:18px;text-align:center;
+  font-family:var(--ff-b);
+}
+.qty-btn{
+  width:22px;height:22px;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:15px;line-height:1;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .15s;font-family:var(--ff-b);flex-shrink:0;
+}
+.qty-btn:hover{background:rgba(255,255,255,.38);}
+.qty-num{
+  min-width:20px;text-align:center;color:#fff;
+  font-size:13px;font-weight:700;font-family:var(--ff-big);
+}
+
+/* ── CARRINHO FLUTUANTE ─────────────────────── */
+.cart-fab{
+  position:fixed;bottom:32px;right:32px;z-index:200;
+  background:var(--gold);color:#fff;border:none;
+  padding:14px 24px;font-family:var(--ff-b);font-size:13px;
+  font-weight:700;letter-spacing:.06em;cursor:pointer;
+  display:none;align-items:center;gap:10px;
+  box-shadow:0 8px 32px rgba(184,146,74,.45);
+  transition:all .25s var(--ease);
+}
+.cart-fab.visible{display:flex;}
+.cart-fab:hover{background:var(--gold-lt);transform:translateY(-2px);}
+.cart-badge{
+  background:var(--black);color:#fff;font-size:11px;font-weight:700;
+  width:22px;height:22px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ── MODAL PEDIDO ───────────────────────────── */
+.order-modal{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.75);z-index:500;
+  align-items:center;justify-content:center;padding:20px;
+}
+.order-modal.open{display:flex;}
+.order-panel{
+  background:#fff;max-width:740px;width:100%;
+  max-height:90vh;overflow-y:auto;position:relative;
+}
+.order-hdr{
+  background:var(--black);padding:24px 32px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.order-hdr-logo{font-family:var(--ff-h);font-size:20px;color:#fff;}
+.order-hdr-logo span{color:var(--gold);}
+.order-hdr-sub{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:3px;}
+.order-hdr-close{
+  background:none;border:1px solid rgba(255,255,255,.2);color:#fff;
+  padding:8px 16px;font-size:11px;letter-spacing:.1em;cursor:pointer;
+  font-family:var(--ff-b);transition:all .2s;
+}
+.order-hdr-close:hover{background:rgba(255,255,255,.1);}
+.order-body{padding:28px 32px;}
+.order-client{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;}
+.order-field label{display:block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:5px;}
+.order-field input,.order-field select{
+  width:100%;border:1px solid var(--border);padding:10px 14px;
+  font-size:13px;font-family:var(--ff-b);color:var(--black);outline:none;
+  transition:border-color .2s;background:#fff;
+}
+.order-field input:focus,.order-field select:focus{border-color:var(--gold);}
+.order-sec-lbl{
+  font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
+  display:flex;align-items:center;gap:10px;
+}
+.order-sec-lbl::before{content:'';width:20px;height:1px;background:var(--gold);}
+.order-table{width:100%;border-collapse:collapse;margin-bottom:20px;}
+.order-table th{
+  background:var(--cream);padding:9px 12px;
+  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gray);text-align:left;border-bottom:1px solid var(--border);
+}
+.order-table td{padding:12px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:middle;}
+.order-table tr:last-child td{border-bottom:none;}
+.order-thumb{width:46px;height:69px;object-fit:cover;border:1px solid var(--border);display:block;}
+.order-pname{font-weight:600;color:var(--black);font-size:13px;}
+.order-pcol{font-size:11px;color:var(--gray);margin-top:2px;}
+.order-qty-cell{font-family:var(--ff-big);font-size:24px;color:var(--gold);text-align:center;}
+.order-total-row{background:var(--black);}
+.order-total-row td{color:#fff;font-weight:700;font-size:14px;border-bottom:none;padding:14px 12px;}
+.order-total-num{font-family:var(--ff-big);font-size:26px;color:var(--gold);text-align:center;}
+.order-empty{text-align:center;padding:48px 0;color:var(--gray);font-size:14px;}
+.order-empty span{font-size:32px;display:block;margin-bottom:12px;}
+.order-actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;}
+.btn-print{
+  background:var(--black);color:#fff;border:none;padding:14px 28px;
+  font-family:var(--ff-b);font-size:12px;font-weight:700;letter-spacing:.08em;
+  cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .2s;
+}
+.btn-print:hover{background:#333;}
+.btn-clear{
+  background:none;color:var(--gray);border:1px solid var(--border);padding:13px 20px;
+  font-family:var(--ff-b);font-size:12px;font-weight:600;letter-spacing:.06em;
+  cursor:pointer;transition:all .2s;
+}
+.btn-clear:hover{border-color:var(--black);color:var(--black);}
+
+/* ── PRINT ──────────────────────────────────── */
+@media print{
+  body>*{display:none!important;}
+  #printOrder{display:block!important;margin:0;padding:0;}
+}
+#printOrder{display:none;}
+.print-hdr{display:flex;align-items:center;justify-content:space-between;padding:24px 32px;background:#0F0F0F;margin-bottom:0;}
+.print-hdr-logo{font-family:'Georgia',serif;font-size:22px;color:#fff;}
+.print-hdr-logo span{color:#B8924A;}
+.print-hdr-info{font-size:11px;color:rgba(255,255,255,.5);text-align:right;line-height:1.8;}
+.print-meta{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:2px solid #B8924A;margin-bottom:0;}
+.print-meta-block{padding:16px 32px;background:#F7F4EF;border-right:1px solid #E8E2D9;}
+.print-meta-block:last-child{border-right:none;}
+.print-meta-label{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6B6B6B;margin-bottom:3px;}
+.print-meta-value{font-size:13px;font-weight:600;color:#0F0F0F;}
+.print-table{width:100%;border-collapse:collapse;margin:0;}
+.print-table th{background:#F7F4EF;padding:10px 16px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B6B6B;border-bottom:1px solid #E8E2D9;text-align:left;}
+.print-table td{padding:12px 16px;border-bottom:1px solid #E8E2D9;font-size:12px;vertical-align:middle;}
+.print-thumb{width:40px;height:60px;object-fit:cover;border:1px solid #E8E2D9;display:block;}
+.print-qty{font-size:20px;font-weight:700;color:#B8924A;text-align:center;}
+.print-total-row td{background:#0F0F0F;color:#fff;font-weight:700;padding:14px 16px;font-size:13px;border-bottom:none;}
+.print-total-num{font-size:24px;font-weight:700;color:#B8924A;text-align:center;}
+.print-footer{padding:16px 32px;font-size:10px;color:#6B6B6B;text-align:center;border-top:1px solid #E8E2D9;margin-top:0;}
+
+/* ── RESPONSIVO ──────────────────────────── */
+@media(max-width:900px){
+  header{padding:0 24px;}
+  .hdr-nav{display:none;}
+  .cat-hero{padding:60px 24px;}
+  .filter-bar{padding:16px 24px;}
+  .wrap{padding:0 24px;}
+  .catalog-grid{grid-template-columns:repeat(2,1fr);}
+  .editorial-grid{grid-template-columns:1fr;}
+  .cta-banner{padding:60px 24px;}
+  footer{padding:40px 24px 24px;}
+  .lb-prev{left:-10px;}
+  .lb-next{right:-10px;}
+  .order-client{grid-template-columns:1fr;}
+  .cart-fab{bottom:20px;right:20px;}
+  #collectionSection .wrap > div[style*="grid-template-columns:480px"]{
+    grid-template-columns:1fr!important;
+    gap:24px!important;
+  }
+}
+@media(max-width:500px){
+  .catalog-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  A partir de 40 peças · Entrega em todo Brasil · <strong>Fale pelo WhatsApp: (49) 99927-1417</strong>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="#">
+    <div class="logo-wrap">
+      <span class="logo-main">Gringo's</span>
+      <span class="logo-tag">Uniformes</span>
+    </div>
+  </a>
+  <nav class="hdr-nav">
+    <a href="#" onclick="showCollection('all',document.getElementById('btn-all'));window.scrollTo({top:0,behavior:'smooth'});return false;" class="hdr-link">Início</a>
+    <a href="#" onclick="document.getElementById('allCoversSection').scrollIntoView({behavior:'smooth'});return false;" class="hdr-link">Catálogo</a>
+    <a href="#contato" class="hdr-link">Contato</a>
+  </nav>
+  <a href="#" onclick="document.getElementById('allCoversSection').scrollIntoView({behavior:'smooth'});return false;" class="hdr-cta">Fazer Pedido</a>
+</header>
+
+<!-- HERO CATÁLOGO -->
+<section class="cat-hero">
+  <div class="cat-eyebrow">
+    <span>★</span> Coleção Completa <span>★</span>
+  </div>
+  <h1 class="cat-hero-title">Catálogo <em>Gringo's</em></h1>
+  <p class="cat-hero-sub">Uniformes premium para empresas que valorizam identidade visual. Qualidade, acabamento e entrega garantida.</p>
+  <div class="cat-stats">
+    <div class="cat-stat">
+      <div class="cat-stat-num">50+</div>
+      <div class="cat-stat-label">Modelos</div>
+    </div>
+    <div class="cat-stat-sep"></div>
+    <div class="cat-stat">
+      <div class="cat-stat-num">2026</div>
+      <div class="cat-stat-label">Coleção</div>
+    </div>
+    <div class="cat-stat-sep"></div>
+    <div class="cat-stat">
+      <div class="cat-stat-num">90%</div>
+      <div class="cat-stat-label">Satisfação</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item">Polos Corporativas <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Camisas Sociais <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Uniformes Técnicos <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Bordado Incluso <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Pedido Mínimo <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Entrega Nacional <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Polos Corporativas <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Camisas Sociais <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Uniformes Técnicos <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Bordado Incluso <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Pedido Mínimo <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Entrega Nacional <span class="marquee-dot"></span></div>
+  </div>
+</div>
+
+<!-- FILTROS -->
+<div class="filter-bar">
+  <span class="filter-label">Coleções:</span>
+  <button class="filter-btn active"  id="btn-all"     onclick="showCollection('all',this)">Todas as Coleções</button>
+  <button class="filter-btn"         id="btn-texas"   onclick="showCollection('texas',this)">Texas Collection</button>
+  <button class="filter-btn"         id="btn-urban"   onclick="showCollection('urban',this)">Urban Collection</button>
+  <button class="filter-btn"         id="btn-algodao" onclick="showCollection('algodao',this)">Camisetas Algodão Egípcio</button>
+  <button class="filter-btn"         id="btn-nova"    onclick="showCollection('nova',this)">Polos</button>
+  <button class="filter-btn"         id="btn-tenis"   onclick="showCollection('tenis',this)">KNIT EVO</button>
+  <button class="filter-btn"         id="btn-calcas"  onclick="showCollection('calcas',this)">Calças</button>
+  <span class="filter-count">Exibindo <strong id="count">6</strong> coleções</span>
+</div>
+
+<!-- VIEW "TODAS AS COLEÇÕES" — 3 capas lado a lado -->
+<section class="sec" id="allCoversSection">
+  <div class="wrap">
+    <div class="sec-header">
+      <div>
+        <div class="sec-label">Nossas Coleções</div>
+        <h2 class="sec-title">Escolha sua <em>Coleção</em></h2>
+      </div>
+      <p style="font-size:13px;color:var(--gray);max-width:300px;text-align:right;line-height:1.6;">Clique em uma capa para explorar todos os produtos da coleção.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border);">
+
+      <!-- Capa Texas -->
+      <div class="catalog-item" style="aspect-ratio:2/3;cursor:pointer;" onclick="showCollection('texas', document.getElementById('btn-texas'))">
+        <img src="assets/catalogo/1.svg" alt="Texas Collection" loading="lazy">
+        <div class="catalog-overlay" style="opacity:1;background:linear-gradient(180deg,transparent 40%,rgba(15,15,15,.92) 100%);">
+          <div class="overlay-content" style="width:100%;">
+            <div style="font-family:var(--ff-big);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;">COLEÇÃO</div>
+            <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;">Texas<br><em style="color:var(--gold);">Collection</em></div>
+            <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.06em;">27 produtos · Clique para ver</div>
+          </div>
+        </div>
+        <div class="page-badge">Texas</div>
+      </div>
+
+      <!-- Capa Urban -->
+      <div class="catalog-item" style="aspect-ratio:2/3;cursor:pointer;" onclick="showCollection('urban', document.getElementById('btn-urban'))">
+        <img src="assets/catalogo/30.svg" alt="Urban Collection" loading="lazy">
+        <div class="catalog-overlay" style="opacity:1;background:linear-gradient(180deg,transparent 40%,rgba(15,15,15,.92) 100%);">
+          <div class="overlay-content" style="width:100%;">
+            <div style="font-family:var(--ff-big);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;">COLEÇÃO</div>
+            <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;">Urban<br><em style="color:var(--gold);">Collection</em></div>
+            <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.06em;">10 produtos · Clique para ver</div>
+          </div>
+        </div>
+        <div class="page-badge">Urban</div>
+      </div>
+
+      <!-- Capa Algodão Egípcio -->
+      <div class="catalog-item" style="aspect-ratio:2/3;cursor:pointer;" onclick="showCollection('algodao', document.getElementById('btn-algodao'))">
+        <img src="assets/catalogo/capa-algodao-egipcio.png" alt="Camisetas Algodão Egípcio" loading="lazy">
+        <div class="catalog-overlay" style="opacity:1;background:linear-gradient(180deg,transparent 40%,rgba(15,15,15,.92) 100%);">
+          <div class="overlay-content" style="width:100%;">
+            <div style="font-family:var(--ff-big);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;">COLEÇÃO</div>
+            <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;">Algodão<br><em style="color:var(--gold);">Egípcio</em></div>
+            <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.06em;">6 produtos · Clique para ver</div>
+          </div>
+        </div>
+        <div class="page-badge">Premium</div>
+      </div>
+
+      <!-- Capa Nova Coleção -->
+      <div class="catalog-item" style="aspect-ratio:2/3;cursor:pointer;" onclick="showCollection('nova', document.getElementById('btn-nova'))">
+        <img src="assets/catalogo/44.svg" alt="Polo Tech Light" loading="lazy">
+        <div class="catalog-overlay" style="opacity:1;background:linear-gradient(180deg,transparent 40%,rgba(15,15,15,.92) 100%);">
+          <div class="overlay-content" style="width:100%;">
+            <div style="font-family:var(--ff-big);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;">COLEÇÃO</div>
+            <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;"><em style="color:var(--gold);">Polos</em></div>
+            <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.06em;">Tech Light · Piquet Gold · Italiana</div>
+          </div>
+        </div>
+        <div class="page-badge">Novo</div>
+      </div>
+
+      <!-- Capa KNIT EVO -->
+      <div class="catalog-item" style="aspect-ratio:2/3;cursor:pointer;" onclick="showCollection('tenis', document.getElementById('btn-tenis'))">
+        <img src="assets/catalogo/capa-knit-evo.png" alt="KNIT EVO Tênis Casual" loading="lazy">
+        <div class="catalog-overlay" style="opacity:1;background:linear-gradient(180deg,transparent 40%,rgba(15,15,15,.88) 100%);">
+          <div class="overlay-content" style="width:100%;">
+            <div style="font-family:var(--ff-big);font-size:10px;letter-spacing:.28em;color:var(--gold);margin-bottom:6px;">NOVO · COLEÇÃO</div>
+            <div style="font-family:var(--ff-big);font-size:clamp(26px,2.8vw,38px);color:var(--white);line-height:1;letter-spacing:.04em;">KNIT EVO</div>
+            <div style="font-family:var(--ff-h);font-size:clamp(14px,1.5vw,20px);color:rgba(255,255,255,.7);line-height:1.2;margin-top:4px;font-style:italic;">Tênis Casual</div>
+            <div style="font-size:11px;color:rgba(255,255,255,.45);margin-top:10px;letter-spacing:.08em;">4 cores · Nr. 37 ao 42</div>
+          </div>
+        </div>
+        <div class="page-badge" style="z-index:3;">Novo</div>
+      </div>
+
+      <!-- Capa Calças -->
+      <div class="catalog-item" style="aspect-ratio:2/3;cursor:pointer;" onclick="showCollection('calcas', document.getElementById('btn-calcas'))">
+        <img src="assets/catalogo/capa-calcas.png" alt="Calças" loading="lazy">
+        <div class="catalog-overlay" style="opacity:1;background:linear-gradient(180deg,transparent 40%,rgba(15,15,15,.88) 100%);">
+          <div class="overlay-content" style="width:100%;">
+            <div style="font-family:var(--ff-big);font-size:10px;letter-spacing:.28em;color:var(--gold);margin-bottom:6px;">NOVA · COLEÇÃO</div>
+            <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;"><em style="color:var(--gold);">Calças</em></div>
+            <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.06em;">Clique para ver</div>
+          </div>
+        </div>
+        <div class="page-badge" style="z-index:3;">Novo</div>
+      </div>
+
+    </div>
+
+    <!-- Como fazer seu pedido -->
+    <div style="margin-top:64px;border-top:1px solid var(--border);padding-top:56px;">
+      <div style="text-align:center;margin-bottom:40px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:10px;">
+          <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+          Como fazer seu pedido
+          <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+        </div>
+        <h2 style="font-family:var(--ff-h);font-size:clamp(26px,3vw,40px);color:var(--black);line-height:1.1;">
+          Simples, rápido e <em style="color:var(--gold);">sem complicação</em>
+        </h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:24px;border:1px solid var(--border);border-left:3px solid var(--gold);">
+          <div style="font-family:var(--ff-big);font-size:40px;color:var(--gold);opacity:.4;line-height:1;min-width:40px;">01</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--black);margin-bottom:6px;">Escolha uma coleção</div>
+            <div style="font-size:13px;color:var(--gray);line-height:1.6;">Clique em uma das capas acima para explorar os produtos. Passe o mouse sobre cada peça e use <strong style="color:var(--black);">P · M · G · GG</strong> com <strong style="color:var(--black);">+ / −</strong> para selecionar tamanho e quantidade.</div>
+            <div style="margin-top:10px;padding:8px 12px;background:var(--cream);border-left:2px solid var(--gold);font-size:11px;color:var(--black);line-height:1.6;">
+              💡 Você pode voltar e adicionar peças de <strong>várias coleções</strong> no mesmo pedido.
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:24px;border:1px solid var(--border);border-left:3px solid var(--gold);">
+          <div style="font-family:var(--ff-big);font-size:40px;color:var(--gold);opacity:.4;line-height:1;min-width:40px;">02</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--black);margin-bottom:6px;">Revise e baixe o PDF</div>
+            <div style="font-size:13px;color:var(--gray);line-height:1.6;">Clique no botão <strong style="color:var(--gold);">Ver Pedido</strong> que aparece no canto inferior direito. Confira os itens e tamanhos, preencha seus dados e clique em <strong style="color:var(--black);">Baixar PDF do Pedido</strong>.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:24px;border:1px solid var(--border);border-left:3px solid var(--gold);">
+          <div style="font-family:var(--ff-big);font-size:40px;color:var(--gold);opacity:.4;line-height:1;min-width:40px;">03</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--black);margin-bottom:6px;">Envie e receba em casa</div>
+            <div style="font-size:13px;color:var(--gray);line-height:1.6;">Envie o PDF pelo WhatsApp ou e-mail. Nossa equipe retorna com o orçamento e cuida de tudo — produção, bordado e <strong style="color:var(--black);">entrega em todo o Brasil</strong>.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIEW COLEÇÃO INDIVIDUAL — capa + grid (oculto por padrão) -->
+<section class="sec" id="collectionSection" style="display:none;padding-bottom:0;">
+  <div class="wrap">
+    <div class="sec-header">
+      <div>
+        <div class="sec-label" id="colLabel">Texas Collection</div>
+        <h2 class="sec-title" id="colTitle">Coleção <em>Texas</em></h2>
+      </div>
+      <button onclick="showCollection('all', document.getElementById('btn-all'))"
+        style="background:none;border:1px solid var(--border);padding:10px 20px;font-size:11px;font-weight:600;letter-spacing:.08em;cursor:pointer;color:var(--gray);font-family:var(--ff-b);transition:all .2s;"
+        onmouseover="this.style.borderColor='var(--black)';this.style.color='var(--black)'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--gray)'">
+        ← Todas as Coleções
+      </button>
+    </div>
+    <!-- Capa + Painel explicativo -->
+    <div style="display:grid;grid-template-columns:480px 1fr;gap:48px;align-items:start;">
+
+      <!-- Capa -->
+      <div>
+        <div class="catalog-item" id="coverItem" style="aspect-ratio:2/3;cursor:pointer;">
+          <img id="coverImg" src="" alt="Capa" loading="lazy">
+          <div class="catalog-overlay">
+            <div class="overlay-content">
+              <div class="overlay-num" id="coverNum">01</div>
+              <div class="overlay-label">Capa da Coleção</div>
+              <div class="overlay-sub">Ver catálogo completo</div>
+            </div>
+          </div>
+          <div class="page-badge">Capa</div>
+        </div>
+      </div>
+
+      <!-- Painel explicativo -->
+      <div style="padding-top:8px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px;">
+          <span style="display:inline-block;width:20px;height:1px;background:var(--gold);"></span>
+          Como fazer seu pedido
+        </div>
+        <h3 style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,34px);color:var(--black);line-height:1.15;margin-bottom:20px;">
+          Simples, rápido<br>e <em style="color:var(--gold);">sem complicação</em>
+        </h3>
+
+        <!-- Passo 1 -->
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border:1px solid var(--border);border-left:3px solid var(--gold);margin-bottom:12px;transition:box-shadow .2s;">
+          <div style="font-family:var(--ff-big);font-size:36px;color:var(--gold);opacity:.5;line-height:1;min-width:36px;">01</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--black);margin-bottom:4px;">Explore e selecione as peças</div>
+            <div style="font-size:13px;color:var(--gray);line-height:1.6;">Role o catálogo abaixo, passe o mouse sobre cada produto e use os botões <strong style="color:var(--black);">P · M · G · GG</strong> com <strong style="color:var(--black);">+ / −</strong> para adicionar a quantidade desejada de cada tamanho.</div>
+            <div style="margin-top:10px;padding:10px 14px;background:var(--cream);border-left:3px solid var(--gold);font-size:12px;color:var(--black);line-height:1.6;">
+              <strong>💡 Dica:</strong> Você pode <strong>voltar para outras coleções</strong> e continuar adicionando peças — tudo ficará salvo no mesmo pedido até você baixar o PDF.
+            </div>
+          </div>
+        </div>
+
+        <!-- Passo 2 -->
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border:1px solid var(--border);border-left:3px solid var(--gold);margin-bottom:12px;">
+          <div style="font-family:var(--ff-big);font-size:36px;color:var(--gold);opacity:.5;line-height:1;min-width:36px;">02</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--black);margin-bottom:4px;">Revise seu pedido</div>
+            <div style="font-size:13px;color:var(--gray);line-height:1.6;">Clique no botão <strong style="color:var(--gold);">Ver Pedido</strong> que aparece no canto inferior direito. Confira os itens, tamanhos, quantidades e o <strong style="color:var(--black);">valor total</strong>. Preencha seus dados de contato.</div>
+          </div>
+        </div>
+
+        <!-- Passo 3 -->
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border:1px solid var(--border);border-left:3px solid var(--gold);margin-bottom:24px;">
+          <div style="font-family:var(--ff-big);font-size:36px;color:var(--gold);opacity:.5;line-height:1;min-width:36px;">03</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--black);margin-bottom:4px;">Baixe e envie para orçamento</div>
+            <div style="font-size:13px;color:var(--gray);line-height:1.6;">Clique em <strong style="color:var(--gold);">Baixar PDF do Pedido</strong> — o arquivo será salvo no seu dispositivo. Envie o PDF pelo WhatsApp ou e-mail para receber seu <strong style="color:var(--black);">orçamento personalizado</strong>.</div>
+          </div>
+        </div>
+
+        <!-- CTA WhatsApp -->
+        <a href="https://wa.me/message/BG7KAMJD27H3L1"
+           target="_blank"
+           style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 28px;font-family:var(--ff-b);font-size:13px;font-weight:700;letter-spacing:.06em;text-decoration:none;transition:all .25s;"
+           onmouseover="this.style.background='#1ebe5d';this.style.transform='translateY(-2px)'"
+           onmouseout="this.style.background='#25D366';this.style.transform='none'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enviar pedido pelo WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GRID DA COLEÇÃO (oculto por padrão) -->
+<section class="sec" id="catalogo" style="display:none;">
+  <div class="wrap">
+    <div class="sec-header">
+      <div>
+        <div class="sec-label" id="gridLabel">Páginas</div>
+        <h2 class="sec-title" id="gridTitle">Todos os <em>Produtos</em></h2>
+      </div>
+    </div>
+    <div class="catalog-grid" id="catalogGrid"></div>
+  </div>
+</section>
+
+<!-- POLO TECH LIGHT — Nova Coleção -->
+<section class="sec" id="poloSection" style="display:none;padding-top:0;">
+  <div class="wrap">
+
+    <div class="sec-header" style="margin-bottom:40px;">
+      <div>
+        <div class="sec-label">Nova Coleção</div>
+        <h2 class="sec-title">Camisa Polo <em>Tech Light</em></h2>
+        <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">Tecnologia de ponta em conforto e leveza · 5 cores · P ao XG</p>
+      </div>
+    </div>
+
+    <!-- Seletor de cores -->
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
+      <span style="font-size:12px;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;font-weight:700;">Cor:</span>
+      <span id="cat-polo-cor-nome" style="font-size:13px;color:var(--black);font-weight:600;letter-spacing:.04em;">Branco</span>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <button class="cat-polo-cor-btn active" title="Branco"
+          style="width:32px;height:32px;border-radius:50%;background:#F2F0EC;border:2px solid var(--gold);cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatPoloColor('branco',50,this)"></button>
+        <button class="cat-polo-cor-btn" title="Cinza"
+          style="width:32px;height:32px;border-radius:50%;background:#9CA3AF;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatPoloColor('cinza',51,this)"></button>
+        <button class="cat-polo-cor-btn" title="Azul Marinho"
+          style="width:32px;height:32px;border-radius:50%;background:#1E3A5F;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatPoloColor('marinho',52,this)"></button>
+        <button class="cat-polo-cor-btn" title="Preto"
+          style="width:32px;height:32px;border-radius:50%;background:#111111;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatPoloColor('preto',53,this)"></button>
+        <button class="cat-polo-cor-btn" title="Bege"
+          style="width:32px;height:32px;border-radius:50%;background:#C8B99A;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatPoloColor('bege',54,this)"></button>
+      </div>
+    </div>
+
+    <!-- Grid 4 fotos -->
+    <div id="cat-polo-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:24px;width:100vw;position:relative;left:50%;transform:translateX(-50%);transition:opacity .25s;">
+      <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-polo-img-1" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp" alt="Polo Tech Light Branco 1" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-polo-img-2" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-2-c30e84cc8549a07b1717750822465636-1024-1024.webp" alt="Polo Tech Light Branco 2" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-polo-img-3" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-3-820d727b1a606d550517750822448829-1024-1024.webp" alt="Polo Tech Light Branco 3" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-polo-img-4" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-4-af0fce41ed7768f4d817750822451336-1024-1024.webp" alt="Polo Tech Light Branco 4" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    </div>
+
+    <!-- Quality pills -->
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;">
+      <div class="qpill"><span>✓</span> Tech Light</div>
+      <div class="qpill"><span>✓</span> Leveza Extrema</div>
+      <div class="qpill"><span>✓</span> 5 Cores</div>
+      <div class="qpill"><span>✓</span> P ao XG</div>
+    </div>
+
+    <!-- Adicionar ao pedido -->
+    <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+        <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+        Adicionar ao pedido — <span id="cat-polo-order-cor">Branco</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="cat-polo-sizes">
+        <!-- Gerado por JS -->
+      </div>
+      <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+    </div>
+
+  </div>
+
+  <!-- ── POLO PIQUET GOLD ─────────────────────────────────────────── -->
+  <div style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+
+    <div class="sec-header" style="margin-bottom:40px;">
+      <div>
+        <div class="sec-label">Nova Coleção</div>
+        <h2 class="sec-title">Polo Piquet <em>Gold</em></h2>
+        <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">Lisa · 5 cores · P ao XG</p>
+      </div>
+    </div>
+
+    <!-- Seletor de cores -->
+    <div style="margin-bottom:24px;">
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);">COR</span>
+        <span id="cat-gold-cor-nome" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--black);font-style:italic;">Branco</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <button class="cat-gold-cor-btn active" title="Branco"
+          style="width:36px;height:36px;border-radius:50%;background:#F2F0EC;border:2px solid var(--gold);cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatGoldColor('branco',55,this)"></button>
+        <button class="cat-gold-cor-btn" title="Preto"
+          style="width:36px;height:36px;border-radius:50%;background:#111111;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatGoldColor('preto',56,this)"></button>
+        <button class="cat-gold-cor-btn" title="Azul Marinho"
+          style="width:36px;height:36px;border-radius:50%;background:#1E3A5F;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatGoldColor('marinho',57,this)"></button>
+        <button class="cat-gold-cor-btn" title="Bege"
+          style="width:36px;height:36px;border-radius:50%;background:#C8B99A;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatGoldColor('bege',58,this)"></button>
+        <button class="cat-gold-cor-btn" title="Verde Musgo"
+          style="width:36px;height:36px;border-radius:50%;background:#4A6741;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatGoldColor('verde',59,this)"></button>
+        <button class="cat-gold-cor-btn" title="Azul Claro"
+          style="width:36px;height:36px;border-radius:50%;background:#A8D8EA;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatGoldColor('azulclaro',60,this)"></button>
+        <button class="cat-gold-cor-btn" title="Verde Claro"
+          style="width:36px;height:36px;border-radius:50%;background:#A8D5B5;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatGoldColor('verdeclaro',61,this)"></button>
+        <button class="cat-gold-cor-btn" title="Rosa"
+          style="width:36px;height:36px;border-radius:50%;background:#D4A0A0;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchCatGoldColor('rosa',62,this)"></button>
+      </div>
+    </div>
+
+    <!-- Grid de fotos (2×2 para Branco, centralizado para outras cores) -->
+    <div id="cat-gold-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:24px;width:100vw;position:relative;left:50%;transform:translateX(-50%);transition:opacity .25s;">
+      <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-gold-img-1" src="assets/polo-gold/branco-1.webp" alt="Polo Piquet Gold Branco 1" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-gold-img-2" src="assets/polo-gold/branco-2.png" alt="Polo Piquet Gold Branco 2" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-gold-img-3" src="assets/polo-gold/branco-3.png" alt="Polo Piquet Gold Branco 3" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-gold-img-4" src="assets/polo-gold/branco-4.png" alt="Polo Piquet Gold Branco 4" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    </div>
+
+
+    <!-- Adicionar ao pedido -->
+    <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+        <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+        Adicionar ao pedido — <span id="cat-gold-order-cor">Branco</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="cat-gold-sizes">
+        <!-- Gerado por JS -->
+      </div>
+      <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+    </div>
+
+  </div>
+
+  <!-- ── POLO ITALIANA ──────────────────────────────────────────────── -->
+  <div id="poloItalianaSubsec" style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+    <div class="wrap">
+
+      <div class="sec-header" style="margin-bottom:40px;">
+        <div>
+          <div class="sec-label">Coleção Premium</div>
+          <h2 class="sec-title">Polo <em>Italiana</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">Tecido importado · 3 cores · P ao XG</p>
+        </div>
+      </div>
+
+      <!-- Grid 3 cores -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-bottom:40px;width:100vw;position:relative;left:50%;transform:translateX(-50%);">
+
+        <!-- Verde -->
+        <div style="background:var(--white);overflow:hidden;">
+          <div style="overflow:hidden;aspect-ratio:3/4;background:#f4f4f4;">
+            <img src="assets/polo-italiana/verde.webp" alt="Polo Italiana Verde" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div style="padding:20px 24px;background:var(--cream);border-top:1px solid var(--border);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:14px;height:14px;border-radius:50%;background:#4A6741;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+              <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Verde</span>
+            </div>
+            <div id="ital-sizes-110" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;"></div>
+          </div>
+        </div>
+
+        <!-- Azul Marinho -->
+        <div style="background:var(--white);overflow:hidden;">
+          <div style="overflow:hidden;aspect-ratio:3/4;background:#f4f4f4;">
+            <img src="assets/polo-italiana/azul-marinho.webp" alt="Polo Italiana Azul Marinho" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div style="padding:20px 24px;background:var(--cream);border-top:1px solid var(--border);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:14px;height:14px;border-radius:50%;background:#1E3A5F;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+              <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Azul Marinho</span>
+            </div>
+            <div id="ital-sizes-111" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;"></div>
+          </div>
+        </div>
+
+        <!-- Off White -->
+        <div style="background:var(--white);overflow:hidden;">
+          <div style="overflow:hidden;aspect-ratio:3/4;background:#f4f4f4;">
+            <img src="assets/polo-italiana/off-white.webp" alt="Polo Italiana Off White" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div style="padding:20px 24px;background:var(--cream);border-top:1px solid var(--border);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:14px;height:14px;border-radius:50%;background:#F0EDE6;border:1px solid rgba(0,0,0,.2);flex-shrink:0;"></div>
+              <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Off White</span>
+            </div>
+            <div id="ital-sizes-112" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- TÊNIS CASUAL — Coleção -->
+<section class="sec" id="tenisSection" style="display:none;padding-top:0;">
+  <div class="wrap">
+
+    <div class="sec-header" style="margin-bottom:40px;">
+      <div>
+        <div class="sec-label">Coleção</div>
+        <h2 class="sec-title">KNIT EVO <em>Tênis Casual</em></h2>
+        <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">4 cores · Numeração 37 ao 42 · Selecione a quantidade por cor</p>
+      </div>
+    </div>
+
+    <!-- Quality pills -->
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;">
+      <div class="qpill"><span>✓</span> 4 Cores</div>
+      <div class="qpill"><span>✓</span> Nr. 37 ao 42</div>
+      <div class="qpill"><span>✓</span> Casual &amp; Conforto</div>
+    </div>
+
+    <!-- Grid de cores — cada uma com foto + seletor de tamanho -->
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" id="tenis-cores-grid">
+
+      <!-- Marrom Claro -->
+      <div style="border:1px solid var(--border);overflow:hidden;">
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
+          <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/branco-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Marrom Claro"></div>
+          <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/branco-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Marrom Claro 2"></div>
+        </div>
+        <div style="padding:20px 24px;background:var(--cream);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#A0785A;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+            <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Marrom Claro</span>
+          </div>
+          <div id="tenis-sizes-100" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+        </div>
+      </div>
+
+      <!-- Azul Marinho -->
+      <div style="border:1px solid var(--border);overflow:hidden;">
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
+          <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/azul-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Azul Marinho"></div>
+          <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/azul-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Azul Marinho 2"></div>
+        </div>
+        <div style="padding:20px 24px;background:var(--cream);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#1E3A5F;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+            <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Azul Marinho</span>
+          </div>
+          <div id="tenis-sizes-101" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+        </div>
+      </div>
+
+      <!-- Cinza -->
+      <div style="border:1px solid var(--border);overflow:hidden;">
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
+          <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/cinza-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Cinza"></div>
+          <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/cinza-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Cinza 2"></div>
+        </div>
+        <div style="padding:20px 24px;background:var(--cream);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#9CA3AF;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+            <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Cinza</span>
+          </div>
+          <div id="tenis-sizes-102" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+        </div>
+      </div>
+
+      <!-- Preto -->
+      <div style="border:1px solid var(--border);overflow:hidden;">
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
+          <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/preto-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Preto"></div>
+          <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/preto-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Preto 2"></div>
+        </div>
+        <div style="padding:20px 24px;background:var(--cream);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+            <div style="width:14px;height:14px;border-radius:50%;background:#111111;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+            <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Preto</span>
+          </div>
+          <div id="tenis-sizes-103" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-size:11px;color:var(--gray);margin-top:20px;line-height:1.6;">Use <strong style="color:var(--black);">+</strong> e <strong style="color:var(--black);">−</strong> para selecionar quantidade por tamanho em cada cor. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens.</p>
+
+  </div>
+</section>
+
+<!-- CALÇAS — Coleção -->
+<section class="sec" id="calcasSection" style="display:none;padding-top:0;">
+  <div class="wrap">
+
+    <div class="sec-header" style="margin-bottom:32px;">
+      <div>
+        <div class="sec-label">Coleção</div>
+        <h2 class="sec-title"><em>Calças</em></h2>
+        <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">4 modelos · Numeração 38 ao 48 · Selecione a cor e a quantidade</p>
+      </div>
+    </div>
+
+    <!-- Seletor de cor -->
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;">
+      <button id="calcas-tab-200" onclick="switchCalcasCor(200)"
+        style="display:flex;align-items:center;gap:8px;padding:10px 18px;border:2px solid var(--black);background:var(--black);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;font-family:var(--ff-b);transition:all .2s;">
+        <span style="width:12px;height:12px;border-radius:50%;background:#5B8DB8;border:1px solid rgba(255,255,255,.4);flex-shrink:0;"></span>
+        AZUL CLARO
+      </button>
+      <button id="calcas-tab-201" onclick="switchCalcasCor(201)"
+        style="display:flex;align-items:center;gap:8px;padding:10px 18px;border:2px solid var(--border);background:transparent;color:var(--gray);font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;font-family:var(--ff-b);transition:all .2s;">
+        <span style="width:12px;height:12px;border-radius:50%;background:#8FB4CC;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></span>
+        AZUL CLARO DELAVÊ
+      </button>
+      <button id="calcas-tab-202" onclick="switchCalcasCor(202)"
+        style="display:flex;align-items:center;gap:8px;padding:10px 18px;border:2px solid var(--border);background:transparent;color:var(--gray);font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;font-family:var(--ff-b);transition:all .2s;">
+        <span style="width:12px;height:12px;border-radius:50%;background:#1A2535;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></span>
+        BLUE BLACK STONADA
+      </button>
+      <button id="calcas-tab-203" onclick="switchCalcasCor(203)"
+        style="display:flex;align-items:center;gap:8px;padding:10px 18px;border:2px solid var(--border);background:transparent;color:var(--gray);font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;font-family:var(--ff-b);transition:all .2s;">
+        <span style="width:12px;height:12px;border-radius:50%;background:#111111;border:1px solid rgba(255,255,255,.1);flex-shrink:0;"></span>
+        PRETO
+      </button>
+    </div>
+
+    <!-- PAINEL: Azul Claro -->
+    <div id="calcas-panel-200" class="calcas-panel">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-claro-1.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Claro 1"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-claro-2.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Claro 2"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-claro-3.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Claro 3"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-claro-4.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Claro 4"></div>
+      </div>
+      <div style="padding:24px 28px;background:var(--cream);border:1px solid var(--border);border-top:none;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <div style="width:14px;height:14px;border-radius:50%;background:#5B8DB8;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+          <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Azul Claro</span>
+        </div>
+        <div id="calcas-sizes-200" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+      </div>
+    </div>
+
+    <!-- PAINEL: Azul Claro Delavê -->
+    <div id="calcas-panel-201" class="calcas-panel" style="display:none;">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-delave-1.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Delavê 1"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-delave-2.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Delavê 2"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-delave-3.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Delavê 3"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-delave-4.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Delavê 4"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-delave-5.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Delavê 5"></div>
+      </div>
+      <div style="padding:24px 28px;background:var(--cream);border:1px solid var(--border);border-top:none;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <div style="width:14px;height:14px;border-radius:50%;background:#8FB4CC;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+          <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Azul Claro Delavê</span>
+        </div>
+        <div id="calcas-sizes-201" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+      </div>
+    </div>
+
+    <!-- PAINEL: Blue Black Stonada -->
+    <div id="calcas-panel-202" class="calcas-panel" style="display:none;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/blue-black-1.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Blue Black Stonada 1"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/blue-black-2.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Blue Black Stonada 2"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/blue-black-3.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Blue Black Stonada 3"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/blue-black-4.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Blue Black Stonada 4"></div>
+      </div>
+      <div style="padding:24px 28px;background:var(--cream);border:1px solid var(--border);border-top:none;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <div style="width:14px;height:14px;border-radius:50%;background:#1A2535;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+          <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Blue Black Stonada</span>
+        </div>
+        <div id="calcas-sizes-202" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+      </div>
+    </div>
+
+    <!-- PAINEL: Preto -->
+    <div id="calcas-panel-203" class="calcas-panel" style="display:none;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/preto-1.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Preta 1"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/preto-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Preta 2"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/preto-3.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Preta 3"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/preto-4.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Preta 4"></div>
+      </div>
+      <div style="padding:24px 28px;background:var(--cream);border:1px solid var(--border);border-top:none;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <div style="width:14px;height:14px;border-radius:50%;background:#111111;border:1px solid rgba(255,255,255,.05);flex-shrink:0;"></div>
+          <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Preto</span>
+        </div>
+        <div id="calcas-sizes-203" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:var(--gray);margin-top:20px;line-height:1.6;">Use <strong style="color:var(--black);">+</strong> e <strong style="color:var(--black);">−</strong> para selecionar quantidade por tamanho em cada cor. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens.</p>
+
+  </div>
+</section>
+
+<!-- CALÇAS ALFAIATARIA — Seção separada -->
+<section class="sec" id="alfaiatariaSection" style="display:none;padding-top:0;">
+  <div class="wrap">
+
+    <div class="sec-header" style="margin-bottom:32px;">
+      <div>
+        <div class="sec-label">Coleção</div>
+        <h2 class="sec-title"><em>Calças Alfaiataria</em></h2>
+        <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">3 cores · Numeração 38 ao 48 · Selecione a cor e a quantidade</p>
+      </div>
+    </div>
+
+    <!-- Seletor de cor -->
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;">
+      <button id="alfa-tab-204" onclick="switchAlfaiatariaCor(204)"
+        style="display:flex;align-items:center;gap:8px;padding:10px 18px;border:2px solid var(--black);background:var(--black);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;font-family:var(--ff-b);transition:all .2s;">
+        <span style="width:12px;height:12px;border-radius:50%;background:#C8B89A;border:1px solid rgba(255,255,255,.4);flex-shrink:0;"></span>
+        BEGE
+      </button>
+      <button id="alfa-tab-205" onclick="switchAlfaiatariaCor(205)"
+        style="display:flex;align-items:center;gap:8px;padding:10px 18px;border:2px solid var(--border);background:transparent;color:var(--gray);font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;font-family:var(--ff-b);transition:all .2s;">
+        <span style="width:12px;height:12px;border-radius:50%;background:#1A1A1A;border:1px solid rgba(255,255,255,.08);flex-shrink:0;"></span>
+        PRETO
+      </button>
+      <button id="alfa-tab-206" onclick="switchAlfaiatariaCor(206)"
+        style="display:flex;align-items:center;gap:8px;padding:10px 18px;border:2px solid var(--border);background:transparent;color:var(--gray);font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;font-family:var(--ff-b);transition:all .2s;">
+        <span style="width:12px;height:12px;border-radius:50%;background:#BDBDBD;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></span>
+        CINZA CLARO
+      </button>
+    </div>
+
+    <!-- PAINEL: Alfaiataria Bege -->
+    <div id="alfa-panel-204" class="calcas-panel">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-bege-1.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Bege 1"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-bege-4.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Bege 4"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-bege-3.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Bege 3"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-bege-2.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Bege 2"></div>
+      </div>
+      <div style="padding:24px 28px;background:var(--cream);border:1px solid var(--border);border-top:none;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <div style="width:14px;height:14px;border-radius:50%;background:#C8B89A;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+          <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Alfaiataria Bege</span>
+        </div>
+        <div id="alfa-sizes-204" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+      </div>
+    </div>
+
+    <!-- PAINEL: Alfaiataria Preto -->
+    <div id="alfa-panel-205" class="calcas-panel" style="display:none;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-preto-1.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Preto 1"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-preto-4.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Preto 4"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-preto-3.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Preto 3"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-preto-4.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Preto 4"></div>
+      </div>
+      <div style="padding:24px 28px;background:var(--cream);border:1px solid var(--border);border-top:none;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <div style="width:14px;height:14px;border-radius:50%;background:#1A1A1A;border:1px solid rgba(255,255,255,.05);flex-shrink:0;"></div>
+          <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Alfaiataria Preto</span>
+        </div>
+        <div id="alfa-sizes-205" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+      </div>
+    </div>
+
+    <!-- PAINEL: Alfaiataria Cinza Claro -->
+    <div id="alfa-panel-206" class="calcas-panel" style="display:none;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-cinza-claro-1.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Cinza Claro 1"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-cinza-claro-2.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Cinza Claro 2"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-cinza-claro-3.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Cinza Claro 3"></div>
+        <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-cinza-claro-4.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Cinza Claro 4"></div>
+      </div>
+      <div style="padding:24px 28px;background:var(--cream);border:1px solid var(--border);border-top:none;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <div style="width:14px;height:14px;border-radius:50%;background:#BDBDBD;border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></div>
+          <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);">Alfaiataria Cinza Claro</span>
+        </div>
+        <div id="alfa-sizes-206" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;"></div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:var(--gray);margin-top:20px;line-height:1.6;">Use <strong style="color:var(--black);">+</strong> e <strong style="color:var(--black);">−</strong> para selecionar quantidade por tamanho em cada cor. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens.</p>
+
+  </div>
+</section>
+
+<script>
+// ── Polo Tech Light — Catálogo ─────────────────────────────────────
+var currentPoloPage = 50;
+var catPoloCores = {
+  branco: { nome:'Branco', page:50, fotos:[
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp',
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-2-c30e84cc8549a07b1717750822465636-1024-1024.webp',
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-3-820d727b1a606d550517750822448829-1024-1024.webp',
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-4-af0fce41ed7768f4d817750822451336-1024-1024.webp'
+  ]},
+  cinza: { nome:'Cinza', page:51, fotos:[
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/cinza-1-d4c885b2ca0086abac17750822446369-1024-1024.webp',
+    'assets/polo-cinza-detalhe2.png',
+    'assets/polo-cinza-detalhe3.png',
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/cinza-4-9ac76306edce00ade717750822450331-1024-1024.webp'
+  ]},
+  marinho: { nome:'Azul Marinho', page:52, fotos:[
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-1-b8eeef18e493aa7ea117750822454353-1024-1024.webp',
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-2-054570c4eecc95d83017750822449357-1024-1024.webp',
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-3-3650df21a6e11421b617750822450435-1024-1024.webp',
+    'assets/polo-marinho-detalhe4.png'
+  ]},
+  preto: { nome:'Preto', page:53, fotos:[
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-1-44a622c1615d120abd17750822477198-1024-1024.webp',
+    'assets/polo-preto-detalhe.png',
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-3-d309c67293e7eefb6c17750822484268-1024-1024.webp',
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-4-59b83ee224f38a6a7417750822489079-1024-1024.webp'
+  ]},
+  bege: { nome:'Bege', page:54, fotos:[
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/bege-1-6938252565598804f417750822450492-1024-1024.webp',
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/bege-2-f7b6b0d900303dfdf217750822447135-1024-1024.webp',
+    'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/bege-3-240756076961a0082217750822453601-1024-1024.webp',
+    'assets/polo-bege-detalhe4.png'
+  ]}
+};
+
+function renderCatPoloSizes(pageNum) {
+  var sizes = ['P','M','G','GG','XG'];
+  var container = document.getElementById('cat-polo-sizes');
+  container.innerHTML = sizes.map(function(sz) {
+    return '<div style="display:flex;align-items:center;gap:6px;">' +
+      '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+      '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',-1);updateCatPoloQty(' + pageNum + ')">−</button>' +
+      '<span class="qty-num" id="qtynum-' + pageNum + '-' + sz + '" style="color:var(--black);">' + ((order[pageNum] && order[pageNum][sz]) || 0) + '</span>' +
+      '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',1);updateCatPoloQty(' + pageNum + ')">+</button>' +
+      '</div>';
+  }).join('');
+}
+
+function updateCatPoloQty(pageNum) {
+  var sizes = ['P','M','G','GG','XG'];
+  sizes.forEach(function(sz) {
+    var el = document.getElementById('qtynum-' + pageNum + '-' + sz);
+    if (el) el.textContent = (order[pageNum] && order[pageNum][sz]) || 0;
+  });
+}
+
+function switchCatPoloColor(cor, pageNum, btn) {
+  var dados = catPoloCores[cor];
+  var grid  = document.getElementById('cat-polo-grid');
+  grid.style.opacity = '0';
+  setTimeout(function() {
+    for (var i = 1; i <= 4; i++) {
+      var img = document.getElementById('cat-polo-img-' + i);
+      if (img) { img.src = dados.fotos[i-1]; img.alt = 'Polo Tech Light ' + dados.nome + ' ' + i; }
+    }
+    document.getElementById('cat-polo-cor-nome').textContent   = dados.nome;
+    document.getElementById('cat-polo-order-cor').textContent  = dados.nome;
+    grid.style.opacity = '1';
+  }, 200);
+
+  document.querySelectorAll('.cat-polo-cor-btn').forEach(function(b) {
+    b.style.border = '2px solid transparent';
+    b.style.transform = 'scale(1)';
+  });
+  btn.style.border = '2px solid var(--gold)';
+  btn.style.transform = 'scale(1.15)';
+
+  currentPoloPage = pageNum;
+  renderCatPoloSizes(pageNum);
+}
+
+// Inicializa tamanhos ao carregar
+document.addEventListener('DOMContentLoaded', function() {
+  window.scrollTo(0, 0);
+  renderCatPoloSizes(50);
+  renderCatGoldSizes(55);
+});
+</script>
+
+<script>
+// ── Polo Piquet Gold — Catálogo ────────────────────────────────────
+var currentGoldPage = 55;
+var catGoldCores = {
+  branco:  { nome:'Branco',      page:55, fotos:['assets/polo-gold/branco-1.webp','assets/polo-gold/branco-2.png','assets/polo-gold/branco-3.png','assets/polo-gold/branco-4.png'] },
+  preto:   { nome:'Preto',       page:56, fotos:['assets/polo-gold/preto-1.webp','assets/polo-gold/preto-2.png','assets/polo-gold/preto-3.png','assets/polo-gold/preto-4.png'] },
+  marinho: { nome:'Azul Marinho',page:57, fotos:['assets/polo-gold/marinho-1.webp','assets/polo-gold/marinho-2.png','assets/polo-gold/marinho-3.png','assets/polo-gold/marinho-4.png'] },
+  bege:    { nome:'Bege',        page:58, fotos:['assets/polo-gold/bege-1.webp','assets/polo-gold/bege-2.png','assets/polo-gold/bege-3.png','assets/polo-gold/bege-4.png'] },
+  verde:      { nome:'Verde Musgo', page:59, fotos:['assets/polo-gold/verde-1.webp','assets/polo-gold/verde-2.png','assets/polo-gold/verde-3.png','assets/polo-gold/verde-4.png'] },
+  azulclaro:  { nome:'Azul Claro',  page:60, fotos:['assets/polo-gold/azul-claro-1.png','assets/polo-gold/azul-claro-2.png','assets/polo-gold/azul-claro-3.png','assets/polo-gold/azul-claro-2.png'] },
+  verdeclaro: { nome:'Verde Claro', page:61, fotos:['assets/polo-gold/verde-claro-1.png','assets/polo-gold/verde-claro-2.png','assets/polo-gold/verde-claro-3.png','assets/polo-gold/verde-claro-4.png'] },
+  rosa:       { nome:'Rosa',        page:62, fotos:['assets/polo-gold/rosa-1.png','assets/polo-gold/rosa-2.png','assets/polo-gold/rosa-3.png','assets/polo-gold/rosa-4.png'] }
+};
+
+function renderCatGoldSizes(pageNum) {
+  var sizes = ['P','M','G','GG','XG'];
+  var container = document.getElementById('cat-gold-sizes');
+  if (!container) return;
+  container.innerHTML = sizes.map(function(sz) {
+    return '<div style="display:flex;align-items:center;gap:6px;">' +
+      '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+      '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',-1);updateCatGoldQty(' + pageNum + ')">−</button>' +
+      '<span class="qty-num" id="qtynum-' + pageNum + '-' + sz + '" style="color:var(--black);">' + ((order[pageNum] && order[pageNum][sz]) || 0) + '</span>' +
+      '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',1);updateCatGoldQty(' + pageNum + ')">+</button>' +
+      '</div>';
+  }).join('');
+}
+
+function updateCatGoldQty(pageNum) {
+  ['P','M','G','GG','XG'].forEach(function(sz) {
+    var el = document.getElementById('qtynum-' + pageNum + '-' + sz);
+    if (el) el.textContent = (order[pageNum] && order[pageNum][sz]) || 0;
+  });
+}
+
+function switchCatGoldColor(cor, pageNum, btn) {
+  var dados = catGoldCores[cor];
+  var grid  = document.getElementById('cat-gold-grid');
+  grid.style.opacity = '0';
+  setTimeout(function() {
+    var multi = dados.fotos.length > 1;
+    grid.style.gridTemplateColumns = multi ? 'repeat(' + dados.fotos.length + ',1fr)' : '1fr';
+    grid.style.maxWidth = multi ? '' : '600px';
+    grid.style.margin   = multi ? '' : '0 auto';
+
+    for (var i = 1; i <= 4; i++) {
+      var cell = document.getElementById('cat-gold-img-' + i);
+      if (!cell) continue;
+      var parentDiv = cell.parentElement;
+      if (i <= dados.fotos.length) {
+        cell.src = dados.fotos[i-1];
+        cell.alt = 'Polo Piquet Gold ' + dados.nome + ' ' + i;
+        parentDiv.style.display = '';
+      } else {
+        parentDiv.style.display = 'none';
+      }
+    }
+    document.getElementById('cat-gold-cor-nome').textContent  = dados.nome;
+    document.getElementById('cat-gold-order-cor').textContent = dados.nome;
+    grid.style.opacity = '1';
+  }, 200);
+
+  document.querySelectorAll('.cat-gold-cor-btn').forEach(function(b) {
+    b.style.border = '2px solid transparent';
+    b.style.transform = 'scale(1)';
+  });
+  btn.style.border = '2px solid var(--gold)';
+  btn.style.transform = 'scale(1.15)';
+
+  currentGoldPage = pageNum;
+  renderCatGoldSizes(pageNum);
+}
+</script>
+
+<script>
+// ── Tênis Casual — Catálogo ────────────────────────────────────────
+var TENIS_NUMS = ['37','38','39','40','41','42'];
+var TENIS_CORES = [
+  { pageNum:100, nome:'Marrom Claro' },
+  { pageNum:101, nome:'Azul Marinho' },
+  { pageNum:102, nome:'Cinza'        },
+  { pageNum:103, nome:'Preto'        }
+];
+
+function renderTodosOsTenisSizes() {
+  TENIS_CORES.forEach(function(cor) {
+    var container = document.getElementById('tenis-sizes-' + cor.pageNum);
+    if (!container) return;
+    container.innerHTML = TENIS_NUMS.map(function(sz) {
+      var pg = cor.pageNum;
+      return '<div style="display:flex;flex-direction:column;align-items:center;gap:3px;">' +
+        '<span style="font-size:10px;font-weight:700;color:var(--gray);">' + sz + '</span>' +
+        '<div style="display:flex;align-items:center;gap:3px;">' +
+        '<button class="qty-btn" style="width:20px;height:20px;font-size:13px;color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQtyTenis(' + pg + ',\'' + sz + '\',-1)">−</button>' +
+        '<span class="qty-num" id="qtynum-' + pg + '-' + sz + '" style="color:var(--black);min-width:18px;text-align:center;">' + ((order[pg] && order[pg][sz]) || 0) + '</span>' +
+        '<button class="qty-btn" style="width:20px;height:20px;font-size:13px;color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQtyTenis(' + pg + ',\'' + sz + '\',1)">+</button>' +
+        '</div></div>';
+    }).join('');
+  });
+}
+
+function changeQtyTenis(pageNum, size, delta) {
+  if (!order[pageNum]) order[pageNum] = {};
+  order[pageNum][size] = Math.max(0, (order[pageNum][size] || 0) + delta);
+  var total = TENIS_NUMS.reduce(function(s,sz){ return s + (order[pageNum][sz]||0); }, 0);
+  if (total === 0) delete order[pageNum];
+  var el = document.getElementById('qtynum-' + pageNum + '-' + size);
+  if (el) el.textContent = (order[pageNum] && order[pageNum][size]) || 0;
+  updateCartFab();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderTodosOsTenisSizes();
+  renderPoloItalianaSizes();
+});
+</script>
+
+<script>
+// ── Polo Italiana — Catálogo ───────────────────────────────────────
+var ITAL_SIZES = ['P','M','G','GG','XG'];
+var ITAL_CORES = [
+  { pageNum:110, nome:'Verde'        },
+  { pageNum:111, nome:'Azul Marinho' },
+  { pageNum:112, nome:'Off White'    }
+];
+
+function renderPoloItalianaSizes() {
+  ITAL_CORES.forEach(function(cor) {
+    var container = document.getElementById('ital-sizes-' + cor.pageNum);
+    if (!container) return;
+    container.innerHTML = ITAL_SIZES.map(function(sz) {
+      var pg = cor.pageNum;
+      return '<div style="display:flex;flex-direction:column;align-items:center;gap:3px;">' +
+        '<span style="font-size:10px;font-weight:700;color:var(--gray);">' + sz + '</span>' +
+        '<div style="display:flex;align-items:center;gap:3px;">' +
+        '<button class="qty-btn" style="width:20px;height:20px;font-size:13px;color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQtyItal(' + pg + ',\'' + sz + '\',-1)">−</button>' +
+        '<span class="qty-num" id="qtynum-' + pg + '-' + sz + '" style="color:var(--black);min-width:18px;text-align:center;">' + ((order[pg] && order[pg][sz]) || 0) + '</span>' +
+        '<button class="qty-btn" style="width:20px;height:20px;font-size:13px;color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQtyItal(' + pg + ',\'' + sz + '\',1)">+</button>' +
+        '</div></div>';
+    }).join('');
+  });
+}
+
+function changeQtyItal(pageNum, size, delta) {
+  if (!order[pageNum]) order[pageNum] = {};
+  order[pageNum][size] = Math.max(0, (order[pageNum][size] || 0) + delta);
+  var total = ITAL_SIZES.reduce(function(s,sz){ return s + (order[pageNum][sz]||0); }, 0);
+  if (total === 0) delete order[pageNum];
+  var el = document.getElementById('qtynum-' + pageNum + '-' + size);
+  if (el) el.textContent = (order[pageNum] && order[pageNum][size]) || 0;
+  updateCartFab();
+}
+</script>
+
+<script>
+// ── Calças — Catálogo ──────────────────────────────────────────────
+var CALCAS_SIZES = ['38','40','42','44','46','48'];
+var CALCAS_CORES = [
+  { pageNum:200, nome:'Azul Claro'        },
+  { pageNum:201, nome:'Azul Claro Delavê' },
+  { pageNum:202, nome:'Blue Black Stonada'},
+  { pageNum:203, nome:'Preto'             }
+];
+var calcasCorAtiva = 200;
+
+var ALFAIATARIA_CORES = [
+  { pageNum:204, nome:'Bege'        },
+  { pageNum:205, nome:'Preto'       },
+  { pageNum:206, nome:'Cinza Claro' }
+];
+var alfaiatariaCorAtiva = 204;
+
+function renderAlfaiatariaSizes() {
+  var ALFA_SIZES = ['38','40','42','44','46','48'];
+  ALFAIATARIA_CORES.forEach(function(cor) {
+    var container = document.getElementById('alfa-sizes-' + cor.pageNum);
+    if (!container) return;
+    var pg = cor.pageNum;
+    container.innerHTML = ALFA_SIZES.map(function(sz) {
+      return '<div style="display:flex;flex-direction:column;align-items:center;gap:3px;">' +
+        '<span style="font-size:10px;font-weight:700;color:var(--gray);">' + sz + '</span>' +
+        '<div style="display:flex;align-items:center;gap:3px;">' +
+        '<button class="qty-btn" style="width:20px;height:20px;font-size:13px;color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQtyCalcas(' + pg + ',\'' + sz + '\',-1)">−</button>' +
+        '<span class="qty-num" id="qtynum-' + pg + '-' + sz + '" style="color:var(--black);min-width:18px;text-align:center;">' + ((order[pg] && order[pg][sz]) || 0) + '</span>' +
+        '<button class="qty-btn" style="width:20px;height:20px;font-size:13px;color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQtyCalcas(' + pg + ',\'' + sz + '\',1)">+</button>' +
+        '</div></div>';
+    }).join('');
+  });
+}
+
+function switchAlfaiatariaCor(pageNum) {
+  alfaiatariaCorAtiva = pageNum;
+  ALFAIATARIA_CORES.forEach(function(cor) {
+    var panel = document.getElementById('alfa-panel-' + cor.pageNum);
+    if (panel) panel.style.display = 'none';
+    var tab = document.getElementById('alfa-tab-' + cor.pageNum);
+    if (tab) {
+      tab.style.background  = 'transparent';
+      tab.style.borderColor = 'var(--border)';
+      tab.style.color       = 'var(--gray)';
+    }
+  });
+  var activePanel = document.getElementById('alfa-panel-' + pageNum);
+  if (activePanel) activePanel.style.display = '';
+  var activeTab = document.getElementById('alfa-tab-' + pageNum);
+  if (activeTab) {
+    activeTab.style.background  = 'var(--black)';
+    activeTab.style.borderColor = 'var(--black)';
+    activeTab.style.color       = '#fff';
+  }
+}
+
+function renderCalcasSizes() {
+  CALCAS_CORES.forEach(function(cor) {
+    var container = document.getElementById('calcas-sizes-' + cor.pageNum);
+    if (!container) return;
+    var pg = cor.pageNum;
+    container.innerHTML = CALCAS_SIZES.map(function(sz) {
+      return '<div style="display:flex;flex-direction:column;align-items:center;gap:3px;">' +
+        '<span style="font-size:10px;font-weight:700;color:var(--gray);">' + sz + '</span>' +
+        '<div style="display:flex;align-items:center;gap:3px;">' +
+        '<button class="qty-btn" style="width:20px;height:20px;font-size:13px;color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQtyCalcas(' + pg + ',\'' + sz + '\',-1)">−</button>' +
+        '<span class="qty-num" id="qtynum-' + pg + '-' + sz + '" style="color:var(--black);min-width:18px;text-align:center;">' + ((order[pg] && order[pg][sz]) || 0) + '</span>' +
+        '<button class="qty-btn" style="width:20px;height:20px;font-size:13px;color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQtyCalcas(' + pg + ',\'' + sz + '\',1)">+</button>' +
+        '</div></div>';
+    }).join('');
+  });
+}
+
+function changeQtyCalcas(pageNum, size, delta) {
+  if (!order[pageNum]) order[pageNum] = {};
+  order[pageNum][size] = Math.max(0, (order[pageNum][size] || 0) + delta);
+  var total = CALCAS_SIZES.reduce(function(s,sz){ return s + (order[pageNum][sz]||0); }, 0);
+  if (total === 0) delete order[pageNum];
+  var el = document.getElementById('qtynum-' + pageNum + '-' + size);
+  if (el) el.textContent = (order[pageNum] && order[pageNum][size]) || 0;
+  updateCartFab();
+}
+
+function switchCalcasCor(pageNum) {
+  calcasCorAtiva = pageNum;
+  // Oculta todos os painéis
+  CALCAS_CORES.forEach(function(cor) {
+    var panel = document.getElementById('calcas-panel-' + cor.pageNum);
+    if (panel) panel.style.display = 'none';
+    var tab = document.getElementById('calcas-tab-' + cor.pageNum);
+    if (tab) {
+      tab.style.background    = 'transparent';
+      tab.style.borderColor   = 'var(--border)';
+      tab.style.color         = 'var(--gray)';
+    }
+  });
+  // Mostra o painel e ativa a tab selecionada
+  var activePanel = document.getElementById('calcas-panel-' + pageNum);
+  if (activePanel) activePanel.style.display = '';
+  var activeTab = document.getElementById('calcas-tab-' + pageNum);
+  if (activeTab) {
+    activeTab.style.background  = 'var(--black)';
+    activeTab.style.borderColor = 'var(--black)';
+    activeTab.style.color       = '#fff';
+  }
+}
+</script>
+
+<!-- Estilo qpill se não definido -->
+<style>
+.qpill{display:flex;align-items:center;gap:6px;background:var(--cream);border:1px solid var(--border);padding:7px 14px;font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--black);}
+.qpill span{color:var(--gold);font-size:13px;}
+</style>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contato">
+  <div class="cta-pre">Do catálogo até a sua porta</div>
+  <h2 class="cta-title">Escolheu? Agora é com<br>a <em>Gringo's</em></h2>
+  <p class="cta-sub">Baixe o PDF do seu pedido, envie para nossa equipe e nós cuidamos de tudo — produção, bordado e entrega direto para você.</p>
+
+  <!-- 3 etapas pós-pedido -->
+  <div style="display:flex;justify-content:center;gap:0;margin:36px 0;flex-wrap:wrap;max-width:760px;margin-left:auto;margin-right:auto;">
+
+    <div style="flex:1;min-width:200px;padding:24px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center;">
+      <div style="font-family:var(--ff-big);font-size:36px;color:var(--gold);margin-bottom:10px;">01</div>
+      <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Envie o PDF</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.6;">Mande o arquivo do pedido pelo WhatsApp ou e-mail para nossa equipe comercial.</div>
+    </div>
+
+    <div style="flex:1;min-width:200px;padding:24px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center;">
+      <div style="font-family:var(--ff-big);font-size:36px;color:var(--gold);margin-bottom:10px;">02</div>
+      <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Receba o orçamento</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.6;">Nossa equipe envia o orçamento personalizado com prazo de entrega e condições de pagamento.</div>
+    </div>
+
+    <div style="flex:1;min-width:200px;padding:24px 28px;text-align:center;">
+      <div style="font-family:var(--ff-big);font-size:36px;color:var(--gold);margin-bottom:10px;">03</div>
+      <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Peças na sua porta</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.6;">Aprovado o pedido, produzimos e entregamos as peças Gringo's direto para você, em todo o Brasil.</div>
+    </div>
+
+  </div>
+
+  <div class="cta-btns">
+    <a href="https://wa.me/message/BG7KAMJD27H3L1" class="btn-whats" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Solicitar orçamento pelo WhatsApp
+    </a>
+    <a href="https://gringoscountry.com.br" class="btn-ghost" target="_blank">Ver Site Completo →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Gringo's</div>
+    <div class="footer-copy">© 2025 Gringo's Uniformes. Todos os direitos reservados.</div>
+    <div class="footer-aivox">Criado com AIVOX</div>
+  </div>
+</footer>
+
+<!-- CARRINHO FLUTUANTE -->
+<button class="cart-fab" id="cartFab" onclick="openOrderModal()">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+  Ver Pedido
+  <span class="cart-badge" id="cartBadge">0</span>
+</button>
+
+<!-- MODAL PEDIDO -->
+<div class="order-modal" id="orderModal" onclick="closeModalOutside(event)">
+  <div class="order-panel">
+    <div class="order-hdr">
+      <div>
+        <div class="order-hdr-logo">Gringo's</div>
+        <div class="order-hdr-sub">Resumo do Pedido</div>
+      </div>
+      <button class="order-hdr-close" onclick="closeOrderModal()">✕ Fechar</button>
+    </div>
+    <div class="order-body">
+      <!-- Dados do cliente -->
+      <div class="order-sec-lbl">Dados do Cliente</div>
+      <div class="order-client">
+        <div class="order-field"><label>Nome / Empresa</label><input type="text" id="oNome" placeholder="Seu nome ou empresa"></div>
+      </div>
+
+      <!-- Itens -->
+      <div class="order-sec-lbl">Itens Selecionados</div>
+      <div id="orderItemsWrap"></div>
+
+      <!-- Ações -->
+      <div class="order-actions" id="orderActions" style="display:none;">
+        <button class="btn-print" onclick="generatePDF()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Baixar PDF do Pedido
+        </button>
+        <button class="btn-clear" onclick="clearOrder()">Limpar Pedido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DIV OCULTA PARA IMPRESSÃO / PDF -->
+<div id="printOrder"></div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLightbox()">✕ Fechar</button>
+    <button class="lb-nav lb-prev" onclick="navLightbox(-1)">‹</button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-nav lb-next" onclick="navLightbox(1)">›</button>
+    <div class="lb-counter" id="lbCounter">1 / 42</div>
+  </div>
+</div>
+
+<script>
+// ── Definição das coleções ─────────────────────────────────────────
+const COLLECTIONS = {
+  texas: {
+    cover: 1,
+    pages: [2, ...Array.from({length:19}, (_,i) => i + 4), 28, 29],   // 02, 04–22, 28–29 (sem TX-02 e 23–27)
+    label: 'Texas Collection',
+    title: 'Coleção <em>Texas</em>'
+  },
+  urban: {
+    cover: 30,
+    pages: [...Array.from({length:7}, (_,i) => i + 31), 63, 64, 65],   // 31–37 + camisetas
+    label: 'Urban Collection',
+    title: 'Coleção <em>Urban</em>'
+  },
+  algodao: {
+    cover: 'capa-algodao-egipcio',
+    pages: [41, 42, 43, 45, 46, 47],
+    label: 'Camisetas Algodão Egípcio',
+    title: 'Algodão <em>Egípcio</em>'
+  },
+  nova: {
+    cover: 44,
+    pages: [],
+    label: 'Polo Tech Light',
+    title: 'Polo <em>Tech Light</em>'
+  },
+  tenis: {
+    cover: 'capa-knit-evo',
+    pages: [],
+    label: 'KNIT EVO Tênis Casual',
+    title: 'KNIT EVO <em>Tênis Casual</em>'
+  },
+  calcas: {
+    cover: 'capa-calcas',
+    pages: [],
+    label: 'Calças',
+    title: '<em>Calças</em>'
+  }
+};
+
+// ── Estado do Lightbox ─────────────────────────────────────────────
+let lbPages   = [];
+let lbCurrent = 0;
+
+// ── Nomes dos produtos por página ─────────────────────────────────
+const PRODUCT_NAMES = {
+  1:'Capa Texas Collection', 2:'Modelo TX-01', 4:'Modelo TX-03',
+  200:'Calça Azul Claro', 201:'Calça Azul Claro Delavê', 202:'Calça Blue Black Stonada', 203:'Calça Preta',
+  204:'Calça Alfaiataria Bege', 205:'Calça Alfaiataria Preto', 206:'Calça Alfaiataria Cinza Claro',
+  5:'Modelo TX-04', 6:'Modelo TX-05', 7:'Modelo TX-06', 8:'Modelo TX-07',
+  9:'Modelo TX-08', 10:'Modelo TX-09', 11:'Modelo TX-10', 12:'Modelo TX-11',
+  13:'Modelo TX-12', 14:'Modelo TX-13', 15:'Modelo TX-14', 16:'Modelo TX-15',
+  17:'Modelo TX-16', 18:'Modelo TX-17', 19:'Modelo TX-18', 20:'Modelo TX-19',
+  21:'Modelo TX-20', 22:'Modelo TX-21', 23:'Modelo TX-22', 24:'Modelo TX-23',
+  25:'Modelo TX-24', 26:'Modelo TX-25', 27:'Modelo TX-26', 28:'Modelo TX-27',
+  29:'Modelo TX-28', 30:'Capa Urban Collection', 31:'Modelo URB-01', 32:'Modelo URB-02',
+  33:'Modelo URB-03', 34:'Modelo URB-04', 35:'Modelo URB-05', 36:'Modelo URB-06',
+  37:'Modelo URB-07', 38:'Capa Algodão Egípcio',
+  41:'Camiseta AE — Chumbo', 42:'Camiseta AE — Branco', 43:'Camiseta AE — Preto',
+  45:'Camiseta AE — Azul Claro', 46:'Camiseta AE — Verde Claro', 47:'Camiseta AE — Azul Marinho',
+  63:'Camiseta Azul Médio', 64:'Camiseta Azul Marinho', 65:'Camiseta Caramelo',
+  50:'Polo Tech Light — Branco', 51:'Polo Tech Light — Cinza',
+  52:'Polo Tech Light — Azul Marinho', 53:'Polo Tech Light — Preto', 54:'Polo Tech Light — Bege',
+  55:'Polo Piquet Gold — Branco', 56:'Polo Piquet Gold — Preto',
+  57:'Polo Piquet Gold — Azul Marinho', 58:'Polo Piquet Gold — Bege', 59:'Polo Piquet Gold — Verde Musgo',
+  60:'Polo Piquet Gold — Azul Claro', 61:'Polo Piquet Gold — Verde Claro', 62:'Polo Piquet Gold — Rosa',
+  100:'KNIT EVO — Marrom Claro', 101:'KNIT EVO — Azul Marinho', 102:'KNIT EVO — Cinza', 103:'KNIT EVO — Preto',
+  110:'Polo Italiana — Verde', 111:'Polo Italiana — Azul Marinho', 112:'Polo Italiana — Off White'
+};
+function getColName(pageNum){
+  if(pageNum>=200) return 'Calças';
+  if(pageNum>=110) return 'Polo Italiana';
+  if(pageNum>=100) return 'KNIT EVO Tênis Casual';
+  if(pageNum>=63 && pageNum<=65) return 'Urban Collection';
+  if(pageNum<=29)  return 'Texas Collection';
+  if(pageNum<=37)  return 'Urban Collection';
+  if(pageNum>=55)  return 'Polo Piquet Gold';
+  if(pageNum>=50)  return 'Polo Tech Light';
+  return 'Algodão Egípcio';
+}
+
+// ── Pedido ────────────────────────────────────────────────────────
+const SIZES = ['P','M','G','GG'];
+
+// Tamanhos customizados por página
+const PAGE_SIZES = {
+  26: ['38','40','42','46','48','50'],
+  27: ['38','40','42','46','48','50'],
+  41: ['P','M','G','GG','XG'],
+  42: ['P','M','G','GG','XG'],
+  43: ['P','M','G','GG','XG'],
+  45: ['P','M','G','GG','XG'],
+  46: ['P','M','G','GG','XG'],
+  47: ['P','M','G','GG','XG'],
+  50: ['P','M','G','GG','XG'],
+  51: ['P','M','G','GG','XG'],
+  52: ['P','M','G','GG','XG'],
+  53: ['P','M','G','GG','XG'],
+  54: ['P','M','G','GG','XG'],
+  55: ['P','M','G','GG','XG'],
+  56: ['P','M','G','GG','XG'],
+  57: ['P','M','G','GG','XG'],
+  58: ['P','M','G','GG','XG'],
+  59: ['P','M','G','GG','XG'],
+  60: ['P','M','G','GG','XG'],
+  61: ['P','M','G','GG','XG'],
+  62: ['P','M','G','GG','XG'],
+  31: ['P','M','G','GG','XG'],
+  32: ['P','M','G','GG','XG'],
+  33: ['P','M','G','GG','XG'],
+  34: ['P','M','G','GG','XG'],
+  35: ['P','M','G','GG','XG'],
+  36: ['P','M','G','GG','XG'],
+  37: ['P','M','G','GG','XG'],
+  63: ['P','M','G','GG','XG'],
+  64: ['P','M','G','GG','XG'],
+  65: ['P','M','G','GG','XG'],
+  100: ['37','38','39','40','41','42'],
+  101: ['37','38','39','40','41','42'],
+  102: ['37','38','39','40','41','42'],
+  103: ['37','38','39','40','41','42'],
+  110: ['P','M','G','GG','XG'],
+  111: ['P','M','G','GG','XG'],
+  112: ['P','M','G','GG','XG'],
+  200: ['38','40','42','44','46','48'],
+  201: ['38','40','42','44','46','48'],
+  202: ['38','40','42','44','46','48'],
+  203: ['38','40','42','44','46','48'],
+  204: ['38','40','42','44','46','48'],
+  205: ['38','40','42','44','46','48'],
+  206: ['38','40','42','44','46','48']
+};
+function getSizes(pg){ return PAGE_SIZES[pg] || SIZES; }
+
+// order = { pageNum: { [size]: qty } }
+const order = {};
+
+function getPageTotal(pg){ return order[pg] ? getSizes(pg).reduce((s,sz)=>s+(order[pg][sz]||0),0) : 0; }
+function getCartTotal(){ return Object.keys(order).reduce((s,pg)=>s+getPageTotal(pg),0); }
+
+function changeQty(pageNum, size, delta){
+  if(!order[pageNum]) order[pageNum] = {};
+  order[pageNum][size] = Math.max(0, (order[pageNum][size]||0) + delta);
+  if(getPageTotal(pageNum) === 0) delete order[pageNum];
+  updateQtyUI(pageNum);
+  updateCartFab();
+}
+
+function updateQtyUI(pageNum){
+  const bar = document.getElementById(`qtybar-${pageNum}`);
+  if(!bar) return;
+  getSizes(pageNum).forEach(sz => {
+    const el = document.getElementById(`qtynum-${pageNum}-${sz}`);
+    if(el) el.textContent = (order[pageNum]?.[sz]) || 0;
+  });
+  bar.classList.toggle('has-qty', getPageTotal(pageNum) > 0);
+}
+
+function updateCartFab(){
+  const total = getCartTotal();
+  const fab   = document.getElementById('cartFab');
+  document.getElementById('cartBadge').textContent = total;
+  fab.classList.toggle('visible', total > 0);
+}
+
+// Páginas que exibem aviso ilustrativo no lugar do seletor de tamanhos
+const NOTICE_PAGES = {
+  28: 'MODELO ILUSTRATIVO UTILIZANDO A COLEÇÃO TEXAS'
+};
+
+// ── Gera itens no grid ─────────────────────────────────────────────
+function buildGrid(pages, colType) {
+  const grid = document.getElementById('catalogGrid');
+  grid.innerHTML = '';
+  pages.forEach(pageNum => {
+    const item = document.createElement('div');
+    item.className = 'catalog-item';
+    const num      = String(pageNum).padStart(2,'0');
+    const hasSizes = !!order[pageNum];
+    const sizes    = getSizes(pageNum);
+
+    // Divide os tamanhos em pares para o grid 2 colunas
+    const pairs = [];
+    for(let i = 0; i < sizes.length; i += 2) pairs.push(sizes.slice(i, i+2));
+
+    const sizeRows = pairs.map(pair =>
+      `<div style="display:flex;gap:10px;">` +
+      pair.map(sz => `
+        <div class="qty-size-row">
+          <span class="qty-size-lbl">${sz}</span>
+          <button class="qty-btn" onclick="changeQty(${pageNum},'${sz}',-1)">−</button>
+          <span class="qty-num" id="qtynum-${pageNum}-${sz}">${order[pageNum]?.[sz]||0}</span>
+          <button class="qty-btn" onclick="changeQty(${pageNum},'${sz}',1)">+</button>
+        </div>`).join('') +
+      `</div>`
+    ).join('');
+
+    const qtyBarContent = NOTICE_PAGES[pageNum]
+      ? `<div style="width:100%;text-align:center;font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--gold);padding:6px 4px;line-height:1.3;">${NOTICE_PAGES[pageNum]}</div>`
+      : `<div class="qty-sizes-grid">${sizeRows}</div>`;
+
+    const imgExts = [41, 42, 43, 45, 46, 47, 63, 64, 65];
+    const imgSrc = imgExts.includes(pageNum)
+      ? `assets/catalogo/${pageNum}.webp`
+      : `assets/catalogo/${pageNum}.svg`;
+    const prodName = PRODUCT_NAMES[pageNum] || '';
+    item.innerHTML = `
+      <img src="${imgSrc}" alt="${prodName}" loading="lazy"
+           onclick="openLightboxCol('${colType}',${pageNum})" style="cursor:zoom-in;">
+      <div class="catalog-overlay" onclick="openLightboxCol('${colType}',${pageNum})" style="cursor:zoom-in;">
+        <div class="overlay-content">
+          ${prodName ? `<div class="overlay-num" style="font-size:13px;letter-spacing:.04em;">${prodName}</div>` : ''}
+          <div class="overlay-sub">Clique para ampliar</div>
+        </div>
+      </div>
+      <div class="qty-bar ${hasSizes?'has-qty':''}" id="qtybar-${pageNum}" onclick="event.stopPropagation()">
+        ${qtyBarContent}
+      </div>
+    `;
+    grid.appendChild(item);
+  });
+}
+
+// ── Troca de coleção ───────────────────────────────────────────────
+function showCollection(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const allCovers       = document.getElementById('allCoversSection');
+  const colSection      = document.getElementById('collectionSection');
+  const gridSection     = document.getElementById('catalogo');
+
+  const poloSection         = document.getElementById('poloSection');
+  const tenisSection        = document.getElementById('tenisSection');
+  const calcasSection       = document.getElementById('calcasSection');
+  const alfaiatariaSection  = document.getElementById('alfaiatariaSection');
+
+  if (type === 'all') {
+    allCovers.style.display          = '';
+    colSection.style.display         = 'none';
+    gridSection.style.display        = 'none';
+    poloSection.style.display        = 'none';
+    tenisSection.style.display       = 'none';
+    calcasSection.style.display      = 'none';
+    alfaiatariaSection.style.display = 'none';
+    document.getElementById('count').textContent = '6';
+
+  } else {
+    const col = COLLECTIONS[type];
+    allCovers.style.display   = 'none';
+    colSection.style.display  = '';
+
+    // Atualiza capa
+    document.getElementById('colLabel').textContent  = col.label;
+    document.getElementById('colTitle').innerHTML    = col.title;
+    const coverExt = ['capa-algodao-egipcio', 'capa-knit-evo', 'capa-calcas'].includes(col.cover) ? 'png' : 'svg';
+    const coverSrc = (typeof col.cover === 'string')
+      ? `assets/catalogo/${col.cover}.${coverExt}`
+      : `assets/catalogo/${col.cover}.svg`;
+    document.getElementById('coverImg').src          = coverSrc;
+    document.getElementById('coverNum').textContent  = String(col.cover).padStart ? String(col.cover).padStart(2,'0') : '—';
+    document.getElementById('coverItem').onclick     = () => openLightboxCol(type, col.cover);
+
+    if (type === 'nova') {
+      gridSection.style.display        = 'none';
+      poloSection.style.display        = '';
+      tenisSection.style.display       = 'none';
+      calcasSection.style.display      = 'none';
+      alfaiatariaSection.style.display = 'none';
+      document.getElementById('count').textContent = '1';
+    } else if (type === 'tenis') {
+      gridSection.style.display        = 'none';
+      poloSection.style.display        = 'none';
+      tenisSection.style.display       = '';
+      calcasSection.style.display      = 'none';
+      alfaiatariaSection.style.display = 'none';
+      document.getElementById('count').textContent = '1';
+    } else if (type === 'calcas') {
+      gridSection.style.display        = 'none';
+      poloSection.style.display        = 'none';
+      tenisSection.style.display       = 'none';
+      calcasSection.style.display      = '';
+      alfaiatariaSection.style.display = '';
+      renderCalcasSizes();
+      switchCalcasCor(calcasCorAtiva);
+      renderAlfaiatariaSizes();
+      switchAlfaiatariaCor(alfaiatariaCorAtiva);
+      document.getElementById('count').textContent = '7';
+    } else {
+      gridSection.style.display        = '';
+      poloSection.style.display        = 'none';
+      tenisSection.style.display       = 'none';
+      calcasSection.style.display      = 'none';
+      alfaiatariaSection.style.display = 'none';
+      document.getElementById('gridLabel').textContent = col.label;
+      document.getElementById('gridTitle').innerHTML   = col.title + ' — <em>Produtos</em>';
+      buildGrid(col.pages, type);
+      document.getElementById('count').textContent = 1 + col.pages.length;
+    }
+  }
+}
+
+// ── Lightbox ───────────────────────────────────────────────────────
+// pageNum = número real da página (1-based)
+function openLightboxCol(colType, pageNum) {
+  if      (colType === 'texas')   lbPages = [1,  ...COLLECTIONS.texas.pages];
+  else if (colType === 'urban')   lbPages = [30, ...COLLECTIONS.urban.pages.filter(p => p !== 30)];
+  else if (colType === 'algodao') lbPages = [COLLECTIONS.algodao.cover, ...COLLECTIONS.algodao.pages];
+  else if (colType === 'nova')    lbPages = [44];
+  else if (colType === 'tenis')   lbPages = [];
+  else if (colType === 'calcas')  lbPages = [];
+  else                            lbPages = Array.from({length:42}, (_,i) => i+1);
+
+  lbCurrent = lbPages.indexOf(pageNum);
+  if (lbCurrent < 0) lbCurrent = 0;
+
+  renderLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function renderLightbox() {
+  const pageNum = lbPages[lbCurrent];
+  const webpPages = [41, 42, 43, 45, 46, 47, 63, 64, 65];
+  const pngPages  = ['capa-algodao-egipcio'];
+  const ext = webpPages.includes(pageNum) ? 'webp' : pngPages.includes(pageNum) ? 'png' : 'svg';
+  document.getElementById('lbImg').src = `assets/catalogo/${pageNum}.${ext}`;
+  document.getElementById('lbCounter').textContent = `${lbCurrent + 1} / ${lbPages.length}`;
+}
+
+function navLightbox(dir) {
+  lbCurrent = (lbCurrent + dir + lbPages.length) % lbPages.length;
+  renderLightbox();
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeLightboxOutside(e) {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+}
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'ArrowLeft')  navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+  if (e.key === 'Escape')     closeLightbox();
+});
+
+// ── Modal de Pedido ────────────────────────────────────────────────
+function openOrderModal(){
+  renderOrderModal();
+  document.getElementById('orderModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeOrderModal(){
+  document.getElementById('orderModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e){
+  if(e.target === document.getElementById('orderModal')) closeOrderModal();
+}
+
+const UNIT_PRICE = 99.90;
+function fmt(v){ return 'R$ ' + v.toFixed(2).replace('.',','); }
+function sizesTag(pg){
+  if(!order[pg]) return '';
+  return getSizes(pg).filter(sz=>(order[pg][sz]||0)>0)
+    .map(sz=>`<span style="display:inline-block;background:rgba(184,146,74,.15);border:1px solid rgba(184,146,74,.4);padding:2px 8px;font-size:10px;font-weight:700;margin:2px;color:var(--gold-dk);">${sz} × ${order[pg][sz]}</span>`)
+    .join('');
+}
+
+function renderOrderModal(){
+  const wrap    = document.getElementById('orderItemsWrap');
+  const actions = document.getElementById('orderActions');
+  const pages   = Object.keys(order).filter(pg => getPageTotal(pg) > 0);
+
+  if(pages.length === 0){
+    wrap.innerHTML = `<div class="order-empty"><span>🛒</span>Nenhum produto selecionado ainda.<br>Navegue pelas coleções, escolha o tamanho e use o <strong>+</strong>.</div>`;
+    actions.style.display = 'none';
+    return;
+  }
+
+  const totalQty   = getCartTotal();
+  const totalValue = totalQty * UNIT_PRICE;
+
+  const POLO_THUMBS = {
+    41: 'assets/catalogo/41.webp',
+    42: 'assets/catalogo/42.webp',
+    43: 'assets/catalogo/43.webp',
+    45: 'assets/catalogo/45.webp',
+    46: 'assets/catalogo/46.webp',
+    47: 'assets/catalogo/47.webp',
+    50: 'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp',
+    51: 'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/cinza-1-d4c885b2ca0086abac17750822446369-1024-1024.webp',
+    52: 'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-1-b8eeef18e493aa7ea117750822454353-1024-1024.webp',
+    53: 'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-1-44a622c1615d120abd17750822477198-1024-1024.webp',
+    54: 'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/bege-1-6938252565598804f417750822450492-1024-1024.webp',
+    55: 'assets/polo-gold/branco-1.webp',
+    56: 'assets/polo-gold/preto-1.webp',
+    57: 'assets/polo-gold/marinho-1.webp',
+    58: 'assets/polo-gold/bege-1.webp',
+    59: 'assets/polo-gold/verde-1.webp',
+    60: 'assets/polo-gold/azul-claro-1.png',
+    61: 'assets/polo-gold/verde-claro-1.png',
+    62: 'assets/polo-gold/rosa-1.png',
+    100: 'assets/tenis/branco-1.jpg',
+    101: 'assets/tenis/azul-1.jpg',
+    102: 'assets/tenis/cinza-1.jpg',
+    103: 'assets/tenis/preto-1.jpg',
+    110: 'assets/polo-italiana/verde.webp',
+    111: 'assets/polo-italiana/azul-marinho.webp',
+    112: 'assets/polo-italiana/off-white.webp',
+    200: 'assets/calcas/azul-claro-1.png',
+    201: 'assets/calcas/azul-delave-1.png',
+    202: 'assets/calcas/blue-black-1.png',
+    203: 'assets/calcas/preto-1.png'
+  };
+  const rows = pages.map(pg => {
+    const pgTotal  = getPageTotal(pg);
+    const thumbSrc = POLO_THUMBS[pg] || `assets/catalogo/${pg}.svg`;
+    return `
+    <tr>
+      <td><img class="order-thumb" src="${thumbSrc}" alt="Pág ${pg}"></td>
+      <td>
+        <div class="order-pname">${PRODUCT_NAMES[pg]||'Produto '+String(pg).padStart(2,'0')}</div>
+        <div class="order-pcol">${getColName(Number(pg))}</div>
+        <div style="margin-top:5px;">${sizesTag(pg)}</div>
+      </td>
+      <td class="order-qty-cell">${pgTotal}</td>
+    </tr>`;
+  }).join('');
+
+  wrap.innerHTML = `
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Produto · Tamanhos</th>
+          <th style="text-align:center;">Total Pçs</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows}
+        <tr class="order-total-row">
+          <td colspan="2">TOTAL DO PEDIDO · ${totalQty} peça${totalQty>1?'s':''}</td>
+          <td class="order-total-num">${totalQty}</td>
+        </tr>
+      </tbody>
+    </table>`;
+  const MIN_PIECES = 40;
+  if(totalQty >= MIN_PIECES){
+    actions.style.display = 'flex';
+    document.getElementById('minOrderNotice')?.remove();
+  } else {
+    actions.style.display = 'none';
+    const existing = document.getElementById('minOrderNotice');
+    if(!existing){
+      const notice = document.createElement('div');
+      notice.id = 'minOrderNotice';
+      notice.style.cssText = 'margin-top:16px;padding:12px 16px;background:rgba(184,146,74,.1);border:1px solid rgba(184,146,74,.4);border-radius:4px;text-align:center;';
+      notice.innerHTML = `<span style="font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.05em;">PEDIDO MÍNIMO: 40 PEÇAS</span><br><span style="font-size:11px;color:var(--gray);margin-top:4px;display:block;">Você tem <strong>${totalQty}</strong> peça${totalQty!==1?'s':''} — adicione mais <strong>${MIN_PIECES - totalQty}</strong> para liberar o download.</span>`;
+      wrap.parentNode.insertBefore(notice, wrap.nextSibling);
+    } else {
+      existing.querySelector('strong:last-child') && (existing.innerHTML = `<span style="font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.05em;">PEDIDO MÍNIMO: 40 PEÇAS</span><br><span style="font-size:11px;color:var(--gray);margin-top:4px;display:block;">Você tem <strong>${totalQty}</strong> peça${totalQty!==1?'s':''} — adicione mais <strong>${MIN_PIECES - totalQty}</strong> para liberar o download.</span>`);
+    }
+  }
+}
+
+function clearOrder(){
+  if(!confirm('Limpar todos os itens do pedido?')) return;
+  Object.keys(order).forEach(k => delete order[k]);
+  updateCartFab();
+  document.querySelectorAll('.qty-bar').forEach(bar => {
+    bar.querySelectorAll('.qty-num').forEach(el => el.textContent = '0');
+    bar.classList.remove('has-qty');
+  });
+  renderOrderModal();
+}
+
+// ── Geração de PDF — jsPDF Direto (sem html2canvas) ───────────────
+function generatePDF(){
+  if(getCartTotal() < 40) return;
+
+  const nomeVal = document.getElementById('oNome').value.trim();
+  if(!nomeVal){
+    document.getElementById('oNome').focus();
+    document.getElementById('oNome').style.border = '2px solid #B8924A';
+    document.getElementById('oNome').placeholder  = 'Preencha seu nome ou empresa para continuar';
+    setTimeout(()=>{ document.getElementById('oNome').style.border=''; }, 2500);
+    return;
+  }
+
+  const btn = document.querySelector('.btn-print');
+  btn.textContent = '⏳ Gerando PDF...';
+  btn.disabled = true;
+
+  try {
+    const { jsPDF } = window.jspdf;
+    const doc  = new jsPDF({ orientation:'p', unit:'mm', format:'a4' });
+    const W    = 210;
+    const mg   = 14;
+    const cW   = W - mg * 2;
+
+    const nome  = nomeVal;
+    const pgs   = Object.keys(order).filter(pg => getPageTotal(pg) > 0);
+    const tQty  = getCartTotal();
+    const tVal  = tQty * UNIT_PRICE;
+    const now   = new Date();
+    const data  = now.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'});
+    const hora  = now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+    const pid   = 'GRG-' + Date.now().toString().slice(-6);
+
+    // helpers
+    const gold  = [184,146,74];
+    const black = [15,15,15];
+    const cream = [247,244,239];
+    const gray  = [107,107,107];
+    const bdr   = [232,226,217];
+    const white = [255,255,255];
+
+    function setRGB(arr){ doc.setTextColor(...arr); }
+    function fillRGB(arr){ doc.setFillColor(...arr); }
+    function drawRGB(arr){ doc.setDrawColor(...arr); }
+
+    let y = 0;
+
+    // ── CABEÇALHO ───────────────────────────────────────────
+    fillRGB(black); doc.rect(0,0,W,32,'F');
+    fillRGB(gold);  doc.rect(0,32,W,1.5,'F');
+
+    // Esquerda — nome da empresa
+    setRGB(white); doc.setFont('helvetica','bold'); doc.setFontSize(18);
+    doc.text("Gringo's", mg, 13);
+
+    // Direita — data, hora e e-mail
+    setRGB([160,160,160]); doc.setFont('helvetica','normal'); doc.setFontSize(8);
+    doc.text(`${data}  \u00B7  ${hora}`, W-mg, 11, {align:'right'});
+    setRGB([160,160,160]); doc.setFont('helvetica','normal'); doc.setFontSize(8);
+    doc.text('gringoscountry@gmail.com', W-mg, 20, {align:'right'});
+
+    y = 38;
+
+    // ── DADOS DO CLIENTE ────────────────────────────────────
+    fillRGB(cream); doc.rect(mg-1, y-2, cW, 16, 'F');
+    drawRGB(bdr); doc.setLineWidth(0.2);
+    doc.rect(mg-1, y-2, cW, 16, 'S');
+
+    setRGB(gray); doc.setFont('helvetica','bold'); doc.setFontSize(7);
+    doc.text('CLIENTE / EMPRESA', mg+1, y+4);
+    setRGB(black); doc.setFont('helvetica','bold'); doc.setFontSize(11);
+    const truncNome = nome.length>50 ? nome.slice(0,50)+'...' : nome;
+    doc.text(truncNome, mg+1, y+12);
+
+    y += 22;
+
+    // linha separadora dourada
+    fillRGB(gold); doc.rect(mg, y, cW, 0.8,'F');
+    y += 5;
+
+    // ── TÍTULO DA SEÇÃO ─────────────────────────────────────
+    setRGB(gold); doc.setFont('helvetica','bold'); doc.setFontSize(8);
+    doc.text('\u2014 ITENS DO PEDIDO', mg, y);
+    y += 7;
+
+    // ── CABEÇALHO DA TABELA ─────────────────────────────────
+    fillRGB(cream); doc.rect(mg, y, cW, 9,'F');
+    drawRGB(bdr); doc.setLineWidth(0.3);
+    doc.line(mg, y+9, mg+cW, y+9);
+
+    setRGB(gray); doc.setFont('helvetica','bold'); doc.setFontSize(7.5);
+    // colunas: Produto(65) | Tamanhos(48) | Qtd(14) | Preço(26) | Subtotal(29)
+    const C = {
+      prod: mg,
+      tam:  mg+75,
+      qtd:  mg+155
+    };
+    doc.text('PRODUTO',  C.prod,    y+6);
+    doc.text('TAMANHOS', C.tam,     y+6);
+    doc.text('QTD',      C.qtd+10,  y+6, {align:'center'});
+    y += 11;
+
+    // ── LINHAS DOS ITENS ────────────────────────────────────
+    pgs.forEach((pg, idx) => {
+      const pgT   = getPageTotal(pg);
+      const name  = PRODUCT_NAMES[pg] || `Produto ${String(pg).padStart(2,'0')}`;
+      const col   = getColName(Number(pg));
+      const sizeTxt = getSizes(pg).filter(sz=>(order[pg]?.[sz]||0)>0)
+        .map(sz=>`${sz}x${order[pg][sz]}`).join('  ');
+      const rowH  = 18;
+
+      // quebra de página
+      if(y + rowH > 275){
+        doc.addPage();
+        y = 16;
+        // redrawa cabeçalho da tabela na nova página
+        fillRGB(cream); doc.rect(mg, y, cW, 9,'F');
+        drawRGB(bdr); doc.line(mg, y+9, mg+cW, y+9);
+        setRGB(gray); doc.setFont('helvetica','bold'); doc.setFontSize(7.5);
+        doc.text('PRODUTO',  C.prod,   y+6);
+        doc.text('TAMANHOS', C.tam,    y+6);
+        doc.text('QTD',      C.qtd+10, y+6, {align:'center'});
+        y += 11;
+      }
+
+      // fundo alternado
+      if(idx%2===0){ fillRGB([251,251,251]); doc.rect(mg, y, cW, rowH,'F'); }
+
+      // separador inferior
+      drawRGB(bdr); doc.setLineWidth(0.25);
+      doc.line(mg, y+rowH, mg+cW, y+rowH);
+
+      // nome do produto
+      setRGB(black); doc.setFont('helvetica','bold'); doc.setFontSize(9);
+      const nm = name.length>30 ? name.slice(0,30)+'.' : name;
+      doc.text(nm, C.prod, y+7);
+
+      // coleção
+      setRGB(gray); doc.setFont('helvetica','normal'); doc.setFontSize(7.5);
+      doc.text(col, C.prod, y+13);
+
+      // tamanhos
+      setRGB([140,110,24]); doc.setFont('helvetica','bold'); doc.setFontSize(9);
+      doc.text(sizeTxt||'—', C.tam, y+10);
+
+      // qtd
+      setRGB(gold); doc.setFont('helvetica','bold'); doc.setFontSize(13);
+      doc.text(String(pgT), C.qtd+10, y+11, {align:'center'});
+
+      y += rowH;
+    });
+
+    // ── LINHA DE TOTAL ──────────────────────────────────────
+    if(y + 16 > 275){ doc.addPage(); y = 16; }
+
+    fillRGB(black); doc.rect(mg, y, cW, 16,'F');
+    setRGB(white); doc.setFont('helvetica','bold'); doc.setFontSize(9);
+    doc.text(`TOTAL DO PEDIDO  \u00B7  ${tQty} pe\u00E7a${tQty>1?'s':''}`, C.prod, y+10);
+
+    setRGB(gold); doc.setFont('helvetica','bold'); doc.setFontSize(14);
+    doc.text(String(tQty), C.qtd+10, y+10, {align:'center'});
+
+    // ── RODAPÉ EM CADA PÁGINA ───────────────────────────────
+    const nPages = doc.internal.getNumberOfPages();
+    for(let i=1; i<=nPages; i++){
+      doc.setPage(i);
+      fillRGB([247,244,239]); doc.rect(0,286,W,11,'F');
+      drawRGB(bdr); doc.setLineWidth(0.3); doc.line(0,286,W,286);
+      setRGB(gray); doc.setFont('helvetica','normal'); doc.setFontSize(7);
+      doc.text("Gringo's Uniformes \u00B7 Cat\u00E1logo Digital \u00B7 Criado com AIVOX", W/2, 292, {align:'center'});
+      doc.text(`${i} / ${nPages}`, W-mg, 292, {align:'right'});
+    }
+
+    doc.save(`pedido-gringos-${pid}.pdf`);
+
+  } catch(err){
+    alert('Erro: ' + err.message);
+    console.error(err);
+  } finally {
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Baixar PDF do Pedido`;
+    btn.disabled = false;
+  }
+}
+</script>
+
+</body>
+</html>
