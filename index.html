@@ -610,26 +610,86 @@ footer{
 
 /* ── RESPONSIVO ──────────────────────────── */
 @media(max-width:900px){
-  header{padding:0 24px;}
+  header{padding:0 20px;height:60px;}
   .hdr-nav{display:none;}
-  .cat-hero{padding:60px 24px;}
-  .filter-bar{padding:16px 24px;}
-  .wrap{padding:0 24px;}
+  .cat-hero{padding:60px 20px;}
+  .filter-bar{
+    padding:14px 20px;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    gap:8px;
+  }
+  .filter-bar::-webkit-scrollbar{display:none;}
+  .filter-count{display:none;}
+  .filter-btn{white-space:nowrap;flex-shrink:0;}
+  .wrap{padding:0 20px;}
   .catalog-grid{grid-template-columns:repeat(2,1fr);}
   .editorial-grid{grid-template-columns:1fr;}
-  .cta-banner{padding:60px 24px;}
-  footer{padding:40px 24px 24px;}
-  .lb-prev{left:-10px;}
-  .lb-next{right:-10px;}
+  .cta-banner{padding:60px 20px;}
+  footer{padding:40px 20px 24px;}
+  .lb-prev{left:-8px;}
+  .lb-next{right:-8px;}
+  .lb-nav{width:40px;height:40px;font-size:20px;}
   .order-client{grid-template-columns:1fr;}
-  .cart-fab{bottom:20px;right:20px;}
+  .cart-fab{bottom:24px;right:16px;padding:12px 20px;font-size:12px;gap:8px;}
+  .order-panel{width:100%;max-height:95vh;}
+  .order-body{padding:20px 20px;}
+  .order-hdr{padding:20px 20px;}
+  #collectionSection .wrap > .col-intro-panel{
+    grid-template-columns:1fr!important;
+    gap:24px!important;
+  }
   #collectionSection .wrap > div[style*="grid-template-columns:480px"]{
     grid-template-columns:1fr!important;
     gap:24px!important;
   }
+  .sec{padding:48px 0;}
 }
+
+@media(max-width:640px){
+  /* ── Grade de capas: 5 → 2 colunas ── */
+  .covers-grid{grid-template-columns:repeat(2,1fr)!important;}
+  /* ── "Como fazer" 3 passos: 3 → 1 coluna ── */
+  .steps-grid{grid-template-columns:1fr!important;}
+  /* ── Painel coleção: 480px+1fr → 1 coluna ── */
+  .col-intro-panel{grid-template-columns:1fr!important;gap:24px!important;}
+  /* ── Polo Tech/Gold: 4 → 2 colunas ── */
+  #cat-polo-grid,#cat-gold-grid{grid-template-columns:repeat(2,1fr)!important;}
+  /* ── Polo Italiana: 3 → 1 coluna ── */
+  .italiana-grid{grid-template-columns:1fr!important;}
+  /* ── Tênis: 2 → 1 coluna ── */
+  #tenis-cores-grid{grid-template-columns:1fr!important;}
+  /* ── Calças/Alfaiataria fotos: 4–5 → 2 colunas ── */
+  .calcas-panel > div:first-child{grid-template-columns:repeat(2,1fr)!important;}
+  /* ── Cabeçalho ── */
+  .hdr-cta{padding:9px 14px;font-size:10px;letter-spacing:.06em;}
+  .cat-hero{padding:48px 16px;}
+  /* ── Modal pedido: esconde thumbnail ── */
+  .order-table th:first-child,.order-table td:first-child{display:none;}
+  /* ── Ações do pedido empilhadas ── */
+  .order-actions{flex-direction:column;}
+  .btn-print,.btn-clear{width:100%;justify-content:center;}
+  /* ── Footer ── */
+  .footer-inner{flex-direction:column;text-align:center;gap:12px;}
+}
+
 @media(max-width:500px){
   .catalog-grid{grid-template-columns:1fr;}
+  .lb-prev{left:4px;}
+  .lb-next{right:4px;}
+  .covers-grid{grid-template-columns:repeat(2,1fr)!important;}
+  #cat-polo-grid,#cat-gold-grid{grid-template-columns:repeat(2,1fr)!important;}
+}
+
+/* ── Touch: qty-bar sempre visível (sem hover) ──────────────── */
+@media(pointer:coarse){
+  .qty-bar{
+    transform:translateY(0)!important;
+    background:rgba(15,15,15,.82);
+  }
+  .catalog-item:hover img{transform:none;}
 }
 </style>
 </head>
@@ -642,7 +702,7 @@ footer{
 
 <!-- HEADER -->
 <header>
-  <a href="#">
+  <a href="landing-gringos-corporativo.html">
     <div class="logo-wrap">
       <span class="logo-main">Gringo's</span>
       <span class="logo-tag">Uniformes</span>
@@ -722,7 +782,7 @@ footer{
       </div>
       <p style="font-size:13px;color:var(--gray);max-width:300px;text-align:right;line-height:1.6;">Clique em uma capa para explorar todos os produtos da coleção.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border);">
+    <div class="covers-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border);">
 
       <!-- Capa Texas -->
       <div class="catalog-item" style="aspect-ratio:2/3;cursor:pointer;" onclick="showCollection('texas', document.getElementById('btn-texas'))">
@@ -818,7 +878,7 @@ footer{
         </h2>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div class="steps-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
 
         <div style="display:flex;gap:16px;align-items:flex-start;padding:24px;border:1px solid var(--border);border-left:3px solid var(--gold);">
           <div style="font-family:var(--ff-big);font-size:40px;color:var(--gold);opacity:.4;line-height:1;min-width:40px;">01</div>
@@ -869,7 +929,7 @@ footer{
       </button>
     </div>
     <!-- Capa + Painel explicativo -->
-    <div style="display:grid;grid-template-columns:480px 1fr;gap:48px;align-items:start;">
+    <div class="col-intro-panel" style="display:grid;grid-template-columns:480px 1fr;gap:48px;align-items:start;">
 
       <!-- Capa -->
       <div>
@@ -1100,7 +1160,7 @@ footer{
       </div>
 
       <!-- Grid 3 cores -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-bottom:40px;width:100vw;position:relative;left:50%;transform:translateX(-50%);">
+      <div class="italiana-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-bottom:40px;width:100vw;position:relative;left:50%;transform:translateX(-50%);">
 
         <!-- Verde -->
         <div style="background:var(--white);overflow:hidden;">
@@ -1795,6 +1855,13 @@ function switchCalcasCor(pageNum) {
 <style>
 .qpill{display:flex;align-items:center;gap:6px;background:var(--cream);border:1px solid var(--border);padding:7px 14px;font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--black);}
 .qpill span{color:var(--gold);font-size:13px;}
+
+/* ── Mobile: botões qty maiores para toque ── */
+@media(pointer:coarse){
+  .qty-btn{width:28px;height:28px;font-size:17px;}
+  .qty-num{font-size:15px;min-width:22px;}
+  .qty-size-lbl{font-size:11px;}
+}
 </style>
 
 <!-- CTA BANNER -->
@@ -2250,6 +2317,23 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape')     closeLightbox();
 });
 
+// ── Swipe no lightbox (mobile) ─────────────────────────────────────
+(function(){
+  let tx = 0, ty = 0;
+  const lb = document.getElementById('lightbox');
+  lb.addEventListener('touchstart', function(e){
+    tx = e.changedTouches[0].clientX;
+    ty = e.changedTouches[0].clientY;
+  }, {passive:true});
+  lb.addEventListener('touchend', function(e){
+    const dx = tx - e.changedTouches[0].clientX;
+    const dy = Math.abs(ty - e.changedTouches[0].clientY);
+    if (Math.abs(dx) > 50 && dy < 60 && lbPages.length > 1) {
+      navLightbox(dx > 0 ? 1 : -1);
+    }
+  }, {passive:true});
+})();
+
 // ── Modal de Pedido ────────────────────────────────────────────────
 function openOrderModal(){
   renderOrderModal();
@@ -2554,10 +2638,25 @@ function generatePDF(){
       doc.text(`${i} / ${nPages}`, W-mg, 292, {align:'right'});
     }
 
-    doc.save(`pedido-gringos-${pid}.pdf`);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if (isIOS) {
+      const pdfBlob = doc.output('blob');
+      const blobUrl = URL.createObjectURL(pdfBlob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = `pedido-gringos-${pid}.pdf`;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
+    } else {
+      doc.save(`pedido-gringos-${pid}.pdf`);
+    }
 
   } catch(err){
-    alert('Erro: ' + err.message);
+    alert('Erro ao gerar PDF: ' + err.message);
     console.error(err);
   } finally {
     btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Baixar PDF do Pedido`;
