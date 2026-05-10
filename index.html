@@ -2089,6 +2089,7 @@ const PAGE_SIZES = {
   63: ['P','M','G','GG','XG'],
   64: ['P','M','G','GG','XG'],
   65: ['P','M','G','GG','XG'],
+  29: ['UN'],
   100: ['37','38','39','40','41','42'],
   101: ['37','38','39','40','41','42'],
   102: ['37','38','39','40','41','42'],
@@ -2171,7 +2172,13 @@ function buildGrid(pages, colType) {
 
     const qtyBarContent = NOTICE_PAGES[pageNum]
       ? `<div style="width:100%;text-align:center;font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--gold);padding:6px 4px;line-height:1.3;">${NOTICE_PAGES[pageNum]}</div>`
-      : `<div class="qty-sizes-grid">${sizeRows}</div>`;
+      : sizes.length === 1 && sizes[0] === 'UN'
+        ? `<div style="display:flex;align-items:center;justify-content:center;gap:14px;padding:2px 0;">
+             <button class="qty-btn" onclick="changeQty(${pageNum},'UN',-1)">−</button>
+             <span class="qty-num" id="qtynum-${pageNum}-UN">${order[pageNum]?.['UN']||0}</span>
+             <button class="qty-btn" onclick="changeQty(${pageNum},'UN',1)">+</button>
+           </div>`
+        : `<div class="qty-sizes-grid">${sizeRows}</div>`;
 
     const imgExts = [41, 42, 43, 45, 46, 47, 63, 64, 65];
     const imgSrc = imgExts.includes(pageNum)
@@ -2360,7 +2367,12 @@ const UNIT_PRICE = 99.90;
 function fmt(v){ return 'R$ ' + v.toFixed(2).replace('.',','); }
 function sizesTag(pg){
   if(!order[pg]) return '';
-  return getSizes(pg).filter(sz=>(order[pg][sz]||0)>0)
+  const sizes = getSizes(pg);
+  if(sizes[0] === 'UN'){
+    const qty = order[pg]['UN']||0;
+    return qty > 0 ? `<span style="display:inline-block;background:rgba(184,146,74,.15);border:1px solid rgba(184,146,74,.4);padding:2px 8px;font-size:10px;font-weight:700;margin:2px;color:var(--gold-dk);">Qtd: ${qty}</span>` : '';
+  }
+  return sizes.filter(sz=>(order[pg][sz]||0)>0)
     .map(sz=>`<span style="display:inline-block;background:rgba(184,146,74,.15);border:1px solid rgba(184,146,74,.4);padding:2px 8px;font-size:10px;font-weight:700;margin:2px;color:var(--gold-dk);">${sz} × ${order[pg][sz]}</span>`)
     .join('');
 }
@@ -2581,7 +2593,7 @@ function generatePDF(){
       const name  = PRODUCT_NAMES[pg] || `Produto ${String(pg).padStart(2,'0')}`;
       const col   = getColName(Number(pg));
       const sizeTxt = getSizes(pg).filter(sz=>(order[pg]?.[sz]||0)>0)
-        .map(sz=>`${sz}x${order[pg][sz]}`).join('  ');
+        .map(sz => sz === 'UN' ? `Qtd:${order[pg][sz]}` : `${sz}x${order[pg][sz]}`).join('  ');
       const rowH  = 18;
 
       // quebra de página
