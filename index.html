@@ -243,6 +243,7 @@ header{
   cursor:pointer;
   display:flex;
   flex-direction:column;
+  overflow:hidden;
 }
 /* wrapper da imagem — contém imagem + overlay */
 .catalog-item-img{
@@ -264,13 +265,14 @@ header{
   inset:0;
   background:linear-gradient(180deg, transparent 50%, rgba(15,15,15,.85) 100%);
   opacity:0;
+  pointer-events:none;
   transition:opacity .35s var(--ease);
   display:flex;
   align-items:flex-end;
   padding:24px;
 }
 .catalog-item:hover .catalog-overlay,
-.catalog-item-img:hover .catalog-overlay{opacity:1;}
+.catalog-item-img:hover .catalog-overlay{opacity:1;pointer-events:auto;}
 .overlay-content{color:var(--white);}
 .overlay-num{
   font-family:var(--ff-big);
@@ -687,10 +689,21 @@ footer{
   #cat-polo-grid,#cat-gold-grid{grid-template-columns:repeat(2,1fr)!important;}
 }
 
-/* Touch: desativa hover scale (não há hover em touch) */
+/* Touch: sem hover scale + layout compacto no grid de catálogo */
 @media(pointer:coarse){
+  /* desativa scale de hover */
   .catalog-item:hover img,
   .catalog-item-img:hover img{transform:none;}
+  /* botões maiores para polo/tênis/calças (área generosa) */
+  .qty-btn{width:28px;height:28px;font-size:17px;}
+  .qty-num{font-size:15px;min-width:22px;}
+  /* grid do catálogo — tamanhos em coluna 2×2 compacto */
+  .qty-sizes-grid{display:flex!important;flex-direction:column;gap:4px;}
+  .qty-sizes-grid > div{display:flex;gap:8px;justify-content:space-between;}
+  .qty-sizes-grid .qty-size-row{flex:1;gap:3px;}
+  .qty-sizes-grid .qty-size-lbl{font-size:10px;min-width:16px;}
+  .qty-sizes-grid .qty-btn{width:22px;height:22px;font-size:14px;}
+  .qty-sizes-grid .qty-num{min-width:14px;font-size:12px;}
 }
 </style>
 </head>
@@ -1857,12 +1870,7 @@ function switchCalcasCor(pageNum) {
 .qpill{display:flex;align-items:center;gap:6px;background:var(--cream);border:1px solid var(--border);padding:7px 14px;font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--black);}
 .qpill span{color:var(--gold);font-size:13px;}
 
-/* ── Mobile: botões qty maiores para toque ── */
-@media(pointer:coarse){
-  .qty-btn{width:28px;height:28px;font-size:17px;}
-  .qty-num{font-size:15px;min-width:22px;}
-  .qty-size-lbl{font-size:11px;}
-}
+/* bloco pointer:coarse unificado acima — este removido */
 </style>
 
 <!-- CTA BANNER -->
