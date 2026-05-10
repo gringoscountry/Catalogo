@@ -240,9 +240,16 @@ header{
 .catalog-item{
   background:var(--white);
   position:relative;
-  overflow:hidden;
   cursor:pointer;
+  display:flex;
+  flex-direction:column;
+}
+/* wrapper da imagem — contém imagem + overlay */
+.catalog-item-img{
+  position:relative;
+  overflow:hidden;
   aspect-ratio:2/3;
+  flex-shrink:0;
 }
 .catalog-item img{
   width:100%;
@@ -251,7 +258,7 @@ header{
   transition:transform .6s var(--ease);
   display:block;
 }
-.catalog-item:hover img{transform:scale(1.04);}
+.catalog-item:hover img,.catalog-item-img:hover img{transform:scale(1.04);}
 .catalog-overlay{
   position:absolute;
   inset:0;
@@ -262,7 +269,8 @@ header{
   align-items:flex-end;
   padding:24px;
 }
-.catalog-item:hover .catalog-overlay{opacity:1;}
+.catalog-item:hover .catalog-overlay,
+.catalog-item-img:hover .catalog-overlay{opacity:1;}
 .overlay-content{color:var(--white);}
 .overlay-num{
   font-family:var(--ff-big);
@@ -460,16 +468,12 @@ footer{
 .footer-copy{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.06em;}
 .footer-aivox{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:.1em;text-transform:uppercase;}
 
-/* ── SELETOR DE QUANTIDADE ─────────────────── */
+/* ── SELETOR DE QUANTIDADE — sempre visível abaixo da imagem ── */
 .qty-bar{
-  position:absolute;bottom:0;left:0;right:0;
   background:rgba(15,15,15,.93);
   backdrop-filter:blur(8px);
-  padding:10px 12px;z-index:3;
-  transform:translateY(100%);
-  transition:transform .28s var(--ease);
+  padding:10px 12px;
 }
-.catalog-item:hover .qty-bar,.qty-bar.has-qty{transform:translateY(0);}
 .qty-bar.has-qty{background:rgba(184,146,74,.97);}
 .qty-sizes-grid{
   display:grid;
@@ -683,13 +687,10 @@ footer{
   #cat-polo-grid,#cat-gold-grid{grid-template-columns:repeat(2,1fr)!important;}
 }
 
-/* ── Touch: qty-bar sempre visível (sem hover) ──────────────── */
+/* Touch: desativa hover scale (não há hover em touch) */
 @media(pointer:coarse){
-  .qty-bar{
-    transform:translateY(0)!important;
-    background:rgba(15,15,15,.82);
-  }
-  .catalog-item:hover img{transform:none;}
+  .catalog-item:hover img,
+  .catalog-item-img:hover img{transform:none;}
 }
 </style>
 </head>
@@ -2173,12 +2174,14 @@ function buildGrid(pages, colType) {
       : `assets/catalogo/${pageNum}.svg`;
     const prodName = PRODUCT_NAMES[pageNum] || '';
     item.innerHTML = `
-      <img src="${imgSrc}" alt="${prodName}" loading="lazy"
-           onclick="openLightboxCol('${colType}',${pageNum})" style="cursor:zoom-in;">
-      <div class="catalog-overlay" onclick="openLightboxCol('${colType}',${pageNum})" style="cursor:zoom-in;">
-        <div class="overlay-content">
-          ${prodName ? `<div class="overlay-num" style="font-size:13px;letter-spacing:.04em;">${prodName}</div>` : ''}
-          <div class="overlay-sub">Clique para ampliar</div>
+      <div class="catalog-item-img">
+        <img src="${imgSrc}" alt="${prodName}" loading="lazy"
+             onclick="openLightboxCol('${colType}',${pageNum})" style="cursor:zoom-in;">
+        <div class="catalog-overlay" onclick="openLightboxCol('${colType}',${pageNum})" style="cursor:zoom-in;">
+          <div class="overlay-content">
+            ${prodName ? `<div class="overlay-num" style="font-size:13px;letter-spacing:.04em;">${prodName}</div>` : ''}
+            <div class="overlay-sub">Clique para ampliar</div>
+          </div>
         </div>
       </div>
       <div class="qty-bar ${hasSizes?'has-qty':''}" id="qtybar-${pageNum}" onclick="event.stopPropagation()">
