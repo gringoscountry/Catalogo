@@ -1,0 +1,1542 @@
+<!-- Desenvolvido com AIVOX | arthurr7070.github.io/AIVOX-LEADING -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gringo's Heartland — Uniformes Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════
+   AIVOX | Gringo's Heartland — E-commerce 2026
+   Identidade: Editorial Luxury · Preto & Branco
+═══════════════════════════════════════════════════════ */
+:root {
+  --black: #0C0C0C;
+  --white: #FFFFFF;
+  --off:   #F7F6F4;
+  --gray:  #6B6B6B;
+  --light: #AEAEAE;
+  --border:#E2E2E2;
+  --ff-d:  'Playfair Display', serif;
+  --ff-b:  'Barlow', sans-serif;
+  --ff-c:  'Barlow Condensed', sans-serif;
+  --ease:  cubic-bezier(0.25,0.46,0.45,0.94);
+  --fast:  cubic-bezier(0.4,0,0.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-b);background:var(--white);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+
+/* ── TOPBAR ─────────────────────────────────────── */
+.topbar{
+  background:var(--black);
+  color:rgba(255,255,255,.65);
+  text-align:center;
+  padding:10px 20px;
+  font-family:var(--ff-c);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.topbar b{color:var(--white);}
+.topbar a{color:var(--white);text-decoration:underline;text-underline-offset:3px;}
+
+/* ── HEADER ─────────────────────────────────────── */
+header{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:0 56px;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:500;
+  gap:24px;
+}
+.logo-wrap{display:flex;align-items:center;height:48px;flex-shrink:0;}
+.logo-wrap img{height:48px;width:auto;object-fit:contain;}
+.hdr-nav{display:flex;align-items:center;gap:32px;}
+.hdr-link{
+  font-family:var(--ff-c);
+  font-size:12px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gray);
+  transition:color .2s;
+}
+.hdr-link:hover{color:var(--black);}
+.hdr-right{display:flex;align-items:center;gap:14px;}
+.cart-trigger{
+  background:var(--black);color:var(--white);
+  border:none;padding:10px 22px;
+  font-family:var(--ff-c);font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;display:flex;align-items:center;gap:9px;
+  transition:background .2s;
+}
+.cart-trigger:hover{background:#2a2a2a;}
+.cart-badge{
+  background:var(--white);color:var(--black);
+  font-size:10px;font-weight:800;
+  width:18px;height:18px;border-radius:50%;
+  display:none;align-items:center;justify-content:center;
+}
+.cart-badge.show{display:flex;}
+
+/* ── HERO ────────────────────────────────────────── */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:90vh;
+  background:var(--black);
+  position:relative;
+  overflow:hidden;
+}
+.hero-left{
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:100px 60px 140px;
+  position:relative;z-index:2;
+}
+.hero-right{position:relative;overflow:hidden;}
+.hero-right::before{
+  content:'';
+  position:absolute;top:0;left:0;bottom:0;right:0;
+  background:linear-gradient(90deg,var(--black) 0%,rgba(12,12,12,.15) 60%,transparent 100%);
+  z-index:1;
+}
+.hero-right img{
+  width:100%;height:100%;object-fit:cover;
+  opacity:.65;
+  transition:transform 10s ease;
+  display:block;
+}
+.hero:hover .hero-right img{transform:scale(1.05);}
+
+.hero-eyebrow{
+  font-family:var(--ff-c);
+  font-size:10px;font-weight:700;letter-spacing:.35em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.35);
+  margin-bottom:32px;
+  display:flex;align-items:center;gap:14px;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:rgba(255,255,255,.25);}
+
+.hero-headline{
+  font-family:var(--ff-d);
+  font-size:clamp(50px,5.5vw,92px);
+  font-weight:700;
+  color:var(--white);
+  line-height:1.0;
+  margin-bottom:0;
+}
+.hero-headline-italic{
+  font-family:var(--ff-d);
+  font-size:clamp(50px,5.5vw,92px);
+  font-weight:400;
+  font-style:italic;
+  color:rgba(255,255,255,.4);
+  line-height:1.05;
+  margin-bottom:36px;
+}
+
+.hero-divider{
+  width:48px;height:1px;
+  background:rgba(255,255,255,.2);
+  margin-bottom:28px;
+}
+
+.hero-sub{
+  font-size:15px;font-weight:300;
+  color:rgba(255,255,255,.5);
+  line-height:1.85;
+  max-width:380px;
+  margin-bottom:52px;
+}
+
+.hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.btn-hero-main{
+  background:var(--white);color:var(--black);
+  border:none;padding:17px 40px;
+  font-family:var(--ff-c);font-size:12px;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase;
+  cursor:pointer;transition:all .25s var(--ease);
+  display:inline-block;
+}
+.btn-hero-main:hover{background:var(--off);transform:translateY(-2px);}
+.btn-hero-ghost{
+  background:transparent;color:rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.2);padding:16px 30px;
+  font-family:var(--ff-c);font-size:12px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;transition:all .2s;
+  display:inline-block;
+}
+.btn-hero-ghost:hover{border-color:rgba(255,255,255,.6);color:var(--white);}
+
+.hero-stats{
+  position:absolute;bottom:44px;left:60px;
+  display:flex;align-items:center;gap:36px;z-index:2;
+}
+.hero-stat{color:var(--white);}
+.hero-stat-n{
+  font-family:var(--ff-c);
+  font-size:30px;font-weight:800;line-height:1;
+}
+.hero-stat-l{
+  font-family:var(--ff-c);
+  font-size:10px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.3);
+  margin-top:5px;
+}
+.hero-sep{width:1px;height:38px;background:rgba(255,255,255,.1);}
+
+/* ── MARQUEE ────────────────────────────────────── */
+.marquee-wrap{
+  background:var(--off);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:14px 0;overflow:hidden;
+}
+.marquee-track{display:flex;width:max-content;animation:marquee 26s linear infinite;}
+.marquee-item{
+  display:flex;align-items:center;gap:18px;
+  padding:0 28px;
+  font-family:var(--ff-c);font-size:12px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--black);
+  white-space:nowrap;
+}
+.m-dot{width:4px;height:4px;background:var(--light);border-radius:50%;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ── SECTION LABEL + TITLE ───────────────────────── */
+.sec-label{
+  font-family:var(--ff-c);
+  font-size:10px;font-weight:700;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gray);
+  margin-bottom:12px;
+  display:flex;align-items:center;gap:12px;
+}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--black);}
+.sec-title{
+  font-family:var(--ff-d);
+  font-size:clamp(28px,3vw,46px);
+  font-weight:700;line-height:1.08;
+  color:var(--black);
+}
+.sec-title em{font-style:italic;font-weight:400;color:var(--gray);}
+
+/* ── TABS ───────────────────────────────────────── */
+.products-section{padding:72px 0 0;}
+.products-head{padding:0 56px;margin-bottom:44px;}
+
+.tabs-bar{
+  background:var(--white);
+  border-bottom:2px solid var(--border);
+  padding:0 56px;
+  display:flex;align-items:flex-end;gap:0;
+  position:sticky;top:72px;z-index:100;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.tabs-bar::-webkit-scrollbar{display:none;}
+
+.tab-btn{
+  background:none;border:none;border-bottom:3px solid transparent;
+  padding:16px 28px 13px;
+  font-family:var(--ff-c);font-size:13px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--light);cursor:pointer;
+  transition:all .2s var(--fast);
+  white-space:nowrap;margin-bottom:-2px;
+  position:relative;
+}
+.tab-btn:hover{color:var(--gray);}
+.tab-btn.active{color:var(--black);border-bottom-color:var(--black);}
+.tab-badge{
+  display:inline-block;margin-left:8px;
+  background:var(--black);color:var(--white);
+  font-size:9px;font-weight:800;letter-spacing:.06em;
+  padding:2px 7px;vertical-align:middle;
+  line-height:1.6;
+}
+.tab-badge.new{background:#222;}
+.tab-badge.premium{background:#555;}
+.tab-badge.limited{background:#888;}
+
+/* ── TAB CONTENT ────────────────────────────────── */
+.tab-content{display:none;padding:60px 56px;}
+.tab-content.active{display:block;}
+
+/* Product Showcase Layout */
+.showcase{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  margin-bottom:64px;
+}
+.showcase-gallery{}
+.gallery-main{
+  position:relative;
+  aspect-ratio:3/4;
+  background:var(--off);
+  overflow:hidden;
+  margin-bottom:8px;
+}
+.gallery-main img{
+  width:100%;height:100%;object-fit:cover;
+  transition:opacity .35s ease;
+}
+.gallery-main img.fade{opacity:0;}
+.gallery-thumbs{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:4px;
+}
+.gallery-thumb{
+  aspect-ratio:3/4;background:var(--off);overflow:hidden;cursor:pointer;
+  border:2px solid transparent;transition:border-color .15s;
+}
+.gallery-thumb.active{border-color:var(--black);}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s var(--ease);}
+.gallery-thumb:hover img{transform:scale(1.06);}
+
+/* Showcase Details */
+.showcase-details{display:flex;flex-direction:column;justify-content:flex-start;padding-top:8px;}
+.showcase-badge{
+  display:inline-flex;align-items:center;
+  background:var(--black);color:var(--white);
+  font-family:var(--ff-c);font-size:9px;font-weight:800;
+  letter-spacing:.16em;text-transform:uppercase;
+  padding:5px 12px;margin-bottom:18px;
+  width:fit-content;
+}
+.showcase-name{
+  font-family:var(--ff-d);
+  font-size:clamp(28px,2.5vw,38px);
+  font-weight:700;line-height:1.1;
+  margin-bottom:6px;
+}
+.showcase-sub{
+  font-size:13px;color:var(--gray);
+  line-height:1.65;margin-bottom:24px;
+  max-width:360px;
+}
+.showcase-price{
+  font-family:var(--ff-c);
+  font-size:48px;font-weight:800;line-height:1;
+  margin-bottom:4px;
+}
+.showcase-price span{font-size:22px;font-weight:500;color:var(--gray);}
+.showcase-price-note{font-size:11px;color:var(--gray);letter-spacing:.04em;margin-bottom:32px;}
+
+/* Separator */
+.det-sep{width:100%;height:1px;background:var(--border);margin-bottom:28px;}
+
+/* Color selector */
+.det-label{
+  font-family:var(--ff-c);
+  font-size:10px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gray);
+  margin-bottom:12px;display:flex;align-items:center;gap:8px;
+}
+.det-label b{color:var(--black);font-weight:800;}
+.swatches{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.swatch{
+  width:28px;height:28px;border-radius:50%;cursor:pointer;
+  border:2px solid transparent;
+  transition:transform .15s,box-shadow .15s;
+  position:relative;
+  flex-shrink:0;
+}
+.swatch.bordered{border-color:var(--border);}
+.swatch:hover{transform:scale(1.2);}
+.swatch.active{box-shadow:0 0 0 3px var(--white),0 0 0 5px var(--black);transform:scale(1.1);}
+
+/* Size selector */
+.sizes{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;}
+.sz-btn{
+  min-width:44px;height:44px;padding:0 10px;
+  background:var(--white);
+  border:1.5px solid var(--border);
+  font-family:var(--ff-c);font-size:13px;font-weight:700;
+  letter-spacing:.04em;cursor:pointer;
+  transition:all .15s var(--fast);
+  color:var(--gray);
+}
+.sz-btn:hover{border-color:var(--black);color:var(--black);}
+.sz-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+
+/* Quantity */
+.qty-row{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+.qty-label{font-family:var(--ff-c);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);}
+.qty-ctrl{display:flex;align-items:center;border:1.5px solid var(--border);}
+.qty-dec,.qty-inc{
+  width:40px;height:40px;background:none;border:none;
+  font-size:18px;font-weight:300;color:var(--black);
+  cursor:pointer;transition:background .15s;
+  display:flex;align-items:center;justify-content:center;
+}
+.qty-dec:hover,.qty-inc:hover{background:var(--off);}
+.qty-val{
+  font-family:var(--ff-c);font-size:16px;font-weight:700;
+  width:44px;text-align:center;padding:0;
+  border:none;border-left:1.5px solid var(--border);border-right:1.5px solid var(--border);
+  height:40px;line-height:40px;outline:none;color:var(--black);
+  background:var(--white);
+}
+
+/* Add to cart btn */
+.add-btn{
+  width:100%;background:var(--black);color:var(--white);
+  border:none;padding:17px;
+  font-family:var(--ff-c);font-size:13px;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase;
+  cursor:pointer;transition:all .2s;
+  margin-bottom:10px;
+}
+.add-btn:hover{background:#2a2a2a;transform:translateY(-1px);}
+.add-btn:disabled{background:var(--border);color:var(--gray);cursor:default;transform:none;}
+
+.size-warning{
+  font-size:11px;color:#c44;
+  display:none;margin-top:-18px;margin-bottom:12px;
+  font-weight:600;letter-spacing:.04em;
+}
+.size-warning.show{display:block;}
+
+.guarantee-row{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  margin-top:4px;
+}
+.guarantee-item{
+  font-size:11px;color:var(--gray);
+  display:flex;align-items:center;gap:5px;
+  letter-spacing:.02em;
+}
+.guarantee-item::before{content:'✓';color:var(--black);font-weight:700;}
+
+/* Color variant grid */
+.variants-label{
+  font-family:var(--ff-c);
+  font-size:10px;font-weight:700;letter-spacing:.25em;
+  text-transform:uppercase;color:var(--gray);
+  margin-bottom:18px;
+  display:flex;align-items:center;gap:12px;
+}
+.variants-label::before{content:'';width:20px;height:1px;background:var(--border);}
+.variants-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:2px;
+}
+.variant-card{
+  background:var(--off);position:relative;cursor:pointer;overflow:hidden;
+  transition:all .25s var(--ease);
+}
+.variant-card:hover{box-shadow:0 0 0 2px var(--black);}
+.variant-card-img{aspect-ratio:3/4;overflow:hidden;}
+.variant-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+.variant-card:hover .variant-card-img img{transform:scale(1.06);}
+.variant-card-body{padding:10px 12px;}
+.variant-card-name{
+  font-family:var(--ff-c);
+  font-size:11px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--black);
+}
+.variant-card-swatch{
+  width:10px;height:10px;border-radius:50%;display:inline-block;
+  vertical-align:middle;margin-right:5px;
+  border:1px solid rgba(0,0,0,.1);
+}
+
+/* ── CHECKOUT SECTION ───────────────────────────── */
+.checkout-section{
+  background:var(--black);
+  padding:100px 56px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:72px;
+  align-items:start;
+}
+.ck-left{}
+.ck-tag{
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.15);
+  padding:6px 16px;
+  font-family:var(--ff-c);font-size:10px;font-weight:700;
+  letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-bottom:28px;
+}
+.ck-title{
+  font-family:var(--ff-d);
+  font-size:clamp(28px,3vw,50px);
+  font-weight:700;color:var(--white);
+  line-height:1.08;margin-bottom:16px;
+}
+.ck-title em{font-style:italic;font-weight:400;color:rgba(255,255,255,.4);}
+.ck-desc{
+  font-size:14px;color:rgba(255,255,255,.4);
+  line-height:1.85;margin-bottom:36px;max-width:400px;
+}
+.ck-features{display:flex;flex-direction:column;gap:12px;}
+.ck-feature{
+  display:flex;align-items:center;gap:12px;
+  font-size:13px;color:rgba(255,255,255,.6);
+}
+.ck-feature::before{
+  content:'';width:6px;height:6px;
+  border:1.5px solid rgba(255,255,255,.3);
+  border-radius:50%;flex-shrink:0;
+}
+
+.ck-right{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);
+  padding:36px;
+}
+.ck-form-title{
+  font-family:var(--ff-d);font-size:20px;font-weight:700;
+  color:var(--white);margin-bottom:24px;
+}
+.ck-field-label{
+  display:block;
+  font-family:var(--ff-c);font-size:10px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);margin-bottom:7px;
+}
+.ck-field{
+  width:100%;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  color:var(--white);padding:13px 16px;
+  font-size:13px;font-family:var(--ff-b);
+  margin-bottom:16px;outline:none;
+  transition:border-color .2s;
+  -webkit-appearance:none;
+}
+.ck-field::placeholder{color:rgba(255,255,255,.2);}
+.ck-field:focus{border-color:rgba(255,255,255,.35);}
+textarea.ck-field{min-height:90px;resize:vertical;}
+.ck-field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.ck-config-note{
+  background:rgba(255,200,50,.06);
+  border:1px solid rgba(255,200,50,.15);
+  padding:14px 18px;margin-bottom:16px;
+  font-size:11px;color:rgba(255,220,100,.65);
+  line-height:1.65;
+}
+.ck-config-note strong{color:rgba(255,220,100,.9);}
+.btn-whats{
+  width:100%;background:#25D366;color:var(--white);
+  border:none;padding:17px;
+  font-family:var(--ff-c);font-size:13px;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-bottom:10px;
+}
+.btn-whats:hover{background:#1fc55a;transform:translateY(-1px);}
+.btn-payment-placeholder{
+  width:100%;background:rgba(255,255,255,.06);
+  border:1px dashed rgba(255,255,255,.15);
+  color:rgba(255,255,255,.3);padding:15px;
+  font-family:var(--ff-c);font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  cursor:default;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.ck-checkout-note{
+  font-size:10px;color:rgba(255,255,255,.2);
+  text-align:center;margin-top:12px;
+  letter-spacing:.06em;line-height:1.6;
+}
+
+/* ── WHY US ─────────────────────────────────────── */
+.why-section{
+  padding:80px 56px;
+  background:var(--off);
+  border-top:1px solid var(--border);
+}
+.why-head{margin-bottom:56px;}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px;}
+.why-item{}
+.why-number{
+  font-family:var(--ff-c);font-size:11px;font-weight:800;
+  letter-spacing:.22em;color:var(--border);
+  margin-bottom:16px;
+}
+.why-title{
+  font-family:var(--ff-d);font-size:20px;font-weight:700;
+  margin-bottom:10px;line-height:1.2;
+}
+.why-desc{font-size:13px;color:var(--gray);line-height:1.75;}
+
+/* ── FOOTER ─────────────────────────────────────── */
+footer{
+  background:var(--black);
+  padding:52px 56px 28px;
+  border-top:3px solid rgba(255,255,255,.04);
+}
+.footer-top{
+  display:flex;align-items:flex-start;
+  justify-content:space-between;gap:40px;
+  flex-wrap:wrap;margin-bottom:48px;
+}
+.footer-brand{}
+.footer-logo-img{
+  height:40px;width:auto;
+  filter:invert(1);margin-bottom:14px;
+}
+.footer-tagline{font-size:12px;color:rgba(255,255,255,.3);line-height:1.6;max-width:240px;}
+.footer-links-group{display:flex;gap:60px;flex-wrap:wrap;}
+.footer-col-title{
+  font-family:var(--ff-c);font-size:10px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);margin-bottom:16px;
+}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-link{font-size:13px;color:rgba(255,255,255,.4);transition:color .2s;}
+.footer-link:hover{color:var(--white);}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.07);
+  padding-top:20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.04em;}
+.footer-aivox{font-size:10px;color:rgba(255,255,255,.12);letter-spacing:.14em;text-transform:uppercase;}
+
+/* ── CART DRAWER ────────────────────────────────── */
+.cart-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:900;opacity:0;pointer-events:none;
+  transition:opacity .3s;
+}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+
+.cart-drawer{
+  position:fixed;top:0;right:0;bottom:0;
+  width:440px;background:var(--white);
+  z-index:950;transform:translateX(100%);
+  transition:transform .38s var(--ease);
+  display:flex;flex-direction:column;
+  box-shadow:-6px 0 48px rgba(0,0,0,.18);
+}
+.cart-drawer.open{transform:translateX(0);}
+
+.cart-hdr{
+  padding:24px 28px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-shrink:0;
+}
+.cart-hdr-title{font-family:var(--ff-d);font-size:22px;font-weight:700;}
+.cart-hdr-count{
+  font-family:var(--ff-c);font-size:11px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--gray);
+}
+.cart-close-btn{
+  background:none;border:1px solid var(--border);padding:8px 14px;
+  font-family:var(--ff-c);font-size:11px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;transition:all .2s;color:var(--gray);
+}
+.cart-close-btn:hover{background:var(--black);color:var(--white);border-color:var(--black);}
+
+.cart-body{flex:1;overflow-y:auto;padding:20px 28px;}
+.cart-empty{
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;height:100%;text-align:center;
+  color:var(--gray);gap:12px;
+}
+.cart-empty-icon{font-size:40px;margin-bottom:4px;}
+.cart-empty p{font-size:14px;line-height:1.6;}
+
+.cart-item{
+  display:flex;gap:16px;
+  padding:16px 0;
+  border-bottom:1px solid var(--border);
+}
+.cart-item-img{
+  width:72px;height:96px;object-fit:cover;
+  background:var(--off);flex-shrink:0;
+}
+.cart-item-info{flex:1;min-width:0;}
+.cart-item-name{
+  font-family:var(--ff-d);font-size:15px;font-weight:700;
+  margin-bottom:4px;line-height:1.2;
+}
+.cart-item-meta{font-size:12px;color:var(--gray);margin-bottom:8px;line-height:1.5;}
+.cart-item-bottom{display:flex;align-items:center;justify-content:space-between;}
+.cart-item-price{font-family:var(--ff-c);font-size:18px;font-weight:800;}
+.cart-item-remove{
+  background:none;border:none;color:var(--light);
+  font-size:18px;cursor:pointer;transition:color .15s;
+  line-height:1;padding:2px;
+}
+.cart-item-remove:hover{color:var(--black);}
+
+.cart-footer{
+  flex-shrink:0;
+  padding:20px 28px;
+  border-top:1px solid var(--border);
+}
+.cart-total-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:20px;
+}
+.cart-total-label{
+  font-family:var(--ff-c);font-size:11px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--gray);
+}
+.cart-total-val{
+  font-family:var(--ff-c);font-size:32px;font-weight:800;
+  line-height:1;
+}
+.btn-checkout{
+  width:100%;background:var(--black);color:var(--white);
+  border:none;padding:17px;
+  font-family:var(--ff-c);font-size:13px;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase;
+  cursor:pointer;transition:all .2s;margin-bottom:10px;
+}
+.btn-checkout:hover{background:#2a2a2a;}
+.cart-footer-note{
+  font-size:11px;color:var(--gray);
+  text-align:center;letter-spacing:.04em;
+}
+
+/* ── TOAST ───────────────────────────────────────── */
+.toast{
+  position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--black);color:var(--white);
+  padding:14px 28px;
+  font-family:var(--ff-c);font-size:12px;font-weight:700;letter-spacing:.1em;
+  z-index:1000;opacity:0;transition:all .35s var(--ease);pointer-events:none;
+  white-space:nowrap;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media(max-width:1100px){
+  header{padding:0 28px;}
+  .hdr-nav{display:none;}
+  .hero{grid-template-columns:1fr;min-height:70vh;}
+  .hero-right{display:none;}
+  .hero-left{padding:80px 28px 120px;}
+  .hero-stats{left:28px;}
+  .products-head,.tabs-bar,.tab-content{padding-left:28px;padding-right:28px;}
+  .showcase{grid-template-columns:1fr;gap:36px;}
+  .checkout-section{grid-template-columns:1fr;padding:60px 28px;gap:40px;}
+  .why-section{padding:60px 28px;}
+  .why-grid{grid-template-columns:repeat(2,1fr);gap:36px;}
+  footer{padding:48px 28px 24px;}
+}
+@media(max-width:680px){
+  .hero-headline,.hero-headline-italic{font-size:40px;}
+  .variants-grid{grid-template-columns:repeat(3,1fr);}
+  .why-grid{grid-template-columns:1fr;}
+  .cart-drawer{width:100%;}
+  .gallery-thumbs{grid-template-columns:repeat(4,1fr);}
+  .ck-field-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  Frete grátis acima de <b>R$ 500</b> · Entrega para todo o Brasil · <a href="#checkout">Fale via WhatsApp</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-wrap">
+    <img src="../../../Downloads/HEARTLAND LOGO.svg" alt="Gringo's Heartland" onerror="this.outerHTML='<span style=\'font-family:var(--ff-d);font-size:20px;font-weight:700;letter-spacing:.05em;\'>GRINGO\'S<br><span style=\'font-size:11px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;\'>HEARTLAND</span></span>'">
+  </div>
+  <nav class="hdr-nav">
+    <a href="#" class="hdr-link" onclick="switchTab('polo-tech',this);window.scrollTo({top:0,behavior:'smooth'});return false;">Polo Tech</a>
+    <a href="#" class="hdr-link" onclick="switchTab('polo-gold',this);window.scrollTo({top:0,behavior:'smooth'});return false;">Polo Gold</a>
+    <a href="#" class="hdr-link" onclick="switchTab('polo-italiana',this);window.scrollTo({top:0,behavior:'smooth'});return false;">Italiana</a>
+    <a href="#" class="hdr-link" onclick="switchTab('tenis',this);window.scrollTo({top:0,behavior:'smooth'});return false;">Tênis</a>
+  </nav>
+  <div class="hdr-right">
+    <button class="cart-trigger" onclick="openCart()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      Carrinho
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Coleção 2026 · Heartland</div>
+    <h1 class="hero-headline">Vista sua equipe</h1>
+    <div class="hero-headline-italic">com alma.</div>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Uniformes corporativos premium para empresas que entendem que identidade visual começa pelo que sua equipe veste.</p>
+    <div class="hero-ctas">
+      <button class="btn-hero-main" onclick="document.querySelector('.products-section').scrollIntoView({behavior:'smooth'})">Ver Coleção</button>
+      <button class="btn-hero-ghost" onclick="document.querySelector('#checkout').scrollIntoView({behavior:'smooth'})">Solicitar Orçamento</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-n">50+</div>
+        <div class="hero-stat-l">Modelos</div>
+      </div>
+      <div class="hero-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">4</div>
+        <div class="hero-stat-l">Linhas</div>
+      </div>
+      <div class="hero-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">BR</div>
+        <div class="hero-stat-l">Entrega Nacional</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp" alt="Polo Heartland">
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item">Polos Corporativas <span class="m-dot"></span></div>
+    <div class="marquee-item">Bordado Incluso <span class="m-dot"></span></div>
+    <div class="marquee-item">Qualidade Premium <span class="m-dot"></span></div>
+    <div class="marquee-item">Entrega Nacional <span class="m-dot"></span></div>
+    <div class="marquee-item">Tênis Corporativo <span class="m-dot"></span></div>
+    <div class="marquee-item">Pedido Mínimo 12 Peças <span class="m-dot"></span></div>
+    <div class="marquee-item">Coleção 2026 <span class="m-dot"></span></div>
+    <div class="marquee-item">Polos Corporativas <span class="m-dot"></span></div>
+    <div class="marquee-item">Bordado Incluso <span class="m-dot"></span></div>
+    <div class="marquee-item">Qualidade Premium <span class="m-dot"></span></div>
+    <div class="marquee-item">Entrega Nacional <span class="m-dot"></span></div>
+    <div class="marquee-item">Tênis Corporativo <span class="m-dot"></span></div>
+    <div class="marquee-item">Pedido Mínimo 12 Peças <span class="m-dot"></span></div>
+    <div class="marquee-item">Coleção 2026 <span class="m-dot"></span></div>
+  </div>
+</div>
+
+<!-- PRODUCTS SECTION -->
+<section class="products-section" id="colecao">
+  <div class="products-head">
+    <div class="sec-label">Nossa Coleção</div>
+    <h2 class="sec-title">Escolha sua linha.<br><em>Vista sua identidade.</em></h2>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs-bar">
+    <button class="tab-btn active" id="tab-polo-tech" onclick="switchTab('polo-tech',this)">
+      Polo Tech Light <span class="tab-badge">Mais Vendido</span>
+    </button>
+    <button class="tab-btn" id="tab-polo-gold" onclick="switchTab('polo-gold',this)">
+      Polo Piquet Gold <span class="tab-badge premium">Premium</span>
+    </button>
+    <button class="tab-btn" id="tab-polo-italiana" onclick="switchTab('polo-italiana',this)">
+      Polo Italiana <span class="tab-badge limited">Limitado</span>
+    </button>
+    <button class="tab-btn" id="tab-tenis" onclick="switchTab('tenis',this)">
+      Tênis Knit Evo <span class="tab-badge new">Novo</span>
+    </button>
+  </div>
+
+  <!-- ═══ TAB: POLO TECH LIGHT ════════════════════════════ -->
+  <div class="tab-content active" id="content-polo-tech">
+    <div class="showcase">
+      <!-- Gallery -->
+      <div class="showcase-gallery">
+        <div class="gallery-main">
+          <img id="pt-main-img" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp" alt="Polo Tech Light">
+        </div>
+        <div class="gallery-thumbs" id="pt-thumbs"></div>
+      </div>
+      <!-- Details -->
+      <div class="showcase-details">
+        <div class="showcase-badge">Mais Vendido · 2026</div>
+        <h2 class="showcase-name">Polo Tech Light</h2>
+        <p class="showcase-sub">Malha tech respirável com proteção UV50+ e toque suave. O uniforme ideal para equipes em movimento — com estilo e conforto garantidos o dia todo.</p>
+        <div class="showcase-price"><span>R$</span> 89<small style="font-size:28px">,90</small></div>
+        <div class="showcase-price-note">por peça</div>
+        <div class="det-sep"></div>
+        <div class="det-label">Cor: <b id="pt-cor-nome">Branco</b></div>
+        <div class="swatches" id="pt-swatches"></div>
+        <div class="det-label">Tamanho:</div>
+        <div class="sizes" id="pt-sizes"></div>
+        <div class="size-warning" id="pt-warn">Selecione um tamanho antes de adicionar</div>
+        <div class="qty-row">
+          <span class="qty-label">Qtd.</span>
+          <div class="qty-ctrl">
+            <button class="qty-dec" onclick="changeQty('pt',-1)">−</button>
+            <input class="qty-val" id="pt-qty" type="number" value="1" min="1" readonly>
+            <button class="qty-inc" onclick="changeQty('pt',1)">+</button>
+          </div>
+        </div>
+        <button class="add-btn" id="pt-add-btn" onclick="addToCart('polo-tech')">Adicionar ao Carrinho</button>
+        <div class="guarantee-row">
+          <span class="guarantee-item">Bordado incluso</span>
+          <span class="guarantee-item">Entrega garantida</span>
+          <span class="guarantee-item">Troca fácil</span>
+        </div>
+      </div>
+    </div>
+    <!-- Color Variants Grid -->
+    <div class="variants-label">Todas as cores disponíveis</div>
+    <div class="variants-grid" id="pt-variants"></div>
+  </div>
+
+  <!-- ═══ TAB: POLO PIQUET GOLD ══════════════════════════ -->
+  <div class="tab-content" id="content-polo-gold">
+    <div class="showcase">
+      <div class="showcase-gallery">
+        <div class="gallery-main">
+          <img id="pg-main-img" src="../assets/polo-gold/branco-1.webp" alt="Polo Piquet Gold" onerror="this.src='https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp'">
+        </div>
+        <div class="gallery-thumbs" id="pg-thumbs"></div>
+      </div>
+      <div class="showcase-details">
+        <div class="showcase-badge">Linha Premium · 2026</div>
+        <h2 class="showcase-name">Polo Piquet Gold</h2>
+        <p class="showcase-sub">Piquet 100% algodão penteado com costuras reforçadas e acabamento impecável. A escolha de empresas que não abrem mão da qualidade na representação da marca.</p>
+        <div class="showcase-price"><span>R$</span> 119<small style="font-size:28px">,90</small></div>
+        <div class="showcase-price-note">por peça</div>
+        <div class="det-sep"></div>
+        <div class="det-label">Cor: <b id="pg-cor-nome">Branco</b></div>
+        <div class="swatches" id="pg-swatches"></div>
+        <div class="det-label">Tamanho:</div>
+        <div class="sizes" id="pg-sizes"></div>
+        <div class="size-warning" id="pg-warn">Selecione um tamanho antes de adicionar</div>
+        <div class="qty-row">
+          <span class="qty-label">Qtd.</span>
+          <div class="qty-ctrl">
+            <button class="qty-dec" onclick="changeQty('pg',-1)">−</button>
+            <input class="qty-val" id="pg-qty" type="number" value="1" min="1" readonly>
+            <button class="qty-inc" onclick="changeQty('pg',1)">+</button>
+          </div>
+        </div>
+        <button class="add-btn" onclick="addToCart('polo-gold')">Adicionar ao Carrinho</button>
+        <div class="guarantee-row">
+          <span class="guarantee-item">100% Algodão</span>
+          <span class="guarantee-item">Bordado incluso</span>
+          <span class="guarantee-item">Entrega garantida</span>
+        </div>
+      </div>
+    </div>
+    <div class="variants-label">Todas as cores disponíveis</div>
+    <div class="variants-grid" id="pg-variants"></div>
+  </div>
+
+  <!-- ═══ TAB: POLO ITALIANA ══════════════════════════════ -->
+  <div class="tab-content" id="content-polo-italiana">
+    <div class="showcase">
+      <div class="showcase-gallery">
+        <div class="gallery-main">
+          <img id="pi-main-img" src="../assets/polo-italiana/verde.webp" alt="Polo Italiana" onerror="this.src='https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-1-b8eeef18e493aa7ea117750822454353-1024-1024.webp'">
+        </div>
+        <div class="gallery-thumbs" id="pi-thumbs"></div>
+      </div>
+      <div class="showcase-details">
+        <div class="showcase-badge">Edição Limitada · 2026</div>
+        <h2 class="showcase-name">Polo Italiana</h2>
+        <p class="showcase-sub">Corte italiano exclusivo com tecido de alto padrão importado. Uma peça que comunica refinamento e posicionamento de marca — perfeita para quem representa no mais alto nível.</p>
+        <div class="showcase-price"><span>R$</span> 149<small style="font-size:28px">,90</small></div>
+        <div class="showcase-price-note">por peça · edição limitada</div>
+        <div class="det-sep"></div>
+        <div class="det-label">Cor: <b id="pi-cor-nome">Verde</b></div>
+        <div class="swatches" id="pi-swatches"></div>
+        <div class="det-label">Tamanho:</div>
+        <div class="sizes" id="pi-sizes"></div>
+        <div class="size-warning" id="pi-warn">Selecione um tamanho antes de adicionar</div>
+        <div class="qty-row">
+          <span class="qty-label">Qtd.</span>
+          <div class="qty-ctrl">
+            <button class="qty-dec" onclick="changeQty('pi',-1)">−</button>
+            <input class="qty-val" id="pi-qty" type="number" value="1" min="1" readonly>
+            <button class="qty-inc" onclick="changeQty('pi',1)">+</button>
+          </div>
+        </div>
+        <button class="add-btn" onclick="addToCart('polo-italiana')">Adicionar ao Carrinho</button>
+        <div class="guarantee-row">
+          <span class="guarantee-item">Tecido importado</span>
+          <span class="guarantee-item">Estoque limitado</span>
+          <span class="guarantee-item">Bordado incluso</span>
+        </div>
+      </div>
+    </div>
+    <div class="variants-label">Cores disponíveis</div>
+    <div class="variants-grid" id="pi-variants"></div>
+  </div>
+
+  <!-- ═══ TAB: TÊNIS KNIT EVO ════════════════════════════ -->
+  <div class="tab-content" id="content-tenis">
+    <div class="showcase">
+      <div class="showcase-gallery">
+        <div class="gallery-main">
+          <img id="tn-main-img" src="../assets/tenis/branco-1.jpg" alt="Tênis Knit Evo" onerror="this.src='https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp'">
+        </div>
+        <div class="gallery-thumbs" id="tn-thumbs"></div>
+      </div>
+      <div class="showcase-details">
+        <div class="showcase-badge">Lançamento · 2026</div>
+        <h2 class="showcase-name">Tênis Knit Evo</h2>
+        <p class="showcase-sub">Malha knit respirável com solado EVA ultra-leve e cabedal em mesh ergonômico. Para equipes que precisam de mobilidade sem abrir mão da identidade visual.</p>
+        <div class="showcase-price"><span>R$</span> 249<small style="font-size:28px">,90</small></div>
+        <div class="showcase-price-note">por par</div>
+        <div class="det-sep"></div>
+        <div class="det-label">Cor: <b id="tn-cor-nome">Branco</b></div>
+        <div class="swatches" id="tn-swatches"></div>
+        <div class="det-label">Numeração:</div>
+        <div class="sizes" id="tn-sizes"></div>
+        <div class="size-warning" id="tn-warn">Selecione uma numeração antes de adicionar</div>
+        <div class="qty-row">
+          <span class="qty-label">Qtd.</span>
+          <div class="qty-ctrl">
+            <button class="qty-dec" onclick="changeQty('tn',-1)">−</button>
+            <input class="qty-val" id="tn-qty" type="number" value="1" min="1" readonly>
+            <button class="qty-inc" onclick="changeQty('tn',1)">+</button>
+          </div>
+        </div>
+        <button class="add-btn" onclick="addToCart('tenis')">Adicionar ao Carrinho</button>
+        <div class="guarantee-row">
+          <span class="guarantee-item">Solado EVA</span>
+          <span class="guarantee-item">Malha respirável</span>
+          <span class="guarantee-item">Entrega garantida</span>
+        </div>
+      </div>
+    </div>
+    <div class="variants-label">Cores disponíveis</div>
+    <div class="variants-grid" id="tn-variants"></div>
+  </div>
+
+</section>
+
+<!-- CHECKOUT SECTION -->
+<section class="checkout-section" id="checkout">
+  <div class="ck-left">
+    <div class="ck-tag">Fechar Pedido</div>
+    <h2 class="ck-title">Pronto para<br><em>vestir sua equipe?</em></h2>
+    <p class="ck-desc">Preencha seus dados e finalize seu pedido via WhatsApp — nossa equipe retorna em até 2h úteis com confirmação e prazo de entrega.</p>
+    <div class="ck-features">
+      <div class="ck-feature">Sem pedido mínimo — compre a quantidade que precisar</div>
+      <div class="ck-feature">Bordado personalizado incluso sem custo extra</div>
+      <div class="ck-feature">Entrega para todo o Brasil com rastreamento</div>
+      <div class="ck-feature">Prazo de produção: 10 a 15 dias úteis</div>
+      <div class="ck-feature">Garantia de qualidade em todas as peças</div>
+    </div>
+  </div>
+  <div class="ck-right">
+    <h3 class="ck-form-title">Dados para contato</h3>
+    <div class="ck-field-row">
+      <div>
+        <label class="ck-field-label">Nome completo</label>
+        <input type="text" class="ck-field" id="ck-nome" placeholder="Seu nome">
+      </div>
+      <div>
+        <label class="ck-field-label">Empresa</label>
+        <input type="text" class="ck-field" id="ck-empresa" placeholder="Nome da empresa">
+      </div>
+    </div>
+    <div class="ck-field-row">
+      <div>
+        <label class="ck-field-label">WhatsApp</label>
+        <input type="tel" class="ck-field" id="ck-whats" placeholder="(11) 9 0000-0000">
+      </div>
+      <div>
+        <label class="ck-field-label">E-mail</label>
+        <input type="email" class="ck-field" id="ck-email" placeholder="email@empresa.com">
+      </div>
+    </div>
+    <label class="ck-field-label">Observações do pedido</label>
+    <textarea class="ck-field" id="ck-obs" placeholder="Informações adicionais, cores, tamanhos, personalização..."></textarea>
+    <div class="ck-config-note">
+      <strong>💳 Pagamento online:</strong> Configure sua plataforma de checkout (Stripe, PagSeguro, Mercado Pago) nesta seção. Substitua o botão abaixo pelo link de pagamento após configurar.
+    </div>
+    <button class="btn-whats" onclick="finalizarWhats()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Enviar Pedido via WhatsApp
+    </button>
+    <button class="btn-payment-placeholder">
+      🔒 Pagar Online — Configure aqui
+    </button>
+    <p class="ck-checkout-note">Ao finalizar, você concorda com nossos termos de venda.<br>Respondemos em até 2h úteis em dias de semana.</p>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="why-head">
+    <div class="sec-label">Por que Heartland</div>
+    <h2 class="sec-title">Qualidade que<br><em>fala por si.</em></h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-number">01</div>
+      <h3 class="why-title">Materiais Premium</h3>
+      <p class="why-desc">Tecidos selecionados com certificação de qualidade. Cada peça passa por controle rigoroso antes de sair da produção.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-number">02</div>
+      <h3 class="why-title">Bordado Incluso</h3>
+      <p class="why-desc">Personalização com a logo da sua empresa sem custo extra. Digitalizamos o arquivo e entregamos pronto para vestir.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-number">03</div>
+      <h3 class="why-title">Entrega Nacional</h3>
+      <p class="why-desc">Enviamos para todo o Brasil com rastreamento em tempo real. Prazo de 10 a 15 dias úteis após confirmação do pedido.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-number">04</div>
+      <h3 class="why-title">Suporte Dedicado</h3>
+      <p class="why-desc">Da escolha dos modelos à entrega, um consultor acompanha cada etapa do seu pedido via WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img class="footer-logo-img" src="../../../Downloads/HEARTLAND LOGO.svg" alt="Gringo's Heartland" onerror="this.outerHTML='<span style=\'font-family:var(--ff-d);font-size:18px;font-weight:700;color:#fff;letter-spacing:.05em;\'>GRINGO\'S HEARTLAND</span>'">
+      <p class="footer-tagline">Uniformes corporativos premium para equipes que vestem sua identidade.</p>
+    </div>
+    <div class="footer-links-group">
+      <div>
+        <div class="footer-col-title">Produtos</div>
+        <div class="footer-links">
+          <a class="footer-link" href="#" onclick="switchTab('polo-tech');return false;">Polo Tech Light</a>
+          <a class="footer-link" href="#" onclick="switchTab('polo-gold');return false;">Polo Piquet Gold</a>
+          <a class="footer-link" href="#" onclick="switchTab('polo-italiana');return false;">Polo Italiana</a>
+          <a class="footer-link" href="#" onclick="switchTab('tenis');return false;">Tênis Knit Evo</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Empresa</div>
+        <div class="footer-links">
+          <a class="footer-link" href="landing-gringos-corporativo.html">Sobre a Gringo's</a>
+          <a class="footer-link" href="#checkout">Solicitar Orçamento</a>
+          <a class="footer-link" href="#checkout">Contato</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Gringo's Heartland · Todos os direitos reservados</p>
+    <p class="footer-aivox">Criado com AIVOX</p>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-hdr">
+    <div>
+      <div class="cart-hdr-title">Carrinho</div>
+      <div class="cart-hdr-count" id="cartCount">0 itens</div>
+    </div>
+    <button class="cart-close-btn" onclick="closeCart()">Fechar ✕</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Seu carrinho está vazio.<br>Adicione produtos acima.</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-val" id="cartTotal">R$ 0</span>
+    </div>
+    <button class="btn-checkout" onclick="irCheckout()">Finalizar Pedido</button>
+    <p class="cart-footer-note">Ou <a href="#checkout" onclick="closeCart()" style="text-decoration:underline;color:var(--black);">preencha o formulário</a> para orçamento</p>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ══════════════════════════════════════════════════
+   AIVOX | Gringo's Heartland — E-commerce JS
+══════════════════════════════════════════════════ */
+
+// ── DADOS DOS PRODUTOS ────────────────────────────
+var PRODUCTS = {
+  'polo-tech': {
+    id: 'polo-tech',
+    name: 'Polo Tech Light',
+    price: 89.90,
+    sizes: ['P','M','G','GG'],
+    prefix: 'pt',
+    colors: [
+      { name:'Branco',      hex:'#F5F5F5', border:true,
+        imgs:['https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp',
+              'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-2-c30e84cc8549a07b1717750822465636-1024-1024.webp',
+              'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-3-820d727b1a606d550517750822448829-1024-1024.webp',
+              'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-4-af0fce41ed7768f4d817750822451336-1024-1024.webp'] },
+      { name:'Cinza',       hex:'#9B9B9B',
+        imgs:['https://dcdn-us.mitiendanube.com/stores/004/240/847/products/cinza-1-d4c885b2ca0086abac17750822446369-1024-1024.webp',
+              'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/cinza-4-9ac76306edce00ade717750822450331-1024-1024.webp',
+              '../assets/polo-cinza-detalhe2.png','../assets/polo-cinza-detalhe3.png'] },
+      { name:'Azul Marinho', hex:'#1C2E5A',
+        imgs:['https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-1-b8eeef18e493aa7ea117750822454353-1024-1024.webp',
+              'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-2-054570c4eecc95d83017750822449357-1024-1024.webp',
+              'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-3-3650df21a6e11421b617750822450435-1024-1024.webp',
+              '../assets/polo-marinho-detalhe4.png'] },
+      { name:'Preto',       hex:'#111111',
+        imgs:['https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-1-44a622c1615d120abd17750822477198-1024-1024.webp',
+              '../assets/polo-preto-detalhe.png',
+              'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-3-d309c67293e7eefb6c17750822484268-1024-1024.webp',
+              'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-4-59b83ee224f38a6a7417750822489079-1024-1024.webp'] },
+      { name:'Bege',        hex:'#C9B99A', border:true,
+        imgs:['https://dcdn-us.mitiendanube.com/stores/004/240/847/products/bege-1-6938252565598804f417750822450492-1024-1024.webp',
+              'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/bege-2-f7b6b0d900303dfdf217750822447135-1024-1024.webp',
+              'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/bege-3-240756076961a0082217750822453601-1024-1024.webp',
+              '../assets/polo-bege-detalhe4.png'] }
+    ]
+  },
+  'polo-gold': {
+    id: 'polo-gold',
+    name: 'Polo Piquet Gold',
+    price: 119.90,
+    sizes: ['P','M','G','GG'],
+    prefix: 'pg',
+    colors: [
+      { name:'Branco',      hex:'#F5F5F5', border:true, imgs:['../assets/polo-gold/branco-1.webp','../assets/polo-gold/branco-2.png','../assets/polo-gold/branco-3.png','../assets/polo-gold/branco-4.png'] },
+      { name:'Preto',       hex:'#111111', imgs:['../assets/polo-gold/preto-1.webp','../assets/polo-gold/preto-2.png','../assets/polo-gold/preto-3.png','../assets/polo-gold/preto-4.png'] },
+      { name:'Azul Marinho', hex:'#1C2E5A', imgs:['../assets/polo-gold/marinho-1.webp','../assets/polo-gold/marinho-2.png','../assets/polo-gold/marinho-3.png','../assets/polo-gold/marinho-4.png'] },
+      { name:'Bege',        hex:'#C9B99A', border:true, imgs:['../assets/polo-gold/bege-1.webp','../assets/polo-gold/bege-2.png','../assets/polo-gold/bege-3.png','../assets/polo-gold/bege-4.png'] },
+      { name:'Verde Musgo', hex:'#4A5E3A', imgs:['../assets/polo-gold/verde-1.webp','../assets/polo-gold/verde-2.png','../assets/polo-gold/verde-3.png','../assets/polo-gold/verde-4.png'] },
+      { name:'Azul Claro',  hex:'#6B9EC8', imgs:['../assets/polo-gold/azul-claro-1.png','../assets/polo-gold/azul-claro-2.png','../assets/polo-gold/azul-claro-3.png'] },
+      { name:'Verde Claro', hex:'#7BAE78', imgs:['../assets/polo-gold/verde-claro-1.png','../assets/polo-gold/verde-claro-2.png','../assets/polo-gold/verde-claro-3.png','../assets/polo-gold/verde-claro-4.png'] },
+      { name:'Rosa',        hex:'#DBA0A0', imgs:['../assets/polo-gold/rosa-1.png','../assets/polo-gold/rosa-2.png','../assets/polo-gold/rosa-3.png','../assets/polo-gold/rosa-4.png'] }
+    ]
+  },
+  'polo-italiana': {
+    id: 'polo-italiana',
+    name: 'Polo Italiana',
+    price: 149.90,
+    sizes: ['P','M','G','GG'],
+    prefix: 'pi',
+    colors: [
+      { name:'Verde',      hex:'#4A5E3A', imgs:['../assets/polo-italiana/verde.webp'] },
+      { name:'Azul Marinho', hex:'#1C2E5A', imgs:['../assets/polo-italiana/azul-marinho.webp'] },
+      { name:'Off White',  hex:'#F5F0E8', border:true, imgs:['../assets/polo-italiana/off-white.webp'] }
+    ]
+  },
+  'tenis': {
+    id: 'tenis',
+    name: 'Tênis Knit Evo',
+    price: 249.90,
+    sizes: ['38','39','40','41','42','43','44'],
+    prefix: 'tn',
+    colors: [
+      { name:'Branco',      hex:'#F5F5F5', border:true, imgs:['../assets/tenis/branco-1.jpg','../assets/tenis/branco-2.jpg','../assets/tenis/branco-3.jpg','../assets/tenis/branco-4.jpg'] },
+      { name:'Azul Marinho', hex:'#1C2E5A', imgs:['../assets/tenis/azul-1.jpg','../assets/tenis/azul-2.jpg','../assets/tenis/azul-3.jpg','../assets/tenis/azul-4.jpg'] },
+      { name:'Cinza',       hex:'#9B9B9B', imgs:['../assets/tenis/cinza-1.jpg','../assets/tenis/cinza-2.jpg','../assets/tenis/cinza-3.jpg','../assets/tenis/cinza-4.jpg'] },
+      { name:'Preto',       hex:'#111111', imgs:['../assets/tenis/preto-1.jpg','../assets/tenis/preto-2.jpg','../assets/tenis/preto-3.jpg'] }
+    ]
+  }
+};
+
+// ── STATE ─────────────────────────────────────────
+var state = {
+  'pt': { colorIdx:0, sizeIdx:-1, qty:1 },
+  'pg': { colorIdx:0, sizeIdx:-1, qty:1 },
+  'pi': { colorIdx:0, sizeIdx:-1, qty:1 },
+  'tn': { colorIdx:0, sizeIdx:-1, qty:1 }
+};
+
+var prefixToId = { pt:'polo-tech', pg:'polo-gold', pi:'polo-italiana', tn:'tenis' };
+var cart = [];
+
+// ── INIT ──────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  Object.keys(PRODUCTS).forEach(function(pid) {
+    initProduct(PRODUCTS[pid]);
+  });
+});
+
+function initProduct(p) {
+  var pre = p.prefix;
+  // Build swatches
+  var swEl = document.getElementById(pre+'-swatches');
+  if (!swEl) return;
+  p.colors.forEach(function(c, i) {
+    var sw = document.createElement('div');
+    sw.className = 'swatch' + (c.border?' bordered':'') + (i===0?' active':'');
+    sw.style.background = c.hex;
+    sw.title = c.name;
+    sw.onclick = (function(idx){ return function(){ selectColor(pre, idx); }; })(i);
+    swEl.appendChild(sw);
+  });
+  // Build sizes
+  var szEl = document.getElementById(pre+'-sizes');
+  if (!szEl) return;
+  p.sizes.forEach(function(s, i) {
+    var btn = document.createElement('button');
+    btn.className = 'sz-btn';
+    btn.textContent = s;
+    btn.onclick = (function(idx){ return function(){ selectSize(pre, idx, btn); }; })(i);
+    szEl.appendChild(btn);
+  });
+  // Build thumbs
+  buildThumbs(pre, 0);
+  // Build variant grid
+  buildVariants(p);
+}
+
+function selectColor(pre, idx) {
+  state[pre].colorIdx = idx;
+  var pid = prefixToId[pre];
+  var p = PRODUCTS[pid];
+  var c = p.colors[idx];
+  // Update swatch active
+  var sws = document.querySelectorAll('#'+pre+'-swatches .swatch');
+  sws.forEach(function(s,i){ s.classList.toggle('active', i===idx); });
+  // Update color name
+  var nm = document.getElementById(pre+'-cor-nome');
+  if (nm) nm.textContent = c.name;
+  // Update main image
+  var img = document.getElementById(pre+'-main-img');
+  if (img && c.imgs && c.imgs.length > 0) {
+    img.classList.add('fade');
+    setTimeout(function(){
+      img.src = c.imgs[0];
+      img.classList.remove('fade');
+    }, 200);
+  }
+  // Rebuild thumbs
+  buildThumbs(pre, idx);
+}
+
+function buildThumbs(pre, colorIdx) {
+  var pid = prefixToId[pre];
+  var p = PRODUCTS[pid];
+  var c = p.colors[colorIdx];
+  var el = document.getElementById(pre+'-thumbs');
+  if (!el) return;
+  el.innerHTML = '';
+  var imgs = (c.imgs && c.imgs.length > 0) ? c.imgs : [c.imgs[0]];
+  imgs.slice(0,4).forEach(function(src, i) {
+    var d = document.createElement('div');
+    d.className = 'gallery-thumb' + (i===0?' active':'');
+    var im = document.createElement('img');
+    im.src = src; im.alt = p.name + ' ' + (i+1);
+    im.onerror = function(){ this.style.display='none'; };
+    d.appendChild(im);
+    d.onclick = (function(s, el_d){
+      return function(){
+        var main = document.getElementById(pre+'-main-img');
+        if (main) { main.classList.add('fade'); setTimeout(function(){ main.src=s; main.classList.remove('fade'); },200); }
+        el.querySelectorAll('.gallery-thumb').forEach(function(t){ t.classList.remove('active'); });
+        el_d.classList.add('active');
+      };
+    })(src, d);
+    el.appendChild(d);
+  });
+}
+
+function selectSize(pre, idx, btn) {
+  state[pre].sizeIdx = idx;
+  var pid = prefixToId[pre];
+  var szEl = document.getElementById(pre+'-sizes');
+  if (szEl) szEl.querySelectorAll('.sz-btn').forEach(function(b,i){ b.classList.toggle('active', i===idx); });
+  var warn = document.getElementById(pre+'-warn');
+  if (warn) warn.classList.remove('show');
+}
+
+function changeQty(pre, delta) {
+  var val = parseInt(document.getElementById(pre+'-qty').value) || 12;
+  val = Math.max(1, val + delta);
+  document.getElementById(pre+'-qty').value = val;
+  state[pre].qty = val;
+}
+
+// ── TAB SWITCH ───────────────────────────────────
+function switchTab(pid, btnEl) {
+  // Deactivate all
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-content').forEach(function(c){ c.classList.remove('active'); });
+  // Activate target
+  var tabId = 'tab-' + pid.replace('polo-','polo-');
+  var contentId = 'content-' + pid;
+  var tb = document.getElementById(tabId);
+  var ct = document.getElementById(contentId);
+  if (tb) tb.classList.add('active');
+  if (ct) ct.classList.add('active');
+}
+
+// ── BUILD VARIANTS GRID ──────────────────────────
+function buildVariants(p) {
+  var el = document.getElementById(p.prefix+'-variants');
+  if (!el) return;
+  p.colors.forEach(function(c, i) {
+    var card = document.createElement('div');
+    card.className = 'variant-card';
+    var imgSrc = (c.imgs && c.imgs.length > 0) ? c.imgs[0] : '';
+    card.innerHTML =
+      '<div class="variant-card-img">' +
+        (imgSrc ? '<img src="'+imgSrc+'" alt="'+c.name+'" onerror="this.style.display=\'none\'">' : '') +
+      '</div>' +
+      '<div class="variant-card-body">' +
+        '<span class="variant-card-swatch" style="background:'+c.hex+';border-color:'+
+          (c.border?'var(--border)':'transparent')+'"></span>' +
+        '<span class="variant-card-name">'+c.name+'</span>' +
+      '</div>';
+    card.onclick = (function(idx){ return function(){ selectColor(p.prefix, idx); }; })(i);
+    el.appendChild(card);
+  });
+}
+
+// ── CART ─────────────────────────────────────────
+function addToCart(pid) {
+  var p = PRODUCTS[pid];
+  var pre = p.prefix;
+  var s = state[pre];
+  if (s.sizeIdx < 0) {
+
+    var warn = document.getElementById(pre+'-warn');
+    if (warn) { warn.classList.add('show'); setTimeout(function(){ warn.classList.remove('show'); }, 3000); }
+    return;
+  }
+  var c = p.colors[s.colorIdx];
+  var sz = p.sizes[s.sizeIdx];
+  var qty = parseInt(document.getElementById(pre+'-qty').value) || 1;
+  var img = (c.imgs && c.imgs.length > 0) ? c.imgs[0] : '';
+  // Check existing
+  var existing = cart.find(function(item){
+    return item.pid===pid && item.color===c.name && item.size===sz;
+  });
+  if (existing) { existing.qty += qty; }
+  else { cart.push({ pid:pid, name:p.name, color:c.name, size:sz, qty:qty, price:p.price, img:img }); }
+  updateCartUI();
+  showToast(p.name + ' · ' + c.name + ' ' + sz + ' adicionado!');
+  openCart();
+}
+
+function removeFromCart(idx) {
+  cart.splice(idx, 1);
+  updateCartUI();
+}
+
+function updateCartUI() {
+  var total = 0;
+  var totalQty = 0;
+  cart.forEach(function(item){ total += item.price * item.qty; totalQty += item.qty; });
+  // Badge
+  var badge = document.getElementById('cartBadge');
+  if (badge) { badge.textContent = totalQty; badge.classList.toggle('show', totalQty > 0); }
+  // Count
+  var cnt = document.getElementById('cartCount');
+  if (cnt) cnt.textContent = cart.length + (cart.length===1?' item':' itens');
+  // Body
+  var body = document.getElementById('cartBody');
+  var footer = document.getElementById('cartFooter');
+  if (!body) return;
+  if (cart.length === 0) {
+    body.innerHTML = '<div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Seu carrinho está vazio.<br>Adicione produtos acima.</p></div>';
+    if (footer) footer.style.display = 'none';
+    return;
+  }
+  if (footer) footer.style.display = '';
+  body.innerHTML = '';
+  cart.forEach(function(item, i) {
+    var d = document.createElement('div');
+    d.className = 'cart-item';
+    d.innerHTML =
+      '<img class="cart-item-img" src="'+item.img+'" alt="'+item.name+'" onerror="this.style.display=\'none\'">' +
+      '<div class="cart-item-info">' +
+        '<div class="cart-item-name">'+item.name+'</div>' +
+        '<div class="cart-item-meta">'+item.color+' · Tam. '+item.size+' · Qtd: '+item.qty+'</div>' +
+        '<div class="cart-item-bottom">' +
+          '<span class="cart-item-price">R$ '+(item.price * item.qty).toFixed(2).replace('.',',')+'</span>' +
+          '<button class="cart-item-remove" onclick="removeFromCart('+i+')" title="Remover">×</button>' +
+        '</div>' +
+      '</div>';
+    body.appendChild(d);
+  });
+  // Total
+  var tv = document.getElementById('cartTotal');
+  if (tv) tv.textContent = 'R$ ' + total.toFixed(2).replace('.',',');
+}
+
+function openCart(){
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCart(){
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function irCheckout() {
+  closeCart();
+  document.querySelector('#checkout').scrollIntoView({behavior:'smooth'});
+}
+
+// ── WHATSAPP CHECKOUT ─────────────────────────────
+function finalizarWhats() {
+  var nome    = document.getElementById('ck-nome').value.trim();
+  var empresa = document.getElementById('ck-empresa').value.trim();
+  var whats   = document.getElementById('ck-whats').value.trim();
+  var email   = document.getElementById('ck-email').value.trim();
+  var obs     = document.getElementById('ck-obs').value.trim();
+
+  var lines = ['*Pedido Gringo\'s Heartland*',''];
+  if (nome)    lines.push('👤 *Nome:* ' + nome);
+  if (empresa) lines.push('🏢 *Empresa:* ' + empresa);
+  if (whats)   lines.push('📱 *WhatsApp:* ' + whats);
+  if (email)   lines.push('📧 *E-mail:* ' + email);
+  lines.push('');
+
+  if (cart.length > 0) {
+    lines.push('*Itens do Pedido:*');
+    var total = 0;
+    cart.forEach(function(item) {
+      var sub = item.price * item.qty;
+      total += sub;
+      lines.push('• ' + item.name + ' · ' + item.color + ' · Tam. ' + item.size + ' · Qtd: ' + item.qty + ' · R$ ' + sub.toFixed(2).replace('.',','));
+    });
+    lines.push('');
+    lines.push('*Total: R$ ' + total.toFixed(2).replace('.',',') + '*');
+  } else {
+    lines.push('_(Carrinho vazio — desejo fazer uma consulta)_');
+  }
+
+  if (obs) { lines.push(''); lines.push('📝 *Observações:* ' + obs); }
+
+  var msg = lines.join('\n');
+  // ⚠️ CONFIGURE O NÚMERO DO WHATSAPP ABAIXO:
+  var phone = '5511900000000'; // <-- Substitua pelo número da Gringo's
+  var url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(msg);
+  window.open(url, '_blank');
+}
+
+// ── TOAST ─────────────────────────────────────────
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 3000);
+}
+
+// ── KEYBOARD ──────────────────────────────────────
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeCart();
+});
+</script>
+</body>
+</html>

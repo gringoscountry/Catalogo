@@ -1,0 +1,1509 @@
+﻿<!-- Desenvolvido com AIVOX | arthurr7070.github.io/AIVOX-LEADING -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gringo's Corporativo — Uniformes que Elevam sua Marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+/* AIVOX | Desenvolvido com o sistema AIVOX */
+
+:root {
+  --black:  #0F0F0F;
+  --white:  #FFFFFF;
+  --cream:  #F7F4EF;
+  --gold:   #B8924A;
+  --gold-lt:#D4AA6A;
+  --gold-dk:#8C6E18;
+  --gray:   #6B6B6B;
+  --border: #E8E2D9;
+  --ff-h:   'DM Serif Display', serif;
+  --ff-big: 'Bebas Neue', sans-serif;
+  --ff-b:   'DM Sans', sans-serif;
+  --ease:   cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-b);background:var(--white);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+
+/* ── TOPBAR ─────────────────────────────── */
+.topbar{
+  background:var(--black);
+  color:var(--white);
+  text-align:center;
+  padding:11px 20px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.08em;
+}
+.topbar strong{color:var(--gold-lt);}
+
+/* ── HEADER ─────────────────────────────── */
+header{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:0 56px;
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 1px 16px rgba(0,0,0,.05);
+}
+.logo-main{font-family:var(--ff-h);font-size:20px;color:var(--black);}
+.logo-tag{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:2px;}
+.hdr-cta{
+  background:var(--gold);
+  color:var(--white);
+  border:none;
+  padding:10px 24px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .2s;
+}
+.hdr-cta:hover{background:var(--gold-lt);}
+
+/* ── HERO ────────────────────────────────── */
+.hero{
+  background:var(--white);
+  padding:80px 56px 0;
+  max-width:1320px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:center;
+  min-height:88vh;
+}
+.hero-left{}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:var(--cream);
+  border:1px solid var(--border);
+  padding:6px 16px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:28px;
+}
+.hero-title{
+  font-family:var(--ff-h);
+  font-size:clamp(36px,4.5vw,60px);
+  line-height:1.08;
+  color:var(--black);
+  margin-bottom:20px;
+}
+.hero-title em{font-style:italic;color:var(--gold);}
+.hero-sub{
+  font-size:17px;
+  color:var(--gray);
+  line-height:1.75;
+  font-weight:300;
+  max-width:460px;
+  margin-bottom:40px;
+}
+.hero-sub strong{color:var(--black);font-weight:600;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;}
+.btn-whats{
+  background:#25D366;
+  color:var(--white);
+  border:none;
+  padding:16px 32px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.06em;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:all .25s var(--ease);
+}
+.btn-whats:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.3);}
+.btn-ghost{
+  background:transparent;
+  color:var(--black);
+  border:1px solid var(--border);
+  padding:15px 28px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.06em;
+  cursor:pointer;
+  transition:all .2s;
+}
+.btn-ghost:hover{border-color:var(--black);}
+.hero-proof{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.proof-item{display:flex;flex-direction:column;}
+.proof-num{font-family:var(--ff-big);font-size:32px;color:var(--gold);line-height:1;}
+.proof-label{font-size:11px;color:var(--gray);margin-top:2px;}
+.proof-sep{width:1px;height:36px;background:var(--border);}
+
+/* Hero Video */
+.hero-right{position:relative;}
+.video-frame{
+  position:relative;
+  border-radius:0;
+  overflow:hidden;
+  background:var(--black);
+  aspect-ratio:9/10;
+  box-shadow:0 32px 80px rgba(0,0,0,.14);
+}
+.video-frame video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.video-badge{
+  position:absolute;
+  bottom:24px;
+  left:24px;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(8px);
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border-left:3px solid var(--gold);
+}
+.vb-icon{font-size:20px;}
+.vb-text{font-size:12px;color:var(--black);font-weight:600;line-height:1.4;}
+.vb-sub{font-size:10px;color:var(--gray);font-weight:400;}
+.video-frame:hover .video-hover{opacity:1;}
+.video-tag{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:var(--gold);
+  color:var(--white);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:5px 12px;
+}
+
+/* ── MARQUEE ─────────────────────────────── */
+.marquee-wrap{
+  background:var(--black);
+  padding:18px 0;
+  overflow:hidden;
+  margin-top:80px;
+}
+.marquee-track{
+  display:flex;
+  gap:0;
+  animation:marquee 22s linear infinite;
+  width:max-content;
+}
+.marquee-item{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:0 32px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  white-space:nowrap;
+}
+.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ── SECTIONS ────────────────────────────── */
+.sec{padding:96px 0;}
+.wrap{max-width:1320px;margin:0 auto;padding:0 56px;}
+.sec-label{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--gold);}
+.sec-title{
+  font-family:var(--ff-h);
+  font-size:clamp(30px,3.5vw,48px);
+  line-height:1.1;
+  color:var(--black);
+  margin-bottom:14px;
+}
+.sec-title em{font-style:italic;color:var(--gold);}
+.sec-sub{font-size:16px;color:var(--gray);line-height:1.75;font-weight:300;}
+
+/* ── DOR / PAIN ──────────────────────────── */
+.pain-bg{background:var(--cream);}
+.pain-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+.pain-left{}
+.pain-q{
+  font-family:var(--ff-h);
+  font-size:clamp(28px,3vw,42px);
+  line-height:1.15;
+  color:var(--black);
+  margin-bottom:32px;
+  font-style:italic;
+}
+.pain-cards{display:flex;flex-direction:column;gap:14px;}
+.pain-card{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:20px 24px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-left:3px solid var(--gold);
+  transition:box-shadow .25s;
+}
+.pain-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.06);}
+.pain-icon{font-size:20px;min-width:28px;}
+.pain-text{font-size:14px;color:var(--black);line-height:1.55;}
+.pain-text strong{display:block;font-size:13px;font-weight:700;margin-bottom:3px;}
+
+.pain-right{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.pain-img-main{
+  overflow:hidden;
+  aspect-ratio:4/3;
+  background:var(--border);
+}
+.pain-img-main img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+.pain-img-main:hover img{transform:scale(1.04);}
+.pain-img-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pain-img-sm{overflow:hidden;aspect-ratio:1;background:var(--border);}
+.pain-img-sm img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+.pain-img-sm:hover img{transform:scale(1.04);}
+
+/* ── TRUTH BANNER ────────────────────────── */
+.truth{
+  background:var(--black);
+  padding:72px 56px;
+  text-align:center;
+}
+.truth-inner{max-width:760px;margin:0 auto;}
+.truth-pre{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.truth-title{
+  font-family:var(--ff-big);
+  font-size:clamp(36px,5vw,64px);
+  color:var(--white);
+  line-height:1.05;
+  letter-spacing:.04em;
+  margin-bottom:20px;
+}
+.truth-title span{color:var(--gold);}
+.truth-sub{font-size:16px;color:rgba(255,255,255,.5);line-height:1.75;font-weight:300;}
+
+/* ── SOLUÇÃO ─────────────────────────────── */
+.sol-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.sol-left{display:flex;flex-direction:column;gap:16px;}
+.sol-item{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  padding:24px;
+  border:1px solid var(--border);
+  transition:border-color .25s,box-shadow .25s;
+}
+.sol-item:hover{border-color:var(--gold);box-shadow:0 6px 28px rgba(184,146,74,.1);}
+.sol-num{
+  font-family:var(--ff-big);
+  font-size:36px;
+  color:var(--gold);
+  line-height:1;
+  min-width:48px;
+  opacity:.4;
+}
+.sol-body{}
+.sol-title{font-size:15px;font-weight:700;color:var(--black);margin-bottom:5px;}
+.sol-desc{font-size:13px;color:var(--gray);line-height:1.6;}
+
+.sol-right{position:relative;}
+.sol-img-stack{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.sol-img{overflow:hidden;aspect-ratio:3/4;background:var(--cream);}
+.sol-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+.sol-img:hover img{transform:scale(1.05);}
+.sol-img.tall{grid-row:1/3;}
+
+/* ── MUDANÇA / ANTES DEPOIS ──────────────── */
+.change-bg{background:var(--cream);}
+.change-header{text-align:center;max-width:640px;margin:0 auto 64px;}
+.change-header .sec-label{justify-content:center;}
+.change-header .sec-label::before{display:none;}
+.change-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.change-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  padding:36px 28px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  transition:box-shadow .3s,border-color .3s;
+  position:relative;
+  overflow:hidden;
+}
+.change-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.07);border-color:var(--gold);}
+.change-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  transform:scaleX(0);
+  transition:transform .3s var(--ease);
+  transform-origin:left;
+}
+.change-card:hover::before{transform:scaleX(1);}
+.change-icon{font-size:32px;}
+.change-title{font-size:16px;font-weight:700;color:var(--black);}
+.change-desc{font-size:13px;color:var(--gray);line-height:1.65;}
+
+/* ── POSICIONAMENTO ──────────────────────── */
+.pos-section{
+  background:var(--black);
+  padding:100px 56px;
+  position:relative;
+  overflow:hidden;
+}
+.pos-section::before{
+  content:'POSICIONAMENTO';
+  position:absolute;
+  bottom:-0.1em;
+  right:-0.02em;
+  font-family:var(--ff-big);
+  font-size:clamp(80px,14vw,180px);
+  color:rgba(255,255,255,.03);
+  letter-spacing:.02em;
+  pointer-events:none;
+  line-height:1;
+}
+.pos-inner{
+  max-width:800px;
+  margin:0 auto;
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+.pos-tag{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.pos-tag::before,.pos-tag::after{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+.pos-title{
+  font-family:var(--ff-big);
+  font-size:clamp(42px,6vw,82px);
+  color:var(--white);
+  line-height:1;
+  letter-spacing:.04em;
+  margin-bottom:16px;
+}
+.pos-title span{color:var(--gold);}
+.pos-sub{font-size:17px;color:rgba(255,255,255,.45);line-height:1.8;font-weight:300;margin-bottom:40px;max-width:560px;margin-left:auto;margin-right:auto;}
+.pos-contrast{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:24px;
+  align-items:center;
+  margin-bottom:52px;
+}
+.pos-side{padding:24px;border:1px solid rgba(255,255,255,.06);text-align:left;}
+.pos-side.bad .ps-icon{color:#ff6b6b;}
+.pos-side.good .ps-icon{color:var(--gold);}
+.ps-icon{font-size:18px;margin-bottom:10px;}
+.ps-title{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;}
+.ps-item{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;}
+.pos-vs{font-family:var(--ff-big);font-size:32px;color:var(--gold);opacity:.4;}
+
+/* ── PRODUTOS / FOTOS ────────────────────── */
+.products-bg{background:var(--white);}
+.products-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:52px;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2px;
+  margin-bottom:2px;
+}
+.prod-card{
+  position:relative;
+  overflow:hidden;
+  background:#C2C2C2;
+  aspect-ratio:3/4;
+}
+.prod-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  padding:0;
+  transition:transform .55s var(--ease);
+}
+.prod-card:hover img{transform:scale(1.06);}
+.prod-label{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:20px 18px;
+  background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 100%);
+  color:var(--white);
+}
+.pl-cat{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:4px;}
+.pl-name{font-size:14px;font-weight:600;}
+.prod-row2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:2px;
+}
+.prod-wide{
+  overflow:hidden;
+  background:var(--cream);
+  aspect-ratio:16/7;
+}
+.prod-wide img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease);}
+.prod-wide:hover img{transform:scale(1.04);}
+
+/* ── QUALIDADE ───────────────────────────── */
+.quality-bg{background:var(--cream);}
+.quality-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.quality-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;}
+.qpill{
+  padding:8px 18px;
+  border:1px solid var(--border);
+  background:var(--white);
+  font-size:12px;
+  font-weight:500;
+  color:var(--black);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.qpill span{color:var(--gold);}
+.quality-img{overflow:hidden;aspect-ratio:4/5;background:var(--border);}
+.quality-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+.quality-img:hover img{transform:scale(1.04);}
+
+/* ── CTA FINAL ───────────────────────────── */
+.cta-section{
+  background:var(--black);
+  padding:100px 56px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-section::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(184,146,74,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-inner{max-width:680px;margin:0 auto;position:relative;}
+.cta-tag{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.cta-tag::before,.cta-tag::after{content:'';width:28px;height:1px;background:var(--gold);}
+.cta-title{
+  font-family:var(--ff-h);
+  font-size:clamp(32px,4vw,52px);
+  color:var(--white);
+  line-height:1.1;
+  margin-bottom:16px;
+}
+.cta-title em{font-style:italic;color:var(--gold);}
+.cta-sub{font-size:16px;color:rgba(255,255,255,.45);line-height:1.75;font-weight:300;margin-bottom:44px;}
+.btn-whats-big{
+  background:#25D366;
+  color:var(--white);
+  border:none;
+  padding:20px 48px;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.08em;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  transition:all .25s var(--ease);
+  margin-bottom:16px;
+}
+.btn-whats-big:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,211,102,.35);}
+.cta-fine{font-size:12px;color:rgba(255,255,255,.25);}
+
+/* ── FOOTER ──────────────────────────────── */
+footer{background:var(--white);border-top:1px solid var(--border);padding:40px 56px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;}
+.ftr-logo{font-family:var(--ff-h);font-size:18px;color:var(--black);}
+.ftr-copy{font-size:11px;color:var(--gray);}
+.ftr-aivox{font-size:10px;color:rgba(0,0,0,.25);}
+.ftr-aivox a{color:var(--gold);opacity:.7;}
+
+/* ── WHATSAPP FIXO ───────────────────────── */
+.wa-fixed{
+  position:fixed;
+  bottom:28px;right:28px;
+  background:#25D366;
+  color:var(--white);
+  width:56px;height:56px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;
+  cursor:pointer;
+  box-shadow:0 8px 28px rgba(37,211,102,.45);
+  z-index:200;
+  transition:transform .25s var(--ease),box-shadow .25s;
+  text-decoration:none;
+}
+.wa-fixed:hover{transform:scale(1.1);box-shadow:0 12px 36px rgba(37,211,102,.55);}
+
+/* ── SIMULADOR ───────────────────────────── */
+.gbtn{padding:9px 18px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--border);background:var(--white);color:var(--gray);cursor:pointer;transition:all .2s;}
+.gbtn.active,.gbtn:hover{background:var(--black);color:var(--white);border-color:var(--black);}
+#uploadBox:hover{border-color:var(--gold);background:rgba(184,146,74,.03);}
+.cbtn{width:30px;height:30px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s;flex-shrink:0;}
+.cbtn:hover{transform:scale(1.15);}
+.cbtn.active{border-color:var(--gold);box-shadow:0 0 0 2px var(--white),0 0 0 4px var(--gold);}
+
+/* ── PRODUTO DESTAQUE HEADER ─────────────── */
+.prod-destaque-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:32px;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.prod-cor-label{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:8px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.prod-cor-label::before{
+  content:'';
+  width:16px;
+  height:1px;
+  background:var(--gold);
+}
+
+/* ── REVEAL ──────────────────────────────── */
+.r{opacity:0;transform:translateY(24px);transition:opacity .65s var(--ease),transform .65s var(--ease);}
+.r.v{opacity:1;transform:translateY(0);}
+.r1{transition-delay:.1s;}.r2{transition-delay:.2s;}.r3{transition-delay:.3s;}.r4{transition-delay:.4s;}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;padding:60px 32px 0;gap:48px;min-height:auto;}
+  .pain-inner{grid-template-columns:1fr;}
+  .sol-grid{grid-template-columns:1fr;}
+  .quality-inner{grid-template-columns:1fr;}
+  .products-grid{grid-template-columns:repeat(2,1fr);}
+  .change-grid{grid-template-columns:1fr;}
+  .pos-contrast{grid-template-columns:1fr;}
+  .pos-vs{display:none;}
+  header{padding:0 24px;}
+  .wrap{padding:0 32px;}
+}
+@media(max-width:640px){
+  .hero{padding:48px 24px 0;}
+  .wrap{padding:0 24px;}
+  .products-grid{grid-template-columns:1fr;}
+  footer{padding:32px 24px;flex-direction:column;text-align:center;}
+  .truth{padding:56px 24px;}
+  .pos-section{padding:72px 24px;}
+  .cta-section{padding:72px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  ⚡ <strong>Pedido mínimo: 10 unidades</strong> — Entrega em até 14 dias com bordado ou silk da sua marca
+</div>
+
+<!-- HEADER -->
+<header>
+  <div>
+    <div class="logo-main">Gringo's</div>
+    <div class="logo-tag">Linha Corporativa</div>
+  </div>
+  <button class="hdr-cta" onclick="goWhats()">Quero Uniformizar Minha Equipe →</button>
+</header>
+
+<!-- HERO -->
+<section style="background:var(--white);overflow:hidden;">
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow r">✦ Para Empresas que Levam a Própria Imagem a Sério</div>
+    <h1 class="hero-title r r1">
+      Sua equipe padronizada,<br>sua marca <em>reconhecida.</em>
+    </h1>
+    <p class="hero-sub r r2">
+      Do atendimento ao campo — quando sua equipe entra numa sala, <strong>a Gringo's já falou por você.</strong> Camisas, polos e calças premium com bordado ou silk da sua marca, entregues em 14 dias.
+    </p>
+    <div class="hero-ctas r r3">
+      <button class="btn-whats" onclick="goWhats()">
+        <span>💬</span> Quero Minha Equipe Padronizada
+      </button>
+      <button class="btn-ghost" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">Ver os Produtos →</button>
+    </div>
+    <div class="hero-proof r r4">
+      <div class="proof-item">
+        <span class="proof-num">1000+</span>
+        <span class="proof-label">Unidades entregues</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-num">100%</span>
+        <span class="proof-label">Personalizado com sua marca</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-num">14 dias</span>
+        <span class="proof-label">Da aprovação à entrega</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right r r2">
+    <div class="video-frame" onclick="window.open('https://youtube.com/shorts/kaSt5zEO32M?feature=share','_blank')" style="cursor:pointer;">
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;">
+        <source src="../assets/camisas.mp4" type="video/mp4">
+      </video>
+      <!-- Play hint overlay -->
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;background:rgba(0,0,0,.25);" class="video-hover">
+        <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,.3);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polygon points="6,4 20,12 6,20" fill="#0F0F0F"/></svg>
+        </div>
+      </div>
+      <div class="video-tag">Coleção Corporativa</div>
+      <div class="video-badge">
+        <div class="vb-icon">▶</div>
+        <div class="vb-text">
+          Assista no YouTube
+          <div class="vb-sub">Clique para ver o vídeo completo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>BORDADO PROFISSIONAL</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>SUA LOGO EM CADA PEÇA</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>ENTREGA EM 14 DIAS</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>ALGODÃO EGÍPCIO</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>MÍNIMO 10 UNIDADES</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>UV50+</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>SILK OU BORDADO</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>BORDADO PROFISSIONAL</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>SUA LOGO EM CADA PEÇA</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>ENTREGA EM 14 DIAS</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>ALGODÃO EGÍPCIO</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>UV50+</span><span class="marquee-dot"></span></div>
+  </div>
+</div>
+
+<!-- DOR / PAIN -->
+<section class="sec pain-bg">
+  <div class="wrap">
+    <div class="pain-inner">
+      <div class="pain-left">
+        <div class="sec-label r">Antes de Fechar Qualquer Negócio...</div>
+        <p class="pain-q r r1">Quando seu cliente olha para a sua equipe, o que ele vê?</p>
+        <div class="pain-cards">
+          <div class="pain-card r r1">
+            <div class="pain-icon">👕</div>
+            <div class="pain-text"><strong>Equipe sem padrão</strong>Cada colaborador aparece do jeito que quer. Sua marca chega antes de você — e chega errada.</div>
+          </div>
+          <div class="pain-card r r2">
+            <div class="pain-icon">😐</div>
+            <div class="pain-text"><strong>Falta de profissionalismo visível</strong>O cliente decide se confia na sua empresa nos primeiros 7 segundos. Uniforme ruim decide por você.</div>
+          </div>
+          <div class="pain-card r r3">
+            <div class="pain-icon">📉</div>
+            <div class="pain-text"><strong>Sua concorrência está sendo lembrada</strong>Enquanto você aparece despadronizado, o concorrente que investiu na imagem já ficou na cabeça do cliente.</div>
+          </div>
+          <div class="pain-card r r4">
+            <div class="pain-icon">🤝</div>
+            <div class="pain-text"><strong>Uma chance de causar boa impressão</strong>Só existe uma. E uniforme fora de padrão queima essa chance antes da conversa começar.</div>
+          </div>
+        </div>
+      </div>
+      <div class="pain-right r r2">
+        <div class="pain-img-main">
+          <img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/82e50c1a65b4e150e41b366fc61d180c-396f23f9d035bf3ae117240760397989-1024-1024.webp" alt="Camisa Manga Longa Oxford Branca Gringo's" />
+        </div>
+        <div class="pain-img-row">
+          <div class="pain-img-sm">
+            <img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/untitled-design-1-00fe5d6e9ac8fb025e17247014357897-1024-1024.webp" alt="Camiseta Premium Algodão Egípcio Branca" />
+          </div>
+          <div class="pain-img-sm">
+            <img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-4-9827bf01c4ed3399fc17744409707163-1024-1024.webp" alt="Polo Piquet Gold Azul Marinho" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUTH BANNER -->
+<div class="truth r">
+  <div class="truth-inner">
+    <div class="truth-pre">Você já sabe disso</div>
+    <div class="truth-title">Ninguém fecha negócio com quem<br>não transmite confiança. E confiança<br>começa pela <span>imagem</span> da equipe.</div>
+    <p class="truth-sub">Seu concorrente já está cuidando. A pergunta é: e você?</p>
+  </div>
+</div>
+
+<!-- POSICIONAMENTO -->
+<div class="pos-section r">
+  <div class="pos-inner">
+    <div class="pos-tag">O que separa empresa de marca</div>
+    <div class="pos-title">É <span>AUTORIDADE.</span></div>
+    <p class="pos-sub">Enquanto a concorrência aparece como amador… <br><strong style="color:rgba(255,255,255,.8);">você aparece como referência.</strong></p>
+    <div class="pos-contrast">
+      <div class="pos-side bad">
+        <div class="ps-icon">✗</div>
+        <div class="ps-title">Sem a Gringo's</div>
+        <div class="ps-item">Equipe despadronizada<br>Marca esquecida<br>Credibilidade zero no primeiro contato<br>Cliente vai embora sem se lembrar de você</div>
+      </div>
+      <div class="pos-vs">VS</div>
+      <div class="pos-side good">
+        <div class="ps-icon">✓</div>
+        <div class="ps-title">Com a Gringo's</div>
+        <div class="ps-item">Equipe padronizada e profissional<br>Marca forte e reconhecida<br>Credibilidade imediata<br>Cliente lembra e indica</div>
+      </div>
+    </div>
+    <button class="btn-whats-big" onclick="goWhats()">
+      <span>💬</span> Quero Transformar Minha Equipe
+    </button>
+  </div>
+</div>
+
+<!-- PRODUTOS / FOTOS -->
+<section class="sec products-bg" id="produtos">
+  <div class="wrap">
+    <div class="products-header r">
+      <div>
+        <div class="sec-label">A Linha Corporativa</div>
+        <h2 class="sec-title">Todas as peças que <em>representam sua marca</em></h2>
+      </div>
+      <p style="font-size:14px;color:var(--gray);max-width:320px;line-height:1.6;">Galeria completa — todas as fotos reais dos produtos disponíveis para personalização corporativa.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         01 · CAMISA TECH UV (seletor de cores interativo)
+    ══════════════════════════════════════ -->
+    <div class="r">
+      <div class="prod-destaque-header">
+        <div>
+          <div class="sec-label">01</div>
+          <h2 class="sec-title" style="margin-bottom:6px;">Camisa Manga Longa <em>Tech UV</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;">80% poliamida + 20% elastano · UV50+ · Super Slim · 4 cores</p>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+          <span style="font-size:12px;color:var(--gray);text-decoration:line-through;">R$ 250,00</span>
+          <span style="font-size:22px;font-weight:700;color:var(--black);">R$ 219,90</span>
+          <span style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;">3x de R$ 73,30 s/ juros</span>
+        </div>
+      </div>
+
+      <!-- SELETOR DE CORES -->
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+        <span style="font-size:12px;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;">Cor:</span>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <!-- Bolinha dividida: Azul Claro / Marinho -->
+          <button class="techuv-cor-btn active" data-cor="azul-marinho" title="Azul Claro · Marinho"
+            style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#7BB8D4 50%,#1E3A5F 50%);border:2px solid var(--gold);cursor:pointer;transition:border-color .2s,transform .2s;overflow:hidden;"
+            onclick="switchTechuvColor('azul-marinho',this)"></button>
+          <!-- Bolinha dividida: Branco / Preto -->
+          <button class="techuv-cor-btn" data-cor="branco-preto" title="Branco · Preto"
+            style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#F2F0EC 50%,#111111 50%);border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;overflow:hidden;"
+            onclick="switchTechuvColor('branco-preto',this)"></button>
+        </div>
+        <span id="techuv-cor-nome" style="font-size:13px;color:var(--black);font-weight:600;letter-spacing:.04em;">Azul Claro · Marinho</span>
+      </div>
+
+      <!-- GRID DE 4 FOTOS -->
+      <div id="techuv-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:24px;transition:opacity .25s;">
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/azul-claro-1-09ffa432550d513c8517749824834372-640-0.webp" alt="Tech UV Azul Claro 1" /></div>
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/azul-claro-3-1629702626bf7bc4d017749825233078-640-0.webp" alt="Tech UV Azul Claro 2" /></div>
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-2-060332f8a073f0d9fe17749825545918-640-0.webp" alt="Tech UV Marinho 1" /></div>
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-3-7ef07538b2a88412bc17749825654741-640-0.webp" alt="Tech UV Marinho 2" /></div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <div class="qpill"><span>✓</span> 80% Poliamida + 20% Elastano</div><div class="qpill"><span>✓</span> UV50+</div><div class="qpill"><span>✓</span> Super Slim</div><div class="qpill"><span>✓</span> Secagem Rápida</div><div class="qpill"><span>✓</span> P ao XG</div><div class="qpill"><span>✓</span> Personalizável</div>
+      </div>
+    </div>
+
+    <script>
+    var techuvCores = {
+      'azul-marinho': {
+        nome: 'Azul Claro · Marinho',
+        fotos: [
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/azul-claro-1-09ffa432550d513c8517749824834372-640-0.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/azul-claro-3-1629702626bf7bc4d017749825233078-640-0.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-2-060332f8a073f0d9fe17749825545918-640-0.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-3-7ef07538b2a88412bc17749825654741-640-0.webp'
+        ]
+      },
+      'branco-preto': {
+        nome: 'Branco · Preto',
+        fotos: [
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-2-1ec9b722e150c8917717749825348856-640-0.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-2-1ec9b722e150c8917717749825348856-640-0.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-2-49d9daafee4e3f712117749824058165-640-0.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-2-49d9daafee4e3f712117749824058165-640-0.webp'
+        ]
+      }
+    };
+
+    function switchTechuvColor(cor, btn) {
+      var grid = document.getElementById('techuv-grid');
+      var nomeEl = document.getElementById('techuv-cor-nome');
+      var dados = techuvCores[cor];
+
+      grid.style.opacity = '0';
+      setTimeout(function() {
+        var cards = grid.querySelectorAll('.prod-card img');
+        for (var i = 0; i < cards.length; i++) {
+          cards[i].src = dados.fotos[i];
+          cards[i].alt = 'Tech UV ' + dados.nome + ' ' + (i+1);
+        }
+        nomeEl.textContent = dados.nome;
+        grid.style.opacity = '1';
+      }, 200);
+
+      var btns = document.querySelectorAll('.techuv-cor-btn');
+      for (var j = 0; j < btns.length; j++) {
+        btns[j].style.border = '2px solid transparent';
+        btns[j].style.transform = 'scale(1)';
+      }
+      btn.style.border = '2px solid var(--gold)';
+      btn.style.transform = 'scale(1.15)';
+    }
+    </script>
+
+    <!-- ══════════════════════════════════════
+         02 · CAMISA POLO TECH LIGHT (seletor de cores interativo)
+    ══════════════════════════════════════ -->
+    <div class="r" style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+      <div class="prod-destaque-header">
+        <div>
+          <div class="sec-label">02</div>
+          <h2 class="sec-title" style="margin-bottom:6px;">Camisa Polo <em>Tech Light</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;">Tecnologia de ponta em conforto e leveza · 5 cores · P ao XG</p>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+          <span style="font-size:12px;color:var(--gray);text-decoration:line-through;">R$ 179,90</span>
+          <span style="font-size:22px;font-weight:700;color:var(--black);">R$ 149,90</span>
+          <span style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;">Personalizável com sua logo</span>
+        </div>
+      </div>
+
+      <!-- SELETOR DE CORES -->
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+        <span style="font-size:12px;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;">Cor:</span>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <button class="polo-cor-btn active" data-cor="branco" title="Branco"
+            style="width:30px;height:30px;border-radius:50%;background:#F2F0EC;border:2px solid var(--gold);cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchPoloColor('branco',this)"></button>
+          <button class="polo-cor-btn" data-cor="cinza" title="Cinza"
+            style="width:30px;height:30px;border-radius:50%;background:#9CA3AF;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchPoloColor('cinza',this)"></button>
+          <button class="polo-cor-btn" data-cor="marinho" title="Azul Marinho"
+            style="width:30px;height:30px;border-radius:50%;background:#1E3A5F;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchPoloColor('marinho',this)"></button>
+          <button class="polo-cor-btn" data-cor="preto" title="Preto"
+            style="width:30px;height:30px;border-radius:50%;background:#111111;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchPoloColor('preto',this)"></button>
+          <button class="polo-cor-btn" data-cor="bege" title="Bege"
+            style="width:30px;height:30px;border-radius:50%;background:#C8B99A;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchPoloColor('bege',this)"></button>
+        </div>
+        <span id="polo-cor-nome" style="font-size:13px;color:var(--black);font-weight:600;letter-spacing:.04em;">Branco</span>
+      </div>
+
+      <!-- GRID DE 4 FOTOS -->
+      <div id="polo-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:24px;transition:opacity .25s;">
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp" alt="Polo Tech Light Branco 1" /></div>
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-2-c30e84cc8549a07b1717750822465636-1024-1024.webp" alt="Polo Tech Light Branco 2" /></div>
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-3-820d727b1a606d550517750822448829-1024-1024.webp" alt="Polo Tech Light Branco 3" /></div>
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-4-af0fce41ed7768f4d817750822451336-1024-1024.webp" alt="Polo Tech Light Branco 4" /></div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <div class="qpill"><span>✓</span> Tech Light</div><div class="qpill"><span>✓</span> Leveza Extrema</div><div class="qpill"><span>✓</span> 5 Cores</div><div class="qpill"><span>✓</span> P ao XG</div><div class="qpill"><span>✓</span> Personalizável</div>
+      </div>
+    </div>
+
+    <script>
+    var poloCores = {
+      branco: {
+        nome: 'Branco',
+        fotos: [
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-2-c30e84cc8549a07b1717750822465636-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-3-820d727b1a606d550517750822448829-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-4-af0fce41ed7768f4d817750822451336-1024-1024.webp'
+        ]
+      },
+      cinza: {
+        nome: 'Cinza',
+        fotos: [
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/cinza-1-d4c885b2ca0086abac17750822446369-1024-1024.webp',
+          '../assets/polo-cinza-detalhe2.png',
+          '../assets/polo-cinza-detalhe3.png',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/cinza-4-9ac76306edce00ade717750822450331-1024-1024.webp'
+        ]
+      },
+      marinho: {
+        nome: 'Azul Marinho',
+        fotos: [
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-1-b8eeef18e493aa7ea117750822454353-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-2-054570c4eecc95d83017750822449357-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-3-3650df21a6e11421b617750822450435-1024-1024.webp',
+          '../assets/polo-marinho-detalhe4.png'
+        ]
+      },
+      preto: {
+        nome: 'Preto',
+        fotos: [
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-1-44a622c1615d120abd17750822477198-1024-1024.webp',
+          '../assets/polo-preto-detalhe.png',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-3-d309c67293e7eefb6c17750822484268-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/preto-4-59b83ee224f38a6a7417750822489079-1024-1024.webp'
+        ]
+      },
+      bege: {
+        nome: 'Bege',
+        fotos: [
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/bege-1-6938252565598804f417750822450492-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/bege-2-f7b6b0d900303dfdf217750822447135-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/bege-3-240756076961a0082217750822453601-1024-1024.webp',
+          '../assets/polo-bege-detalhe4.png'
+        ]
+      }
+    };
+
+    function switchPoloColor(cor, btn) {
+      var grid = document.getElementById('polo-grid');
+      var nomeEl = document.getElementById('polo-cor-nome');
+      var dados = poloCores[cor];
+
+      // Fade out
+      grid.style.opacity = '0';
+      setTimeout(function() {
+        // Atualiza fotos
+        var cards = grid.querySelectorAll('.prod-card img');
+        for (var i = 0; i < cards.length; i++) {
+          cards[i].src = dados.fotos[i];
+          cards[i].alt = 'Polo Tech Light ' + dados.nome + ' ' + (i+1);
+        }
+        // Atualiza nome
+        nomeEl.textContent = dados.nome;
+        // Fade in
+        grid.style.opacity = '1';
+      }, 200);
+
+      // Atualiza botões
+      var btns = document.querySelectorAll('.polo-cor-btn');
+      for (var j = 0; j < btns.length; j++) {
+        btns[j].style.border = '2px solid transparent';
+        btns[j].style.transform = 'scale(1)';
+      }
+      btn.style.border = '2px solid var(--gold)';
+      btn.style.transform = 'scale(1.15)';
+    }
+    </script>
+
+    <!-- ══════════════════════════════════════
+         03 · CALÇA SARJA PREMIUM ALGODÃO EGÍPCIO (seletor de cores)
+    ══════════════════════════════════════ -->
+    <div class="r" style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+      <div class="prod-destaque-header">
+        <div>
+          <div class="sec-label">03</div>
+          <h2 class="sec-title" style="margin-bottom:6px;">Calça Sarja <em>Premium</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;">100% Algodão Egípcio · Corte premium · 3 cores · 36 ao 50</p>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+          <span style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;">Personalizável com sua logo</span>
+        </div>
+      </div>
+
+      <!-- SELETOR DE CORES -->
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+        <span style="font-size:12px;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;">Cor:</span>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <button class="calca-cor-btn active" data-cor="natural" title="Natural"
+            style="width:30px;height:30px;border-radius:50%;background:#C4A882;border:2px solid var(--gold);cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchCalcaColor('natural',this)"></button>
+          <button class="calca-cor-btn" data-cor="claro" title="Claro"
+            style="width:30px;height:30px;border-radius:50%;background:#E8DCC8;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchCalcaColor('claro',this)"></button>
+          <button class="calca-cor-btn" data-cor="preto" title="Preto"
+            style="width:30px;height:30px;border-radius:50%;background:#111111;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchCalcaColor('preto',this)"></button>
+        </div>
+        <span id="calca-cor-nome" style="font-size:13px;color:var(--black);font-weight:600;letter-spacing:.04em;">Natural</span>
+      </div>
+
+      <!-- GRID DE 4 FOTOS -->
+      <div id="calca-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:24px;transition:opacity .25s;">
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/95c902e4dc62803e05c40799b12c0327-635830b0219bf3223a17726113838920-1024-1024.webp" alt="Calça Sarja Natural 1" /></div>
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/97fa7a1d3566c449001dc009db649714-5eabb8d422d3437b4617726113854448-1024-1024.webp" alt="Calça Sarja Natural 2" /></div>
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/78f2b78796a33342369ecdfdd541c793-f83b6cb086e2229c4b17726113868242-1024-1024.webp" alt="Calça Sarja Natural 3" /></div>
+        <div class="prod-card"><img src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/78f2b78796a33342369ecdfdd541c793-2292e68917e147fc8117726113883237-1024-1024.webp" alt="Calça Sarja Natural 4" /></div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <div class="qpill"><span>✓</span> Algodão Egípcio</div><div class="qpill"><span>✓</span> Sarja Premium</div><div class="qpill"><span>✓</span> 3 Cores</div><div class="qpill"><span>✓</span> 36 ao 50</div><div class="qpill"><span>✓</span> Personalizável</div>
+      </div>
+    </div>
+
+    <script>
+    var calcaCores = {
+      natural: {
+        nome: 'Natural',
+        fotos: [
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/95c902e4dc62803e05c40799b12c0327-635830b0219bf3223a17726113838920-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/97fa7a1d3566c449001dc009db649714-5eabb8d422d3437b4617726113854448-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/78f2b78796a33342369ecdfdd541c793-f83b6cb086e2229c4b17726113868242-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/97fa7a1d3566c449001dc009db649714-5eabb8d422d3437b4617726113854448-1024-1024.webp'
+        ]
+      },
+      claro: {
+        nome: 'Claro',
+        fotos: [
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/69be1a679554fc0971929377c182ec67-0d73f56c9563c3334017726114032427-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/82f6be8ca2d11c1da854fc92c7f5b8e1-89b13d708cc2b7a48317726114045578-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/58340e11502d4be6178e6418c6587e9d-a1ed1ff3053ad84f5217726114057992-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/69be1a679554fc0971929377c182ec67-f61456b527eb31a5b317726114070308-1024-1024.webp'
+        ]
+      },
+      preto: {
+        nome: 'Preto',
+        fotos: [
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/60b68d6daf0aaa7677067445dee50b42-f52630d2f06bc6650d17726113936165-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/f529744b3e465271101cb32fcccb7963-418b3269b56e7c836517726113947984-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/005b293528c716e1a7c7a35dc6600438-fbc528f73953b79abb17726113961076-1024-1024.webp',
+          'https://dcdn-us.mitiendanube.com/stores/004/240/847/products/f529744b3e465271101cb32fcccb7963-418b3269b56e7c836517726113947984-1024-1024.webp'
+        ]
+      }
+    };
+
+    function switchCalcaColor(cor, btn) {
+      var grid = document.getElementById('calca-grid');
+      var nomeEl = document.getElementById('calca-cor-nome');
+      var dados = calcaCores[cor];
+
+      grid.style.opacity = '0';
+      setTimeout(function() {
+        var cards = grid.querySelectorAll('.prod-card img');
+        for (var i = 0; i < cards.length; i++) {
+          cards[i].src = dados.fotos[i];
+          cards[i].alt = 'Calça Sarja ' + dados.nome + ' ' + (i+1);
+        }
+        nomeEl.textContent = dados.nome;
+        grid.style.opacity = '1';
+      }, 200);
+
+      var btns = document.querySelectorAll('.calca-cor-btn');
+      for (var j = 0; j < btns.length; j++) {
+        btns[j].style.border = '2px solid transparent';
+        btns[j].style.transform = 'scale(1)';
+      }
+      btn.style.border = '2px solid var(--gold)';
+      btn.style.transform = 'scale(1.15)';
+    }
+    </script>
+
+  </div>
+</section>
+
+
+<!-- COMO FUNCIONA -->
+<section class="sec" style="background:var(--black);padding:80px 0;">
+  <div class="wrap">
+    <div style="text-align:center;max-width:600px;margin:0 auto 56px;" class="r">
+      <div class="sec-label" style="justify-content:center;color:var(--gold);"><span style="width:20px;height:1px;background:var(--gold);display:block;"></span>Simples Assim</div>
+      <h2 class="sec-title" style="color:var(--white);">Como funciona a<br><em>sua compra</em></h2>
+      <p class="sec-sub" style="color:rgba(255,255,255,.6);">Do pedido &agrave; entrega &mdash; tudo com suporte direto e qualidade premium Gringo&apos;s.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:960px;margin:0 auto 48px;" class="r r1">
+
+      <!-- PASSO 01 -->
+      <div class="r" style="background:#181818;padding:40px 32px;display:flex;flex-direction:column;gap:16px;position:relative;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:64px;color:rgba(184,146,74,.15);line-height:1;position:absolute;top:16px;right:24px;">01</div>
+        <div style="width:52px;height:52px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:22px;">&#128085;</div>
+        <div style="font-size:18px;font-weight:700;color:var(--white);line-height:1.3;">Escolha as Pe&ccedil;as</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;">Navegue pelo cat&aacute;logo e selecione as camisas, polos ou cal&ccedil;as que v&atilde;o representar a sua empresa com qualidade.</div>
+      </div>
+
+      <!-- PASSO 02 -->
+      <div class="r r1" style="background:#181818;padding:40px 32px;display:flex;flex-direction:column;gap:16px;position:relative;border-left:1px solid #2a2a2a;border-right:1px solid #2a2a2a;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:64px;color:rgba(184,146,74,.15);line-height:1;position:absolute;top:16px;right:24px;">02</div>
+        <div style="width:52px;height:52px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:22px;">&#127912;</div>
+        <div style="font-size:18px;font-weight:700;color:var(--white);line-height:1.3;">Defina Quantidade e Logo</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;">Informe a quantidade por tamanho e, caso queira personaliza&ccedil;&atilde;o, envie sua logo. Bordado ou silk com acabamento profissional.</div>
+      </div>
+
+      <!-- PASSO 03 -->
+      <div class="r r2" style="background:#181818;padding:40px 32px;display:flex;flex-direction:column;gap:16px;position:relative;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:64px;color:rgba(184,146,74,.15);line-height:1;position:absolute;top:16px;right:24px;">03</div>
+        <div style="width:52px;height:52px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:22px;">&#128172;</div>
+        <div style="font-size:18px;font-weight:700;color:var(--white);line-height:1.3;">Fale no WhatsApp</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;">Entre em contato pelo WhatsApp e tenha controle total &mdash; do atendimento &agrave; entrega, com a m&aacute;xima qualidade premium da Gringo&apos;s.</div>
+      </div>
+
+    </div>
+
+    <!-- CTA inline -->
+    <div style="text-align:center;" class="r">
+      <button class="btn-whats-big" onclick="goWhats()" style="background:var(--gold);color:var(--black);font-weight:700;">&#128172; Come&ccedil;ar Agora no WhatsApp</button>
+      <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.06em;">PEDIDO M&Iacute;NIMO: 10 UNIDADES &middot; ENTREGA EM AT&Eacute; 14 DIAS</p>
+    </div>
+  </div>
+</section>
+<!-- MUDANÇA -->
+<section class="sec change-bg">
+  <div class="wrap">
+    <div class="change-header r">
+      <div class="sec-label" style="justify-content:center;"><span style="width:20px;height:1px;background:var(--gold);display:block;"></span>O Que Muda na Sua Empresa</div>
+      <h2 class="sec-title">Com a Gringo's, sua empresa <em>se destaca.</em></h2>
+    </div>
+    <div class="change-grid">
+      <div class="change-card r">
+        <div class="change-icon">🏆</div>
+        <div class="change-title">Mais Credibilidade Imediatamente</div>
+        <div class="change-desc">Sua equipe chega ao cliente transmitindo profissionalismo antes de dizer uma só palavra.</div>
+      </div>
+      <div class="change-card r r1">
+        <div class="change-icon">🎯</div>
+        <div class="change-title">Marca Reconhecida</div>
+        <div class="change-desc">Uniformes padronizados fazem sua marca estar presente em todo lugar que sua equipe estiver.</div>
+      </div>
+      <div class="change-card r r2">
+        <div class="change-icon">💼</div>
+        <div class="change-title">Equipe Padronizada com Estilo</div>
+        <div class="change-desc">Visual organizado e consistente que fortalece a cultura e o orgulho da equipe.</div>
+      </div>
+      <div class="change-card r r1">
+        <div class="change-icon">🤝</div>
+        <div class="change-title">Mais Confiança do Cliente</div>
+        <div class="change-desc">Clientes confiam mais em empresas que investem na própria imagem. Simples assim.</div>
+      </div>
+      <div class="change-card r r2">
+        <div class="change-icon">🚀</div>
+        <div class="change-title">Destaque da Concorrência</div>
+        <div class="change-desc">Enquanto outros aparecem com qualquer roupa, você aparece com identidade de marca forte.</div>
+      </div>
+      <div class="change-card r r3">
+        <div class="change-icon">⭐</div>
+        <div class="change-title">Imagem Que Fica na Memória</div>
+        <div class="change-desc">Sua empresa será lembrada. Não pelo que fez hoje — mas pela impressão que deixou.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIDADE -->
+<section class="sec quality-bg">
+  <div class="wrap">
+    <div class="quality-inner">
+      <div class="r">
+        <div class="sec-label">Padrão Gringo's</div>
+        <h2 class="sec-title">Qualidade que <em>representa sua marca</em></h2>
+        <p class="sec-sub">Desenvolvido com o padrão de qualidade da Gringo's — uma marca com identidade forte, agora aplicada ao mundo corporativo.</p>
+        <div class="quality-pills">
+          <div class="qpill"><span>✓</span> Tecido premium</div>
+          <div class="qpill"><span>✓</span> Acabamento reforçado</div>
+          <div class="qpill"><span>✓</span> Personalização profissional</div>
+          <div class="qpill"><span>✓</span> Bordado ou silk quality</div>
+          <div class="qpill"><span>✓</span> Entrega em 14 dias</div>
+          <div class="qpill"><span>✓</span> Pedido mínimo: 10 unidades</div>
+        </div>
+      </div>
+      <div class="quality-img r r2" style="position:relative;overflow:hidden;">
+        <div id="quality-slide" style="position:relative;width:100%;height:100%;">
+          <img class="quality-slide-img active" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-3-820d727b1a606d550517750822448829-1024-1024.webp" alt="Polo Tech Light Branco" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:1;transition:opacity .8s ease;" />
+          <img class="quality-slide-img" src="../assets/polo-marinho-detalhe4.png" alt="Polo Tech Light Marinho" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0;transition:opacity .8s ease;" />
+          <img class="quality-slide-img" src="../assets/polo-bege-detalhe4.png" alt="Polo Tech Light Bege" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0;transition:opacity .8s ease;" />
+          <img class="quality-slide-img" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/cinza-4-9ac76306edce00ade717750822450331-1024-1024.webp" alt="Polo Tech Light Cinza" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0;transition:opacity .8s ease;" />
+          <img class="quality-slide-img" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/marinho-3-7ef07538b2a88412bc17749825654741-640-0.webp" alt="Tech UV Azul Claro Marinho" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0;transition:opacity .8s ease;" />
+        </div>
+      </div>
+      <script>
+      (function() {
+        var imgs = document.querySelectorAll('.quality-slide-img');
+        var idx = 0;
+        setInterval(function() {
+          imgs[idx].style.opacity = '0';
+          idx = (idx + 1) % imgs.length;
+          imgs[idx].style.opacity = '1';
+        }, 3000);
+      })();
+      </script>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SIMULADOR DE LOGO ════════════════════════ -->
+<section class="sec" style="background:var(--cream);">
+  <div class="wrap">
+    <div style="text-align:center;max-width:640px;margin:0 auto 56px;" class="r">
+      <div class="sec-label" style="justify-content:center;"><span style="width:20px;height:1px;background:var(--gold);display:block;"></span>Experimente Antes de Pedir</div>
+      <h2 class="sec-title">Veja como sua logo fica<br><em>nas nossas peças</em></h2>
+      <p class="sec-sub">Faça o upload da sua logo e visualize como ela ficará aplicada nas camisas e camisetas da Gringo's.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;" class="r r1">
+
+      <!-- PAINEL ESQUERDO — controles -->
+      <div style="display:flex;flex-direction:column;gap:24px;">
+
+        <!-- Upload -->
+        <div style="background:var(--white);border:1px solid var(--border);padding:32px;display:flex;flex-direction:column;align-items:center;gap:16px;cursor:pointer;transition:border-color .25s;" id="uploadBox" onclick="document.getElementById('logoInput').click()">
+          <div style="width:56px;height:56px;background:var(--cream);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-size:24px;">⬆</div>
+          <div style="text-align:center;">
+            <div style="font-size:14px;font-weight:600;color:var(--black);margin-bottom:4px;">Arraste ou clique para subir sua logo</div>
+            <div style="font-size:12px;color:var(--gray);">PNG, JPG ou SVG · Fundo transparente recomendado</div>
+          </div>
+          <input type="file" id="logoInput" accept="image/*" style="display:none;" onchange="handleLogo(event)"/>
+        </div>
+
+        <!-- Escolher peça -->
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Escolher Peça</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;" id="garmentBtns">
+            <button class="gbtn active" onclick="setGarment('camisa',32,75)">Camisa</button>
+            <button class="gbtn" onclick="setGarment('polo',34,70)">Polo</button>
+          </div>
+        </div>
+
+        <!-- Tamanho da logo -->
+        <div id="logoControls" style="display:none;">
+          <!-- Cores da peça -->
+          <div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Cor da Peça</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;" id="colorBtns">
+              <button class="cbtn active" onclick="setGarmentColor('branco')"      style="background:#F2F0EC;border-color:#ccc;" title="Branco"></button>
+              <button class="cbtn"        onclick="setGarmentColor('azul-marinho')"style="background:#1B2D54;" title="Azul Marinho"></button>
+              <button class="cbtn"        onclick="setGarmentColor('azul-royal')"  style="background:#2E5FA3;" title="Azul Royal"></button>
+              <button class="cbtn"        onclick="setGarmentColor('cinza')"       style="background:#6B7280;" title="Cinza"></button>
+              <button class="cbtn"        onclick="setGarmentColor('verde')"       style="background:#2D5A3D;" title="Verde"></button>
+            </div>
+          </div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:18px 0 14px;">Tamanho da Logo</div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-size:12px;color:var(--gray);">Menor</span>
+            <input type="range" id="logoSize" min="30" max="140" value="75" style="flex:1;accent-color:var(--gold);" oninput="updateLogo()"/>
+            <span style="font-size:12px;color:var(--gray);">Maior</span>
+          </div>
+
+          <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:18px 0 14px;">Posição Vertical</div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-size:12px;color:var(--gray);">Cima</span>
+            <input type="range" id="logoPosY" min="20" max="55" value="32" style="flex:1;accent-color:var(--gold);" oninput="updateLogo()"/>
+            <span style="font-size:12px;color:var(--gray);">Baixo</span>
+          </div>
+
+          <!-- CTA após upload -->
+          <div style="margin-top:24px;padding:20px;background:var(--black);display:flex;align-items:center;gap:16px;">
+            <div style="font-size:20px;">💬</div>
+            <div style="flex:1;">
+              <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:2px;">Gostou do resultado?</div>
+              <div style="font-size:11px;color:rgba(255,255,255,.45);">Solicite seu orçamento agora com sua logo</div>
+            </div>
+            <button onclick="goWhats()" style="background:var(--gold);border:none;color:var(--white);padding:10px 18px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Pedir Agora</button>
+          </div>
+        </div>
+
+        <!-- Placeholder quando não tem logo -->
+        <div id="uploadHint" style="padding:20px;border:1px solid var(--border);background:var(--white);">
+          <div style="font-size:13px;font-weight:600;color:var(--black);margin-bottom:8px;">✦ Como funciona</div>
+          <div style="font-size:12px;color:var(--gray);line-height:1.7;">
+            1. Faça upload da sua logo acima<br>
+            2. Escolha a peça que deseja visualizar<br>
+            3. Ajuste o tamanho e posição<br>
+            4. Gostou? Solicite seu orçamento!
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PAINEL DIREITO — preview -->
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Prévia</div>
+        <div style="position:relative;overflow:hidden;background:var(--white);border:1px solid var(--border);" id="previewBox">
+          <div id="garmentWrap" style="position:relative;background:transparent;">
+            <img id="garmentImg"
+              src="mokup-camisa-branco.png"
+              alt="Peça selecionada"
+              style="width:100%;display:block;aspect-ratio:3/4;object-fit:contain;padding:20px;background:transparent;transition:opacity .25s;"
+            />
+          <!-- Logo overlay — fixado no lado do coração (direito do peito) -->
+          <div id="logoOverlay" style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:flex-start;justify-content:flex-end;padding-top:32%;padding-right:22%;pointer-events:none;">
+            <img id="logoPreview" src="" alt="Sua logo" style="display:none;max-width:75px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));transition:all .2s;" />
+          </div>
+          <!-- Watermark hint antes de subir -->
+          <div id="previewHint" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,255,255,.6);backdrop-filter:blur(2px);">
+            <div style="font-size:36px;margin-bottom:12px;opacity:.4;">⬆</div>
+            <div style="font-size:13px;font-weight:600;color:var(--black);opacity:.5;">Faça upload da sua logo</div>
+          </div>
+          <!-- Badge peça -->
+          <div style="position:absolute;bottom:14px;left:14px;background:rgba(255,255,255,.92);padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--black);" id="garmentBadge">CAMISA</div>
+        </div>
+        <div style="margin-top:12px;font-size:11px;text-align:center;background:#B8860B;color:#fff;font-weight:700;padding:8px 16px;letter-spacing:.04em;">⚠ Apenas ilustrativo — a peça entregue será da linha premium da Gringo's, podendo variar no acabamento conforme a técnica de personalização.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="cta-inner r">
+    <div class="cta-tag">Pronto para começar?</div>
+    <h2 class="cta-title">Transforme a imagem<br>da sua equipe <em>agora.</em></h2>
+    <p class="cta-sub">Solicite um orçamento personalizado e veja como sua marca pode se destacar de verdade. Atendimento rápido, personalizado e sem complicação.</p>
+    <div>
+      <button class="btn-whats-big" onclick="goWhats()">
+        <span>💬</span> Clique Aqui e Fale no WhatsApp
+      </button>
+    </div>
+    <p class="cta-fine">Sem compromisso — resposta rápida · Garanta que sua empresa seja lembrada pela imagem que transmite.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftr-logo">Gringo's</div>
+  <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);">Linha Corporativa</div>
+  <div class="ftr-copy">© 2025 Gringo's. Todos os direitos reservados.</div>
+  <div class="ftr-aivox">Criado com <a href="https://arthurr7070.github.io/AIVOX-LEADING/#" target="_blank">AIVOX</a></div>
+</footer>
+
+<!-- WhatsApp Fixo -->
+<a class="wa-fixed" onclick="goWhats()" title="Falar no WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30" fill="white">
+    <path d="M16 2C8.268 2 2 8.268 2 16c0 2.492.649 4.832 1.784 6.865L2 30l7.335-1.763A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 0 1-5.833-1.597l-.418-.248-4.352 1.046 1.074-4.24-.272-.435A11.46 11.46 0 0 1 4.5 16C4.5 9.596 9.596 4.5 16 4.5S27.5 9.596 27.5 16 22.404 27.5 16 27.5zm6.29-8.61c-.344-.172-2.036-1.004-2.352-1.118-.316-.115-.547-.172-.777.172-.23.344-.892 1.118-1.094 1.348-.2.23-.402.258-.746.086-.344-.172-1.452-.535-2.766-1.707-1.022-.912-1.712-2.038-1.912-2.382-.2-.344-.021-.53.15-.701.154-.154.344-.402.516-.603.172-.2.23-.344.344-.574.115-.23.058-.43-.029-.603-.086-.172-.777-1.875-1.065-2.567-.28-.674-.565-.583-.777-.594l-.661-.011c-.23 0-.603.086-.918.43-.316.344-1.205 1.176-1.205 2.868 0 1.692 1.234 3.327 1.406 3.557.172.23 2.428 3.706 5.882 5.196.822.355 1.463.567 1.963.726.824.263 1.574.226 2.167.137.661-.099 2.036-.832 2.323-1.636.287-.804.287-1.493.2-1.636-.086-.143-.316-.23-.66-.402z"/>
+  </svg>
+</a>
+
+<script>
+// AIVOX | Desenvolvido com o sistema AIVOX
+
+function goWhats(){
+  window.open('https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20nos%20uniformes%20corporativos%20da%20Gringo\'s.', '_blank');
+}
+
+// ── SIMULADOR DE LOGO ─────────────────────────────
+let logoPosYVal = 48;
+
+function handleLogo(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    const img = document.getElementById('logoPreview');
+    img.src = ev.target.result;
+    img.style.display = 'block';
+    document.getElementById('previewHint').style.display = 'none';
+    document.getElementById('logoControls').style.display = 'block';
+    document.getElementById('uploadHint').style.display = 'none';
+    updateLogo();
+  };
+  reader.readAsDataURL(file);
+}
+
+function updateLogo() {
+  const size  = document.getElementById('logoSize').value;
+  const posY  = document.getElementById('logoPosY').value;
+  const img   = document.getElementById('logoPreview');
+  const overlay = document.getElementById('logoOverlay');
+  img.style.maxWidth  = size + 'px';
+  overlay.style.paddingTop = posY + '%';
+}
+
+function setGarment(name, posY, size) {
+  currentGarment = name;
+  var gImg = document.getElementById('garmentImg');
+  gImg.src = 'mokup-' + name + '-' + currentColor + '.png';
+  gImg.style.padding = (name === 'polo') ? '10px' : '20px';
+  document.getElementById('garmentBadge').textContent = name.toUpperCase();
+  document.getElementById('logoPosY').value = posY;
+  document.getElementById('logoSize').value = size;
+  updateLogo();
+  document.querySelectorAll('.gbtn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+let currentGarment = 'camisa';
+let currentColor   = 'branco';
+
+function setGarmentColor(color) {
+  currentColor = color;
+  document.getElementById('garmentImg').src = 'mokup-' + currentGarment + '-' + color + '.png';
+  document.querySelectorAll('.cbtn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// ── SCROLL REVEAL ─────────────────────────────────
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('v'); obs.unobserve(e.target); }
+  });
+}, {threshold: 0.07});
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

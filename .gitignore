@@ -1,0 +1,20 @@
+# Dependências
+node_modules/
+remotion-video/node_modules/
+
+# Vídeos grandes
+assets/camisas.mp4
+*.mp4
+
+# Screenshots de revisão
+mobile-review*.png
+mobile-texas*.png
+
+# Scripts de build/utilitário
+*.ps1
+*.py
+apps_script_upload.js
+enviar_drive.py
+
+# PDFs do catálogo (gerados)
+Catalogo-Gringos*.pdf
