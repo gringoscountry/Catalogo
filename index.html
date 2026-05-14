@@ -34,6 +34,9 @@ body{font-family:var(--ff-b);background:var(--white);color:var(--black);overflow
 img{display:block;max-width:100%;}
 a{text-decoration:none;color:inherit;}
 
+/* ── Zoom nas fotos das coleções Texas ───── */
+#texasSpiritSection div[style*="aspect-ratio"] img { cursor:zoom-in; }
+
 /* ── TOPBAR ─────────────────────────────── */
 .topbar{
   background:var(--black);
@@ -629,6 +632,7 @@ footer{
   }
   .filter-bar::-webkit-scrollbar{display:none;}
   .filter-count{display:none;}
+  .filter-label{display:none;}
   .filter-btn{white-space:nowrap;flex-shrink:0;}
   .wrap{padding:0 20px;}
   .catalog-grid{grid-template-columns:repeat(2,1fr);}
@@ -670,7 +674,7 @@ footer{
   /* ── Calças/Alfaiataria fotos: 4–5 → 2 colunas ── */
   .calcas-panel > div:first-child{grid-template-columns:repeat(2,1fr)!important;}
   /* ── Cabeçalho ── */
-  .hdr-cta{padding:9px 14px;font-size:10px;letter-spacing:.06em;}
+  .hdr-cta{padding:12px 16px;font-size:11px;letter-spacing:.06em;}
   .cat-hero{padding:48px 16px;}
   /* ── Modal pedido: esconde thumbnail ── */
   .order-table th:first-child,.order-table td:first-child{display:none;}
@@ -702,8 +706,12 @@ footer{
   .qty-sizes-grid > div{display:flex;gap:8px;justify-content:space-between;}
   .qty-sizes-grid .qty-size-row{flex:1;gap:3px;}
   .qty-sizes-grid .qty-size-lbl{font-size:10px;min-width:16px;}
-  .qty-sizes-grid .qty-btn{width:22px;height:22px;font-size:14px;}
-  .qty-sizes-grid .qty-num{min-width:14px;font-size:12px;}
+  .qty-sizes-grid .qty-btn{width:32px;height:32px;font-size:15px;}
+  .qty-sizes-grid .qty-num{min-width:18px;font-size:13px;}
+  /* Botões de cor maiores para toque */
+  .ts-cor-btn,.touro-cor-btn,.teua-cor-btn,.cat-gold-cor-btn,.cat-polo-cor-btn{
+    width:44px!important;height:44px!important;
+  }
 }
 </style>
 </head>
@@ -1022,6 +1030,282 @@ footer{
       </div>
     </div>
     <div class="catalog-grid" id="catalogGrid"></div>
+  </div>
+</section>
+
+<!-- TEXAS SPIRIT — Coleção Texas -->
+<section class="sec" id="texasSpiritSection" style="display:none;padding-top:0;">
+  <div class="wrap">
+
+    <div class="sec-header" style="margin-bottom:40px;">
+      <div>
+        <div class="sec-label">Texas Collection</div>
+        <h2 class="sec-title">Camiseta <em>Texas Spirit</em></h2>
+        <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">100% Algodão · 2 cores · P ao XG</p>
+      </div>
+    </div>
+
+    <!-- Seletor de cores -->
+    <div style="margin-bottom:24px;">
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);">COR</span>
+        <span id="ts-cor-nome" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--black);font-style:italic;">Branco</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <button class="ts-cor-btn active" title="Branco"
+          style="width:36px;height:36px;border-radius:50%;background:#F4F2EE;border:2px solid var(--gold);cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchTSSectionColor('branco',300,this)"></button>
+        <button class="ts-cor-btn" title="Preto"
+          style="width:36px;height:36px;border-radius:50%;background:#111111;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchTSSectionColor('preto',301,this)"></button>
+      </div>
+    </div>
+
+    <!-- Grid 3 fotos -->
+    <div id="ts-foto-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+      <div style="overflow:hidden;aspect-ratio:3/4;">
+        <img id="ts-sec-img-1" src="assets/catalogo/ts-branco-frente.svg" alt="Texas Spirit Branco — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
+      </div>
+      <div style="overflow:hidden;aspect-ratio:3/4;">
+        <img id="ts-sec-img-2" src="assets/catalogo/ts-branco-costas.png" alt="Texas Spirit Branco — Costas" style="width:100%;height:100%;object-fit:contain;display:block;">
+      </div>
+      <div style="overflow:hidden;aspect-ratio:3/4;">
+        <img id="ts-sec-img-3" src="assets/catalogo/ts-branco.png" alt="Texas Spirit Branco — Frente e Verso" style="width:100%;height:100%;object-fit:contain;display:block;">
+      </div>
+    </div>
+
+    <!-- Adicionar ao pedido -->
+    <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);max-width:1100px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+        <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+        Adicionar ao pedido — <span id="ts-order-cor">Branco</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="ts-sizes-wrap">
+        <!-- Gerado por JS -->
+      </div>
+      <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+    </div>
+
+    <!-- ── CAMISETA TOURO ──────────────────────────────────────── -->
+    <div style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+
+      <div class="sec-header" style="margin-bottom:40px;">
+        <div>
+          <div class="sec-label">Texas Collection</div>
+          <h2 class="sec-title">Camiseta <em>Touro</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">100% Algodão · 2 cores · P ao XG</p>
+        </div>
+      </div>
+
+      <!-- Seletor de cores -->
+      <div style="margin-bottom:24px;">
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+          <span style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);">COR</span>
+          <span id="touro-cor-nome" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--black);font-style:italic;">Branco</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+          <button class="touro-cor-btn active" title="Branco"
+            style="width:36px;height:36px;border-radius:50%;background:#F4F2EE;border:2px solid var(--gold);cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchTouroColor('branco',304,this)"></button>
+          <button class="touro-cor-btn" title="Preto"
+            style="width:36px;height:36px;border-radius:50%;background:#111111;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchTouroColor('preto',305,this)"></button>
+        </div>
+      </div>
+
+      <!-- Grid 3 fotos -->
+      <div id="touro-foto-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img id="touro-img-1" src="assets/catalogo/touro-branco-frente.png" alt="Touro Branco — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img id="touro-img-2" src="assets/catalogo/touro-branco-costas.png" alt="Touro Branco — Costas" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img id="touro-img-3" src="assets/catalogo/touro-branco-fv.png" alt="Touro Branco — Frente e Verso" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+      </div>
+
+      <!-- Adicionar ao pedido -->
+      <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);max-width:1100px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+          <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+          Adicionar ao pedido — <span id="touro-order-cor">Branco</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="touro-sizes-wrap">
+          <!-- Gerado por JS -->
+        </div>
+        <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+      </div>
+
+    </div>
+
+    <!-- ── CAMISETA TEXAS EUA ──────────────────────────────────── -->
+    <div style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+
+      <div class="sec-header" style="margin-bottom:40px;">
+        <div>
+          <div class="sec-label">Texas Collection</div>
+          <h2 class="sec-title">Camiseta <em>Texas EUA</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">100% Algodão · 2 cores · P ao XG</p>
+        </div>
+      </div>
+
+      <!-- Seletor de cores -->
+      <div style="margin-bottom:24px;">
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+          <span style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);">COR</span>
+          <span id="teua-cor-nome" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--black);font-style:italic;">Branco</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+          <button class="teua-cor-btn active" title="Branco"
+            style="width:36px;height:36px;border-radius:50%;background:#F4F2EE;border:2px solid var(--gold);cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchTEUAColor('branco',306,this)"></button>
+          <button class="teua-cor-btn" title="Preto"
+            style="width:36px;height:36px;border-radius:50%;background:#111111;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+            onclick="switchTEUAColor('preto',307,this)"></button>
+        </div>
+      </div>
+
+      <!-- Grid 3 fotos -->
+      <div id="teua-foto-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img id="teua-img-1" src="assets/catalogo/teua-branco-frente.png" alt="Texas EUA Branco — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img id="teua-img-2" src="assets/catalogo/teua-branco-fv.png" alt="Texas EUA Branco — Frente e Verso" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img id="teua-img-3" src="assets/catalogo/teua-branco-costas.png" alt="Texas EUA Branco — Costas" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+      </div>
+
+      <!-- Adicionar ao pedido -->
+      <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);max-width:1100px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+          <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+          Adicionar ao pedido — <span id="teua-order-cor">Branco</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="teua-sizes-wrap">
+          <!-- Gerado por JS -->
+        </div>
+        <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+      </div>
+
+    </div>
+
+    <!-- ── CAMISETA HORSE ──────────────────────────────────────── -->
+    <div style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+
+      <div class="sec-header" style="margin-bottom:40px;">
+        <div>
+          <div class="sec-label">Texas Collection</div>
+          <h2 class="sec-title">Camiseta <em>Horse</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">100% Algodão · P ao XG</p>
+        </div>
+      </div>
+
+      <!-- Grid 3 fotos -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/horse-frente.png" alt="Horse — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/horse-fv.png" alt="Horse — Frente e Verso" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/horse-costas.png" alt="Horse — Costas" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+      </div>
+
+      <!-- Adicionar ao pedido -->
+      <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);max-width:1100px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+          <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+          Adicionar ao pedido — Horse
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="horse-sizes-wrap">
+          <!-- Gerado por JS -->
+        </div>
+        <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+      </div>
+
+    </div>
+
+    <!-- ── TEXAS AGRO ───────────────────────────────────────────── -->
+    <div style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+
+      <div class="sec-header" style="margin-bottom:40px;">
+        <div>
+          <div class="sec-label">Texas Collection</div>
+          <h2 class="sec-title">Camiseta <em>Texas Agro</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">100% Algodão · P ao XG</p>
+        </div>
+      </div>
+
+      <!-- Grid 3 fotos -->
+      <div id="ta-foto-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/ta-frente.svg" alt="Texas Agro — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/ta-semmodelo.png" alt="Texas Agro — Sem Modelo" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/ta-costas.svg" alt="Texas Agro — Costas" style="width:100%;height:100%;object-fit:contain;object-position:bottom;display:block;">
+        </div>
+      </div>
+
+      <!-- Adicionar ao pedido -->
+      <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);max-width:1100px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+          <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+          Adicionar ao pedido — Texas Agro
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="ta-sizes-wrap">
+          <!-- Gerado por JS -->
+        </div>
+        <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+      </div>
+
+    <!-- ── CAMISETA POR DO SOL ──────────────────────────────────── -->
+    <div style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+
+      <div class="sec-header" style="margin-bottom:40px;">
+        <div>
+          <div class="sec-label">Texas Collection</div>
+          <h2 class="sec-title">Camiseta <em>Por do Sol</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">100% Algodão · P ao XG</p>
+        </div>
+      </div>
+
+      <!-- Grid 3 fotos -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/ps-costas.svg" alt="Por do Sol — Costas" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/ps-fv.png" alt="Por do Sol — Frente e Verso" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/ps-costas.svg" alt="Por do Sol — Costas" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+      </div>
+
+      <!-- Adicionar ao pedido -->
+      <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);max-width:1100px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+          <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+          Adicionar ao pedido — Por do Sol
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="ps-sizes-wrap">
+          <!-- Gerado por JS -->
+        </div>
+        <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
@@ -1595,6 +1879,19 @@ document.addEventListener('DOMContentLoaded', function() {
   window.scrollTo(0, 0);
   renderCatPoloSizes(50);
   renderCatGoldSizes(55);
+
+  // Lightbox para fotos das seções Texas
+  const sec = document.getElementById('texasSpiritSection');
+  if (sec) {
+    sec.addEventListener('click', function(e) {
+      const img = e.target.closest('img');
+      if (!img) return;
+      const wrap = img.parentElement;
+      if (wrap && wrap.style.cssText.includes('aspect-ratio')) {
+        openPhotoLightbox(img.src);
+      }
+    });
+  }
 });
 </script>
 
@@ -1976,7 +2273,7 @@ function switchCalcasCor(pageNum) {
 const COLLECTIONS = {
   texas: {
     cover: 1,
-    pages: [2, ...Array.from({length:19}, (_,i) => i + 4), 28, 29],   // 02, 04–22, 28–29 (sem TX-02 e 23–27)
+    pages: [],
     label: 'Texas Collection',
     title: 'Coleção <em>Texas</em>'
   },
@@ -2012,22 +2309,25 @@ const COLLECTIONS = {
   }
 };
 
+// ── Texas Collection — aguardando novas fotos ─────────────────────
+const TEXAS_PAGES = new Set([2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 28, 29]);
+const PLACEHOLDER_SRC = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect width="400" height="600" fill="#0F0F0F"/><rect x="10" y="10" width="380" height="580" fill="none" stroke="#B8924A" stroke-width="1" stroke-dasharray="8 4" opacity=".45"/><text x="200" y="268" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="5" fill="#B8924A">FOTO EM BREVE</text><circle cx="200" cy="308" r="32" fill="none" stroke="#B8924A" stroke-width="1.5" opacity=".55"/><line x1="200" y1="290" x2="200" y2="326" stroke="#B8924A" stroke-width="1.5" opacity=".55"/><line x1="182" y1="308" x2="218" y2="308" stroke="#B8924A" stroke-width="1.5" opacity=".55"/><text x="200" y="368" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" letter-spacing="3" fill="#555">TEXAS COLLECTION</text></svg>')}`;
+
 // ── Estado do Lightbox ─────────────────────────────────────────────
-let lbPages   = [];
-let lbCurrent = 0;
+let lbPages      = [];
+let lbCurrent    = 0;
+let tsLbImages   = null;  // modo galeria Texas Spirit
+let tsLbCurrent  = 0;
 
 // ── Nomes dos produtos por página ─────────────────────────────────
 const PRODUCT_NAMES = {
-  1:'Capa Texas Collection', 2:'Modelo TX-01', 4:'Modelo TX-03',
+  1:'Capa Texas Collection',
+  2:'', 4:'', 5:'', 6:'', 7:'', 8:'', 9:'', 10:'', 11:'',
+  12:'', 13:'', 14:'', 15:'', 16:'', 17:'', 18:'', 19:'', 20:'',
+  21:'', 22:'', 28:'', 29:'',
   200:'Calça Azul Claro', 201:'Calça Azul Claro Delavê', 202:'Calça Blue Black Stonada', 203:'Calça Preta',
   204:'Calça Alfaiataria Bege', 205:'Calça Alfaiataria Preto', 206:'Calça Alfaiataria Cinza Claro',
-  5:'Modelo TX-04', 6:'Modelo TX-05', 7:'Modelo TX-06', 8:'Modelo TX-07',
-  9:'Modelo TX-08', 10:'Modelo TX-09', 11:'Modelo TX-10', 12:'Modelo TX-11',
-  13:'Modelo TX-12', 14:'Modelo TX-13', 15:'Modelo TX-14', 16:'Modelo TX-15',
-  17:'Modelo TX-16', 18:'Modelo TX-17', 19:'Modelo TX-18', 20:'Modelo TX-19',
-  21:'Modelo TX-20', 22:'Modelo TX-21', 23:'Modelo TX-22', 24:'Modelo TX-23',
-  25:'Modelo TX-24', 26:'Modelo TX-25', 27:'Modelo TX-26', 28:'Modelo TX-27',
-  29:'Modelo TX-28', 30:'Capa Urban Collection', 31:'Modelo URB-01', 32:'Modelo URB-02',
+  30:'Capa Urban Collection', 31:'Modelo URB-01', 32:'Modelo URB-02',
   33:'Modelo URB-03', 34:'Modelo URB-04', 35:'Modelo URB-05', 36:'Modelo URB-06',
   37:'Modelo URB-07', 38:'Capa Algodão Egípcio',
   41:'Camiseta AE — Chumbo', 42:'Camiseta AE — Branco', 43:'Camiseta AE — Preto',
@@ -2039,9 +2339,16 @@ const PRODUCT_NAMES = {
   57:'Polo Piquet Gold — Azul Marinho', 58:'Polo Piquet Gold — Bege', 59:'Polo Piquet Gold — Verde Musgo',
   60:'Polo Piquet Gold — Azul Claro', 61:'Polo Piquet Gold — Verde Claro', 62:'Polo Piquet Gold — Rosa',
   100:'KNIT EVO — Marrom Claro', 101:'KNIT EVO — Azul Marinho', 102:'KNIT EVO — Cinza', 103:'KNIT EVO — Preto',
-  110:'Polo Italiana — Verde', 111:'Polo Italiana — Azul Marinho', 112:'Polo Italiana — Off White'
+  110:'Polo Italiana — Verde', 111:'Polo Italiana — Azul Marinho', 112:'Polo Italiana — Off White',
+  300:'Texas Spirit — Branco', 301:'Texas Spirit — Preto',
+  302:'Texas Agro',
+  303:'Por do Sol',
+  304:'Touro — Branco', 305:'Touro — Preto',
+  306:'Texas EUA — Branco', 307:'Texas EUA — Preto',
+  308:'Horse'
 };
 function getColName(pageNum){
+  if(pageNum >= 300 && pageNum <= 308) return 'Texas Collection';
   if(pageNum>=200) return 'Calças';
   if(pageNum>=110) return 'Polo Italiana';
   if(pageNum>=100) return 'KNIT EVO Tênis Casual';
@@ -2058,6 +2365,15 @@ const SIZES = ['P','M','G','GG'];
 
 // Tamanhos customizados por página
 const PAGE_SIZES = {
+  300: ['P','M','G','GG','XG'],
+  301: ['P','M','G','GG','XG'],
+  302: ['P','M','G','GG','XG'],
+  303: ['P','M','G','GG','XG'],
+  304: ['P','M','G','GG','XG'],
+  305: ['P','M','G','GG','XG'],
+  306: ['P','M','G','GG','XG'],
+  307: ['P','M','G','GG','XG'],
+  308: ['P','M','G','GG','XG'],
   26: ['38','40','42','46','48','50'],
   27: ['38','40','42','46','48','50'],
   41: ['P','M','G','GG','XG'],
@@ -2148,6 +2464,7 @@ function buildGrid(pages, colType) {
   const grid = document.getElementById('catalogGrid');
   grid.innerHTML = '';
   pages.forEach(pageNum => {
+    if (pageNum === 300) { grid.appendChild(buildTSCard(colType)); return; }
     const item = document.createElement('div');
     item.className = 'catalog-item';
     const num      = String(pageNum).padStart(2,'0');
@@ -2181,9 +2498,11 @@ function buildGrid(pages, colType) {
         : `<div class="qty-sizes-grid">${sizeRows}</div>`;
 
     const imgExts = [41, 42, 43, 45, 46, 47, 63, 64, 65];
-    const imgSrc = imgExts.includes(pageNum)
-      ? `assets/catalogo/${pageNum}.webp`
-      : `assets/catalogo/${pageNum}.svg`;
+    const imgSrc = TEXAS_PAGES.has(pageNum)
+      ? PLACEHOLDER_SRC
+      : imgExts.includes(pageNum)
+        ? `assets/catalogo/${pageNum}.webp`
+        : `assets/catalogo/${pageNum}.svg`;
     const prodName = PRODUCT_NAMES[pageNum] || '';
     item.innerHTML = `
       <div class="catalog-item-img">
@@ -2204,28 +2523,327 @@ function buildGrid(pages, colType) {
   });
 }
 
+// ── Texas Spirit — seção estilo Polo ──────────────────────────────
+const tsCores = {
+  branco: { nome:'Branco', fotos:['assets/catalogo/ts-branco-frente.svg','assets/catalogo/ts-branco-costas.png','assets/catalogo/ts-branco.png'] },
+  preto:  { nome:'Preto',  fotos:['assets/catalogo/ts-preto-frente.svg', 'assets/catalogo/ts-preto-costas.png', 'assets/catalogo/ts-preto.png' ] }
+};
+
+function switchTSSectionColor(cor, pageNum, btn) {
+  const d    = tsCores[cor];
+  const grid = document.getElementById('ts-foto-grid');
+  grid.style.opacity = '0';
+  setTimeout(function() {
+    for (let i = 1; i <= 3; i++) {
+      const img = document.getElementById('ts-sec-img-' + i);
+      if (img) { img.src = d.fotos[i-1]; img.alt = 'Texas Spirit ' + d.nome + ' ' + i; }
+    }
+    document.getElementById('ts-cor-nome').textContent  = d.nome;
+    document.getElementById('ts-order-cor').textContent = d.nome;
+    grid.style.opacity = '1';
+  }, 200);
+  document.querySelectorAll('.ts-cor-btn').forEach(b => {
+    b.style.border = '2px solid transparent'; b.style.transform = 'scale(1)';
+  });
+  btn.style.border = '2px solid var(--gold)'; btn.style.transform = 'scale(1.1)';
+  renderTSSizes(pageNum);
+}
+
+function renderTSSizes(pageNum) {
+  const sizes = ['P','M','G','GG','XG'];
+  const el    = document.getElementById('ts-sizes-wrap');
+  if (!el) return;
+  el.innerHTML = sizes.map(sz =>
+    '<div style="display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',-1);updateTSQty(' + pageNum + ')">−</button>' +
+    '<span class="qty-num" id="qtynum-' + pageNum + '-' + sz + '" style="color:var(--black);">' + ((order[pageNum] && order[pageNum][sz]) || 0) + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',1);updateTSQty(' + pageNum + ')">+</button>' +
+    '</div>'
+  ).join('');
+}
+
+function updateTSQty(pageNum) {
+  ['P','M','G','GG','XG'].forEach(sz => {
+    const el = document.getElementById('qtynum-' + pageNum + '-' + sz);
+    if (el) el.textContent = (order[pageNum] && order[pageNum][sz]) || 0;
+  });
+}
+
+// ── Camiseta Touro — cores e tamanhos ─────────────────────────────
+const touroCores = {
+  branco: { nome:'Branco', fotos:['assets/catalogo/touro-branco-frente.png','assets/catalogo/touro-branco-costas.png','assets/catalogo/touro-branco-fv.png'] },
+  preto:  { nome:'Preto',  fotos:['assets/catalogo/touro-preto-frente.png', 'assets/catalogo/touro-preto-costas.png', 'assets/catalogo/touro-preto-fv.png' ] }
+};
+
+function switchTouroColor(cor, pageNum, btn) {
+  const d    = touroCores[cor];
+  const grid = document.getElementById('touro-foto-grid');
+  grid.style.opacity = '0';
+  setTimeout(function() {
+    for (let i = 1; i <= 3; i++) {
+      const img = document.getElementById('touro-img-' + i);
+      if (img) { img.src = d.fotos[i-1]; img.alt = 'Touro ' + d.nome + ' ' + i; }
+    }
+    document.getElementById('touro-cor-nome').textContent  = d.nome;
+    document.getElementById('touro-order-cor').textContent = d.nome;
+    grid.style.opacity = '1';
+  }, 200);
+  document.querySelectorAll('.touro-cor-btn').forEach(b => {
+    b.style.border = '2px solid transparent'; b.style.transform = 'scale(1)';
+  });
+  btn.style.border = '2px solid var(--gold)'; btn.style.transform = 'scale(1.1)';
+  renderTouroSizes(pageNum);
+}
+
+function renderTouroSizes(pageNum) {
+  const el = document.getElementById('touro-sizes-wrap');
+  if (!el) return;
+  el.innerHTML = ['P','M','G','GG','XG'].map(sz =>
+    '<div style="display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',-1);updateTouroQty(' + pageNum + ')">−</button>' +
+    '<span class="qty-num" id="qtynum-' + pageNum + '-' + sz + '" style="color:var(--black);">' + ((order[pageNum] && order[pageNum][sz]) || 0) + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',1);updateTouroQty(' + pageNum + ')">+</button>' +
+    '</div>'
+  ).join('');
+}
+
+function updateTouroQty(pageNum) {
+  ['P','M','G','GG','XG'].forEach(sz => {
+    const el = document.getElementById('qtynum-' + pageNum + '-' + sz);
+    if (el) el.textContent = (order[pageNum] && order[pageNum][sz]) || 0;
+  });
+}
+
+// ── Camiseta Texas EUA — cores e tamanhos ─────────────────────────
+const teuaCores = {
+  branco: { nome:'Branco', fotos:['assets/catalogo/teua-branco-frente.png','assets/catalogo/teua-branco-fv.png','assets/catalogo/teua-branco-costas.png'] },
+  preto:  { nome:'Preto',  fotos:['assets/catalogo/teua-preto-frente.png', 'assets/catalogo/teua-preto-fv.png',  'assets/catalogo/teua-preto-frente.png'  ] }
+};
+
+function switchTEUAColor(cor, pageNum, btn) {
+  const d    = teuaCores[cor];
+  const grid = document.getElementById('teua-foto-grid');
+  grid.style.opacity = '0';
+  setTimeout(function() {
+    for (let i = 1; i <= 3; i++) {
+      const img = document.getElementById('teua-img-' + i);
+      if (img) { img.src = d.fotos[i-1]; img.alt = 'Texas EUA ' + d.nome + ' ' + i; }
+    }
+    document.getElementById('teua-cor-nome').textContent  = d.nome;
+    document.getElementById('teua-order-cor').textContent = d.nome;
+    grid.style.opacity = '1';
+  }, 200);
+  document.querySelectorAll('.teua-cor-btn').forEach(b => {
+    b.style.border = '2px solid transparent'; b.style.transform = 'scale(1)';
+  });
+  btn.style.border = '2px solid var(--gold)'; btn.style.transform = 'scale(1.1)';
+  renderTEUASizes(pageNum);
+}
+
+function renderTEUASizes(pageNum) {
+  const el = document.getElementById('teua-sizes-wrap');
+  if (!el) return;
+  el.innerHTML = ['P','M','G','GG','XG'].map(sz =>
+    '<div style="display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',-1);updateTEUAQty(' + pageNum + ')">−</button>' +
+    '<span class="qty-num" id="qtynum-' + pageNum + '-' + sz + '" style="color:var(--black);">' + ((order[pageNum] && order[pageNum][sz]) || 0) + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',1);updateTEUAQty(' + pageNum + ')">+</button>' +
+    '</div>'
+  ).join('');
+}
+
+function updateTEUAQty(pageNum) {
+  ['P','M','G','GG','XG'].forEach(sz => {
+    const el = document.getElementById('qtynum-' + pageNum + '-' + sz);
+    if (el) el.textContent = (order[pageNum] && order[pageNum][sz]) || 0;
+  });
+}
+
+// ── Camiseta Horse — tamanhos ─────────────────────────────────────
+function renderHorseSizes() {
+  const el = document.getElementById('horse-sizes-wrap');
+  if (!el) return;
+  el.innerHTML = ['P','M','G','GG','XG'].map(sz =>
+    '<div style="display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(308,\'' + sz + '\',-1);updateHorseQty()">−</button>' +
+    '<span class="qty-num" id="qtynum-308-' + sz + '" style="color:var(--black);">' + ((order[308] && order[308][sz]) || 0) + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(308,\'' + sz + '\',1);updateHorseQty()">+</button>' +
+    '</div>'
+  ).join('');
+}
+function updateHorseQty() {
+  ['P','M','G','GG','XG'].forEach(sz => {
+    const el = document.getElementById('qtynum-308-' + sz);
+    if (el) el.textContent = (order[308] && order[308][sz]) || 0;
+  });
+}
+
+// ── Texas Agro — tamanhos ──────────────────────────────────────────
+function renderTASizes() {
+  const pageNum = 302;
+  const sizes   = ['P','M','G','GG','XG'];
+  const el      = document.getElementById('ta-sizes-wrap');
+  if (!el) return;
+  el.innerHTML = sizes.map(sz =>
+    '<div style="display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(302,\'' + sz + '\',-1);updateTAQty()">−</button>' +
+    '<span class="qty-num" id="qtynum-302-' + sz + '" style="color:var(--black);">' + ((order[302] && order[302][sz]) || 0) + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(302,\'' + sz + '\',1);updateTAQty()">+</button>' +
+    '</div>'
+  ).join('');
+}
+
+function updateTAQty() {
+  ['P','M','G','GG','XG'].forEach(sz => {
+    const el = document.getElementById('qtynum-302-' + sz);
+    if (el) el.textContent = (order[302] && order[302][sz]) || 0;
+  });
+}
+
+// ── Por do Sol — tamanhos ──────────────────────────────────────────
+function renderPSSizes() {
+  const el = document.getElementById('ps-sizes-wrap');
+  if (!el) return;
+  el.innerHTML = ['P','M','G','GG','XG'].map(sz =>
+    '<div style="display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(303,\'' + sz + '\',-1);updatePSQty()">−</button>' +
+    '<span class="qty-num" id="qtynum-303-' + sz + '" style="color:var(--black);">' + ((order[303] && order[303][sz]) || 0) + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(303,\'' + sz + '\',1);updatePSQty()">+</button>' +
+    '</div>'
+  ).join('');
+}
+
+function updatePSQty() {
+  ['P','M','G','GG','XG'].forEach(sz => {
+    const el = document.getElementById('qtynum-303-' + sz);
+    if (el) el.textContent = (order[303] && order[303][sz]) || 0;
+  });
+}
+
+// ── Texas Spirit — card com seletor de cor ─────────────────────────
+function buildTSCard(colType) {
+  const item = document.createElement('div');
+  item.className = 'catalog-item';
+  item.id = 'ts-variant-card';
+  const sizes = ['P','M','G','GG','XG'];
+  function makeSizeRows(vid) {
+    const pairs = [];
+    for (let i = 0; i < sizes.length; i += 2) pairs.push(sizes.slice(i, i+2));
+    return pairs.map(pair =>
+      `<div style="display:flex;gap:10px;">` +
+      pair.map(sz => `
+        <div class="qty-size-row">
+          <span class="qty-size-lbl">${sz}</span>
+          <button class="qty-btn" onclick="changeQty(${vid},'${sz}',-1)">−</button>
+          <span class="qty-num" id="qtynum-${vid}-${sz}">${order[vid]?.[sz]||0}</span>
+          <button class="qty-btn" onclick="changeQty(${vid},'${sz}',1)">+</button>
+        </div>`).join('') +
+      `</div>`
+    ).join('');
+  }
+  item.innerHTML = `
+    <div class="catalog-item-img" style="position:relative;">
+      <img id="ts-img" src="assets/catalogo/ts-branco.png" alt="Texas Spirit"
+           loading="lazy" onclick="openLightboxTS()" style="cursor:zoom-in;">
+      <div class="catalog-overlay" onclick="openLightboxTS()" style="cursor:zoom-in;">
+        <div class="overlay-content">
+          <div class="overlay-num" style="font-size:13px;letter-spacing:.04em;">Texas Spirit</div>
+          <div class="overlay-sub">Clique para ampliar</div>
+        </div>
+      </div>
+      <div style="position:absolute;top:10px;right:10px;display:flex;gap:7px;z-index:5;">
+        <button onclick="switchTSColor(300);event.stopPropagation();" id="ts-dot-300"
+                title="Branco"
+                style="width:22px;height:22px;border-radius:50%;background:#F4F2EE;
+                       border:2.5px solid #B8924A;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.5);padding:0;"></button>
+        <button onclick="switchTSColor(301);event.stopPropagation();" id="ts-dot-301"
+                title="Preto"
+                style="width:22px;height:22px;border-radius:50%;background:#111;
+                       border:2px solid rgba(255,255,255,.22);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.5);padding:0;"></button>
+      </div>
+    </div>
+    <div style="padding:8px 12px 2px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-size:12px;font-weight:700;color:var(--black);letter-spacing:.04em;">Texas Spirit</div>
+        <div id="ts-active-label" style="font-size:10px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">● Branco</div>
+      </div>
+    </div>
+    <div class="qty-bar" id="qtybar-300" onclick="event.stopPropagation()">
+      <div class="qty-sizes-grid">${makeSizeRows(300)}</div>
+    </div>
+    <div class="qty-bar" id="qtybar-301" style="display:none;" onclick="event.stopPropagation()">
+      <div class="qty-sizes-grid">${makeSizeRows(301)}</div>
+    </div>
+  `;
+  return item;
+}
+
+function switchTSColor(colorId) {
+  const srcs   = { 300:'assets/catalogo/ts-branco.png', 301:'assets/catalogo/ts-preto.png' };
+  const labels = { 300:'● Branco', 301:'● Preto' };
+  document.getElementById('ts-img').src = srcs[colorId];
+  document.getElementById('ts-active-label').textContent = labels[colorId];
+  document.getElementById('ts-dot-300').style.borderColor = colorId === 300 ? '#B8924A' : 'rgba(255,255,255,.22)';
+  document.getElementById('ts-dot-300').style.borderWidth = colorId === 300 ? '2.5px' : '2px';
+  document.getElementById('ts-dot-301').style.borderColor = colorId === 301 ? '#B8924A' : 'rgba(255,255,255,.22)';
+  document.getElementById('ts-dot-301').style.borderWidth = colorId === 301 ? '2.5px' : '2px';
+  document.getElementById('qtybar-300').style.display = colorId === 300 ? '' : 'none';
+  document.getElementById('qtybar-301').style.display = colorId === 301 ? '' : 'none';
+}
+
+function openPhotoLightbox(src) {
+  tsLbImages  = [src];
+  tsLbCurrent = 0;
+  renderLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function openLightboxTS() {
+  const isActive300 = document.getElementById('qtybar-300').style.display !== 'none';
+  const c = isActive300 ? 300 : 301;
+  const galleries = {
+    300: ['assets/catalogo/ts-branco.png','assets/catalogo/ts-branco-frente.svg','assets/catalogo/ts-branco-costas.png'],
+    301: ['assets/catalogo/ts-preto.png','assets/catalogo/ts-preto-frente.svg','assets/catalogo/ts-preto-costas.png']
+  };
+  tsLbImages  = galleries[c];
+  tsLbCurrent = 0;
+  renderLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
 // ── Troca de coleção ───────────────────────────────────────────────
 function showCollection(type, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  if (type !== 'all') window.scrollTo({top: 0, behavior: 'smooth'});
 
   const allCovers       = document.getElementById('allCoversSection');
   const colSection      = document.getElementById('collectionSection');
   const gridSection     = document.getElementById('catalogo');
 
-  const poloSection         = document.getElementById('poloSection');
-  const tenisSection        = document.getElementById('tenisSection');
-  const calcasSection       = document.getElementById('calcasSection');
-  const alfaiatariaSection  = document.getElementById('alfaiatariaSection');
+  const poloSection          = document.getElementById('poloSection');
+  const tenisSection         = document.getElementById('tenisSection');
+  const calcasSection        = document.getElementById('calcasSection');
+  const alfaiatariaSection   = document.getElementById('alfaiatariaSection');
+  const texasSpiritSection   = document.getElementById('texasSpiritSection');
 
   if (type === 'all') {
-    allCovers.style.display          = '';
-    colSection.style.display         = 'none';
-    gridSection.style.display        = 'none';
-    poloSection.style.display        = 'none';
-    tenisSection.style.display       = 'none';
-    calcasSection.style.display      = 'none';
-    alfaiatariaSection.style.display = 'none';
+    allCovers.style.display           = '';
+    colSection.style.display          = 'none';
+    gridSection.style.display         = 'none';
+    poloSection.style.display         = 'none';
+    tenisSection.style.display        = 'none';
+    calcasSection.style.display       = 'none';
+    alfaiatariaSection.style.display  = 'none';
+    texasSpiritSection.style.display  = 'none';
     document.getElementById('count').textContent = '6';
 
   } else {
@@ -2244,37 +2862,55 @@ function showCollection(type, btn) {
     document.getElementById('coverNum').textContent  = String(col.cover).padStart ? String(col.cover).padStart(2,'0') : '—';
     document.getElementById('coverItem').onclick     = () => openLightboxCol(type, col.cover);
 
-    if (type === 'nova') {
-      gridSection.style.display        = 'none';
-      poloSection.style.display        = '';
-      tenisSection.style.display       = 'none';
-      calcasSection.style.display      = 'none';
-      alfaiatariaSection.style.display = 'none';
+    if (type === 'texas') {
+      gridSection.style.display         = 'none';
+      poloSection.style.display         = 'none';
+      tenisSection.style.display        = 'none';
+      calcasSection.style.display       = 'none';
+      alfaiatariaSection.style.display  = 'none';
+      texasSpiritSection.style.display  = '';
+      renderTSSizes(300);
+      renderTouroSizes(304);
+      renderTEUASizes(306);
+      renderHorseSizes();
+      renderTASizes();
+      renderPSSizes();
+      document.getElementById('count').textContent = '6';
+    } else if (type === 'nova') {
+      gridSection.style.display         = 'none';
+      poloSection.style.display         = '';
+      tenisSection.style.display        = 'none';
+      calcasSection.style.display       = 'none';
+      alfaiatariaSection.style.display  = 'none';
+      texasSpiritSection.style.display  = 'none';
       document.getElementById('count').textContent = '1';
     } else if (type === 'tenis') {
-      gridSection.style.display        = 'none';
-      poloSection.style.display        = 'none';
-      tenisSection.style.display       = '';
-      calcasSection.style.display      = 'none';
-      alfaiatariaSection.style.display = 'none';
+      gridSection.style.display         = 'none';
+      poloSection.style.display         = 'none';
+      tenisSection.style.display        = '';
+      calcasSection.style.display       = 'none';
+      alfaiatariaSection.style.display  = 'none';
+      texasSpiritSection.style.display  = 'none';
       document.getElementById('count').textContent = '1';
     } else if (type === 'calcas') {
-      gridSection.style.display        = 'none';
-      poloSection.style.display        = 'none';
-      tenisSection.style.display       = 'none';
-      calcasSection.style.display      = '';
-      alfaiatariaSection.style.display = '';
+      gridSection.style.display         = 'none';
+      poloSection.style.display         = 'none';
+      tenisSection.style.display        = 'none';
+      calcasSection.style.display       = '';
+      alfaiatariaSection.style.display  = '';
+      texasSpiritSection.style.display  = 'none';
       renderCalcasSizes();
       switchCalcasCor(calcasCorAtiva);
       renderAlfaiatariaSizes();
       switchAlfaiatariaCor(alfaiatariaCorAtiva);
       document.getElementById('count').textContent = '7';
     } else {
-      gridSection.style.display        = '';
-      poloSection.style.display        = 'none';
-      tenisSection.style.display       = 'none';
-      calcasSection.style.display      = 'none';
-      alfaiatariaSection.style.display = 'none';
+      gridSection.style.display         = '';
+      poloSection.style.display         = 'none';
+      tenisSection.style.display        = 'none';
+      calcasSection.style.display       = 'none';
+      alfaiatariaSection.style.display  = 'none';
+      texasSpiritSection.style.display  = 'none';
       document.getElementById('gridLabel').textContent = col.label;
       document.getElementById('gridTitle').innerHTML   = col.title + ' — <em>Produtos</em>';
       buildGrid(col.pages, type);
@@ -2303,15 +2939,33 @@ function openLightboxCol(colType, pageNum) {
 }
 
 function renderLightbox() {
+  if (tsLbImages) {
+    document.getElementById('lbImg').src = tsLbImages[tsLbCurrent];
+    document.getElementById('lbCounter').textContent = `${tsLbCurrent + 1} / ${tsLbImages.length}`;
+    return;
+  }
   const pageNum = lbPages[lbCurrent];
   const webpPages = [41, 42, 43, 45, 46, 47, 63, 64, 65];
   const pngPages  = ['capa-algodao-egipcio'];
-  const ext = webpPages.includes(pageNum) ? 'webp' : pngPages.includes(pageNum) ? 'png' : 'svg';
-  document.getElementById('lbImg').src = `assets/catalogo/${pageNum}.${ext}`;
+  if (TEXAS_PAGES.has(pageNum)) {
+    document.getElementById('lbImg').src = PLACEHOLDER_SRC;
+  } else if (pageNum === 300) {
+    document.getElementById('lbImg').src = 'assets/catalogo/ts-branco.png';
+  } else if (pageNum === 301) {
+    document.getElementById('lbImg').src = 'assets/catalogo/ts-preto.png';
+  } else {
+    const ext = webpPages.includes(pageNum) ? 'webp' : pngPages.includes(pageNum) ? 'png' : 'svg';
+    document.getElementById('lbImg').src = `assets/catalogo/${pageNum}.${ext}`;
+  }
   document.getElementById('lbCounter').textContent = `${lbCurrent + 1} / ${lbPages.length}`;
 }
 
 function navLightbox(dir) {
+  if (tsLbImages) {
+    tsLbCurrent = (tsLbCurrent + dir + tsLbImages.length) % tsLbImages.length;
+    renderLightbox();
+    return;
+  }
   lbCurrent = (lbCurrent + dir + lbPages.length) % lbPages.length;
   renderLightbox();
 }
@@ -2319,6 +2973,7 @@ function navLightbox(dir) {
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
+  tsLbImages = null;
 }
 
 function closeLightboxOutside(e) {
@@ -2421,7 +3076,16 @@ function renderOrderModal(){
     200: 'assets/calcas/azul-claro-1.png',
     201: 'assets/calcas/azul-delave-1.png',
     202: 'assets/calcas/blue-black-1.png',
-    203: 'assets/calcas/preto-1.png'
+    203: 'assets/calcas/preto-1.png',
+    300: 'assets/catalogo/ts-branco.png',
+    301: 'assets/catalogo/ts-preto.png',
+    302: 'assets/catalogo/ta-frente.svg',
+    303: 'assets/catalogo/ps-costas.svg',
+    304: 'assets/catalogo/touro-branco-frente.png',
+    305: 'assets/catalogo/touro-preto-frente.png',
+    306: 'assets/catalogo/teua-branco-frente.png',
+    307: 'assets/catalogo/teua-preto-frente.png',
+    308: 'assets/catalogo/horse-frente.png'
   };
   const rows = pages.map(pg => {
     const pgTotal  = getPageTotal(pg);
@@ -2683,6 +3347,7 @@ function generatePDF(){
     btn.disabled = false;
   }
 }
+
 </script>
 
 </body>
