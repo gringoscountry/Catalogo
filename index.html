@@ -1146,7 +1146,10 @@ footer{
       <div class="sec-header" style="margin-bottom:40px;">
         <div>
           <div class="sec-label">Texas Collection</div>
-          <h2 class="sec-title">Camiseta <em>Texas EUA</em></h2>
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+            <h2 class="sec-title" style="margin:0;">Camiseta <em>Texas EUA</em></h2>
+            <span style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#888;padding:4px 12px;border-radius:2px;">Indisponível</span>
+          </div>
           <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">100% Algodão · 2 cores · P ao XG</p>
         </div>
       </div>
@@ -1168,7 +1171,7 @@ footer{
       </div>
 
       <!-- Grid 3 fotos -->
-      <div id="teua-foto-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+      <div id="teua-foto-grid" style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
         <div style="overflow:hidden;aspect-ratio:3/4;">
           <img id="teua-img-1" src="assets/catalogo/teua-branco-frente.png" alt="Texas EUA Branco — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
         </div>
@@ -1178,18 +1181,18 @@ footer{
         <div style="overflow:hidden;aspect-ratio:3/4;">
           <img id="teua-img-3" src="assets/catalogo/teua-branco-costas.png" alt="Texas EUA Branco — Costas" style="width:100%;height:100%;object-fit:contain;display:block;">
         </div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;">
+          <span style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);padding:10px 24px;border-radius:2px;">Indisponível no momento</span>
+        </div>
       </div>
 
-      <!-- Adicionar ao pedido -->
-      <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);max-width:1100px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
-          <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
-          Adicionar ao pedido — <span id="teua-order-cor">Branco</span>
+      <!-- Indisponível -->
+      <div style="border:1px solid var(--border);padding:28px 32px;background:#f5f5f5;max-width:1100px;opacity:.6;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#999;margin-bottom:10px;display:flex;align-items:center;gap:10px;">
+          <span style="width:20px;height:1px;background:#999;display:inline-block;"></span>
+          Produto indisponível
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="teua-sizes-wrap">
-          <!-- Gerado por JS -->
-        </div>
-        <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+        <p style="font-size:12px;color:#999;line-height:1.6;">Este produto não está disponível para pedido no momento. Em breve voltará ao catálogo.</p>
       </div>
 
     </div>
@@ -1299,6 +1302,82 @@ footer{
           Adicionar ao pedido — Por do Sol
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="ps-sizes-wrap">
+          <!-- Gerado por JS -->
+        </div>
+        <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+      </div>
+
+    </div>
+
+    <!-- ── CAMISA CARGO ───────────────────────────────────────────── -->
+    <div style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+
+      <div class="sec-header" style="margin-bottom:40px;">
+        <div>
+          <div class="sec-label">Texas Collection</div>
+          <h2 class="sec-title">Camisa <em>Cargo</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">Proteção UV 50+ · Conforto e Respirabilidade · Acabamento Premium · P ao XG</p>
+        </div>
+      </div>
+
+      <!-- Grid 3 fotos -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/cargo-frente.png" alt="Camisa Cargo — Frente" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/cargo-costas.png" alt="Camisa Cargo — Costas" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/cargo-logo.png" alt="Camisa Cargo — Logo" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+
+      <!-- Adicionar ao pedido -->
+      <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);max-width:1100px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+          <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+          Adicionar ao pedido — Camisa Cargo
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="cargo-sizes-wrap">
+          <!-- Gerado por JS -->
+        </div>
+        <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+      </div>
+
+    </div>
+
+    <!-- ── CAMISETA OPEN ──────────────────────────────────────────── -->
+    <div style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;">
+
+      <div class="sec-header" style="margin-bottom:40px;">
+        <div>
+          <div class="sec-label">Texas Collection</div>
+          <h2 class="sec-title">Camiseta <em>Open</em></h2>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">100% Algodão · P ao XG</p>
+        </div>
+      </div>
+
+      <!-- Grid 3 fotos -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/open-frente.webp" alt="Camiseta Open — Frente" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/open-costas.png" alt="Camiseta Open — Costas" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;">
+          <img src="assets/catalogo/open-frente.webp" alt="Camiseta Open — Frente" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+
+      <!-- Adicionar ao pedido -->
+      <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);max-width:1100px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+          <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+          Adicionar ao pedido — Camiseta Open
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="open-sizes-wrap">
           <!-- Gerado por JS -->
         </div>
         <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
@@ -2345,10 +2424,12 @@ const PRODUCT_NAMES = {
   303:'Por do Sol',
   304:'Touro — Branco', 305:'Touro — Preto',
   306:'Texas EUA — Branco', 307:'Texas EUA — Preto',
-  308:'Horse'
+  308:'Horse',
+  310:'Camisa Cargo',
+  311:'Camiseta Open'
 };
 function getColName(pageNum){
-  if(pageNum >= 300 && pageNum <= 308) return 'Texas Collection';
+  if(pageNum >= 300 && pageNum <= 311) return 'Texas Collection';
   if(pageNum>=200) return 'Calças';
   if(pageNum>=110) return 'Polo Italiana';
   if(pageNum>=100) return 'KNIT EVO Tênis Casual';
@@ -2374,6 +2455,8 @@ const PAGE_SIZES = {
   306: ['P','M','G','GG','XG'],
   307: ['P','M','G','GG','XG'],
   308: ['P','M','G','GG','XG'],
+  310: ['P','M','G','GG','XG'],
+  311: ['P','M','G','GG','XG'],
   26: ['38','40','42','46','48','50'],
   27: ['38','40','42','46','48','50'],
   41: ['P','M','G','GG','XG'],
@@ -2631,15 +2714,14 @@ function switchTEUAColor(cor, pageNum, btn) {
       const img = document.getElementById('teua-img-' + i);
       if (img) { img.src = d.fotos[i-1]; img.alt = 'Texas EUA ' + d.nome + ' ' + i; }
     }
-    document.getElementById('teua-cor-nome').textContent  = d.nome;
-    document.getElementById('teua-order-cor').textContent = d.nome;
+    const corNome = document.getElementById('teua-cor-nome');
+    if (corNome) corNome.textContent = d.nome;
     grid.style.opacity = '1';
   }, 200);
   document.querySelectorAll('.teua-cor-btn').forEach(b => {
     b.style.border = '2px solid transparent'; b.style.transform = 'scale(1)';
   });
   btn.style.border = '2px solid var(--gold)'; btn.style.transform = 'scale(1.1)';
-  renderTEUASizes(pageNum);
 }
 
 function renderTEUASizes(pageNum) {
@@ -2723,6 +2805,48 @@ function updatePSQty() {
   ['P','M','G','GG','XG'].forEach(sz => {
     const el = document.getElementById('qtynum-303-' + sz);
     if (el) el.textContent = (order[303] && order[303][sz]) || 0;
+  });
+}
+
+// ── Camisa Cargo — tamanhos ────────────────────────────────────────
+function renderCargoSizes() {
+  const el = document.getElementById('cargo-sizes-wrap');
+  if (!el) return;
+  el.innerHTML = ['P','M','G','GG','XG'].map(sz =>
+    '<div style="display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(310,\'' + sz + '\',-1);updateCargoQty()">−</button>' +
+    '<span class="qty-num" id="qtynum-310-' + sz + '" style="color:var(--black);">' + ((order[310] && order[310][sz]) || 0) + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(310,\'' + sz + '\',1);updateCargoQty()">+</button>' +
+    '</div>'
+  ).join('');
+}
+
+function updateCargoQty() {
+  ['P','M','G','GG','XG'].forEach(sz => {
+    const el = document.getElementById('qtynum-310-' + sz);
+    if (el) el.textContent = (order[310] && order[310][sz]) || 0;
+  });
+}
+
+// ── Camiseta Open — tamanhos ───────────────────────────────────────
+function renderOpenSizes() {
+  const el = document.getElementById('open-sizes-wrap');
+  if (!el) return;
+  el.innerHTML = ['P','M','G','GG','XG'].map(sz =>
+    '<div style="display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(311,\'' + sz + '\',-1);updateOpenQty()">−</button>' +
+    '<span class="qty-num" id="qtynum-311-' + sz + '" style="color:var(--black);">' + ((order[311] && order[311][sz]) || 0) + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(311,\'' + sz + '\',1);updateOpenQty()">+</button>' +
+    '</div>'
+  ).join('');
+}
+
+function updateOpenQty() {
+  ['P','M','G','GG','XG'].forEach(sz => {
+    const el = document.getElementById('qtynum-311-' + sz);
+    if (el) el.textContent = (order[311] && order[311][sz]) || 0;
   });
 }
 
@@ -2875,7 +2999,9 @@ function showCollection(type, btn) {
       renderHorseSizes();
       renderTASizes();
       renderPSSizes();
-      document.getElementById('count').textContent = '6';
+      renderCargoSizes();
+      renderOpenSizes();
+      document.getElementById('count').textContent = '8';
     } else if (type === 'nova') {
       gridSection.style.display         = 'none';
       poloSection.style.display         = '';
@@ -3085,7 +3211,9 @@ function renderOrderModal(){
     305: 'assets/catalogo/touro-preto-frente.png',
     306: 'assets/catalogo/teua-branco-frente.png',
     307: 'assets/catalogo/teua-preto-frente.png',
-    308: 'assets/catalogo/horse-frente.png'
+    308: 'assets/catalogo/horse-frente.png',
+    310: 'assets/catalogo/cargo-frente.png',
+    311: 'assets/catalogo/open-frente.webp'
   };
   const rows = pages.map(pg => {
     const pgTotal  = getPageTotal(pg);
