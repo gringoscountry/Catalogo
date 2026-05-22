@@ -683,6 +683,10 @@ footer{
   .btn-print,.btn-clear{width:100%;justify-content:center;}
   /* ── Footer ── */
   .footer-inner{flex-direction:column;text-align:center;gap:12px;}
+  /* ── Algodão Egípcio: 3 fotos → 1 coluna ── */
+  #alg-foto-wrap{grid-template-columns:1fr!important;max-width:360px!important;}
+  /* ── Brasil: grids de produto 3 → 1 coluna ── */
+  #brasilSection .produto-foto-grid{grid-template-columns:1fr!important;max-width:360px!important;}
 }
 
 @media(max-width:500px){
@@ -788,6 +792,7 @@ footer{
   <button class="filter-btn"         id="btn-nova"    onclick="showCollection('nova',this)">Polos</button>
   <button class="filter-btn"         id="btn-tenis"   onclick="showCollection('tenis',this)">KNIT EVO</button>
   <button class="filter-btn"         id="btn-calcas"  onclick="showCollection('calcas',this)">Calças</button>
+  <button class="filter-btn"         id="btn-brasil"  onclick="showCollection('brasil',this)">🇧🇷 Brasil</button>
   <span class="filter-count">Exibindo <strong id="count">6</strong> coleções</span>
 </div>
 
@@ -810,7 +815,6 @@ footer{
           <div class="overlay-content" style="width:100%;">
             <div style="font-family:var(--ff-big);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;">COLEÇÃO</div>
             <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;">Texas<br><em style="color:var(--gold);">Collection</em></div>
-            <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.06em;">27 produtos · Clique para ver</div>
           </div>
         </div>
         <div class="page-badge">Texas</div>
@@ -823,7 +827,6 @@ footer{
           <div class="overlay-content" style="width:100%;">
             <div style="font-family:var(--ff-big);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;">COLEÇÃO</div>
             <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;">Urban<br><em style="color:var(--gold);">Collection</em></div>
-            <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.06em;">10 produtos · Clique para ver</div>
           </div>
         </div>
         <div class="page-badge">Urban</div>
@@ -836,7 +839,6 @@ footer{
           <div class="overlay-content" style="width:100%;">
             <div style="font-family:var(--ff-big);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;">COLEÇÃO</div>
             <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;">Algodão<br><em style="color:var(--gold);">Egípcio</em></div>
-            <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.06em;">6 produtos · Clique para ver</div>
           </div>
         </div>
         <div class="page-badge">Premium</div>
@@ -849,7 +851,6 @@ footer{
           <div class="overlay-content" style="width:100%;">
             <div style="font-family:var(--ff-big);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;">COLEÇÃO</div>
             <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;"><em style="color:var(--gold);">Polos</em></div>
-            <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.06em;">Tech Light · Piquet Gold · Italiana</div>
           </div>
         </div>
         <div class="page-badge">Novo</div>
@@ -863,7 +864,6 @@ footer{
             <div style="font-family:var(--ff-big);font-size:10px;letter-spacing:.28em;color:var(--gold);margin-bottom:6px;">NOVO · COLEÇÃO</div>
             <div style="font-family:var(--ff-big);font-size:clamp(26px,2.8vw,38px);color:var(--white);line-height:1;letter-spacing:.04em;">KNIT EVO</div>
             <div style="font-family:var(--ff-h);font-size:clamp(14px,1.5vw,20px);color:rgba(255,255,255,.7);line-height:1.2;margin-top:4px;font-style:italic;">Tênis Casual</div>
-            <div style="font-size:11px;color:rgba(255,255,255,.45);margin-top:10px;letter-spacing:.08em;">4 cores · Nr. 37 ao 42</div>
           </div>
         </div>
         <div class="page-badge" style="z-index:3;">Novo</div>
@@ -876,7 +876,18 @@ footer{
           <div class="overlay-content" style="width:100%;">
             <div style="font-family:var(--ff-big);font-size:10px;letter-spacing:.28em;color:var(--gold);margin-bottom:6px;">NOVA · COLEÇÃO</div>
             <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;"><em style="color:var(--gold);">Calças</em></div>
-            <div style="font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;letter-spacing:.06em;">Clique para ver</div>
+          </div>
+        </div>
+        <div class="page-badge" style="z-index:3;">Novo</div>
+      </div>
+
+      <!-- Capa Brasil -->
+      <div class="catalog-item" style="aspect-ratio:2/3;cursor:pointer;" onclick="showCollection('brasil', document.getElementById('btn-brasil'))">
+        <img src="assets/catalogo/capa-brasil.png" alt="Coleção Brasil" loading="lazy">
+        <div class="catalog-overlay" style="opacity:1;background:linear-gradient(180deg,transparent 40%,rgba(15,15,15,.92) 100%);">
+          <div class="overlay-content" style="width:100%;">
+            <div style="font-family:var(--ff-big);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;">NOVA · COLEÇÃO</div>
+            <div style="font-family:var(--ff-h);font-size:clamp(22px,2.5vw,32px);color:var(--white);line-height:1.1;"><em style="color:var(--gold);">Brasil</em></div>
           </div>
         </div>
         <div class="page-badge" style="z-index:3;">Novo</div>
@@ -1381,6 +1392,180 @@ footer{
           <!-- Gerado por JS -->
         </div>
         <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ALGODÃO EGÍPCIO — Coleção -->
+<section class="sec" id="algodaoSection" style="display:none;padding-top:0;">
+  <div class="wrap">
+
+    <div class="sec-header" style="margin-bottom:40px;">
+      <div>
+        <div class="sec-label">Camisetas Algodão Egípcio</div>
+        <h2 class="sec-title">Camiseta <em>Algodão Egípcio</em></h2>
+        <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">100% Algodão Egípcio · 6 cores · P ao XG</p>
+      </div>
+    </div>
+
+    <!-- Seletor de cores -->
+    <div style="margin-bottom:24px;">
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+        <span style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);">COR</span>
+        <span id="alg-cor-nome" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--black);font-style:italic;">Chumbo</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <button class="alg-cor-btn active" title="Chumbo"
+          style="width:36px;height:36px;border-radius:50%;background:#6B7280;border:2px solid var(--gold);cursor:pointer;transition:border-color .2s,transform .2s;transform:scale(1.1);"
+          onclick="switchAlgodaoCor('Chumbo',41,this)"></button>
+        <button class="alg-cor-btn" title="Branco"
+          style="width:36px;height:36px;border-radius:50%;background:#F4F2EE;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchAlgodaoCor('Branco',42,this)"></button>
+        <button class="alg-cor-btn" title="Preto"
+          style="width:36px;height:36px;border-radius:50%;background:#111111;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchAlgodaoCor('Preto',43,this)"></button>
+        <button class="alg-cor-btn" title="Azul Claro"
+          style="width:36px;height:36px;border-radius:50%;background:#93C5FD;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchAlgodaoCor('Azul Claro',45,this)"></button>
+        <button class="alg-cor-btn" title="Verde Claro"
+          style="width:36px;height:36px;border-radius:50%;background:#86EFAC;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchAlgodaoCor('Verde Claro',46,this)"></button>
+        <button class="alg-cor-btn" title="Azul Marinho"
+          style="width:36px;height:36px;border-radius:50%;background:#1E3A5F;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;"
+          onclick="switchAlgodaoCor('Azul Marinho',47,this)"></button>
+      </div>
+    </div>
+
+    <!-- Fotos do produto -->
+    <div id="alg-foto-wrap" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+      <div style="overflow:hidden;aspect-ratio:3/4;">
+        <img id="alg-img-1" src="assets/catalogo/41.webp" alt="Camiseta Algodão Egípcio — Chumbo"
+             style="width:100%;height:100%;object-fit:contain;display:block;">
+      </div>
+      <div style="overflow:hidden;aspect-ratio:3/4;">
+        <img id="alg-img-2" src="assets/catalogo/41.webp" alt="Camiseta Algodão Egípcio — Chumbo"
+             style="width:100%;height:100%;object-fit:contain;display:block;">
+      </div>
+      <div style="overflow:hidden;aspect-ratio:3/4;">
+        <img id="alg-img-3" src="assets/catalogo/41.webp" alt="Camiseta Algodão Egípcio — Chumbo"
+             style="width:100%;height:100%;object-fit:contain;display:block;">
+      </div>
+    </div>
+
+    <!-- Adicionar ao pedido -->
+    <div style="border:1px solid var(--border);padding:28px 32px;background:var(--cream);max-width:1100px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+        <span style="width:20px;height:1px;background:var(--gold);display:inline-block;"></span>
+        Adicionar ao pedido — <span id="alg-order-cor">Chumbo</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;" id="alg-sizes-wrap">
+        <!-- Gerado por JS -->
+      </div>
+      <p style="font-size:11px;color:var(--gray);margin-top:16px;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- BRASIL — Coleção -->
+<section class="sec" id="brasilSection" style="display:none;padding-top:0;">
+  <div class="wrap">
+
+    <div class="sec-header" style="margin-bottom:40px;">
+      <div>
+        <div class="sec-label" style="color:#F5C518;">Coleção Brasil</div>
+        <h2 class="sec-title">Coleção <em style="color:#009C3B;">Brasil</em></h2>
+        <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">Copa do Mundo · Em breve</p>
+      </div>
+    </div>
+
+    <!-- ── CAMISETA BRASIL COPA DO MUNDO ── -->
+    <div style="margin-bottom:72px;">
+
+      <div class="sec-header" style="margin-bottom:40px;">
+        <div>
+          <div class="sec-label" style="color:#F5C518;">Coleção Brasil</div>
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+            <h2 class="sec-title" style="margin:0;">Camiseta <em>Brasil Copa do Mundo</em></h2>
+            <span style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#009C3B;padding:4px 12px;border-radius:2px;">Em Breve</span>
+          </div>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">100% Algodão · P ao XG</p>
+        </div>
+      </div>
+
+      <!-- Grid 3 fotos -->
+      <div class="produto-foto-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;position:relative;">
+        <div style="overflow:hidden;aspect-ratio:3/4;background:#f0f0f0;display:flex;align-items:center;justify-content:center;">
+          <img src="assets/catalogo/capa-brasil.png" alt="Camiseta Brasil Copa do Mundo"
+               style="width:100%;height:100%;object-fit:cover;display:block;opacity:.35;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;background:#f0f0f0;display:flex;align-items:center;justify-content:center;">
+          <img src="assets/catalogo/capa-brasil.png" alt="Camiseta Brasil Copa do Mundo"
+               style="width:100%;height:100%;object-fit:cover;display:block;opacity:.35;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;background:#f0f0f0;display:flex;align-items:center;justify-content:center;">
+          <img src="assets/catalogo/capa-brasil.png" alt="Camiseta Brasil Copa do Mundo"
+               style="width:100%;height:100%;object-fit:cover;display:block;opacity:.35;">
+        </div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;">
+          <span style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:#009C3B;padding:12px 28px;border-radius:2px;">Em Breve</span>
+        </div>
+      </div>
+
+      <!-- Indisponível -->
+      <div style="border:1px solid var(--border);padding:28px 32px;background:#f9f9f9;max-width:1100px;opacity:.7;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#009C3B;margin-bottom:10px;display:flex;align-items:center;gap:10px;">
+          <span style="width:20px;height:1px;background:#009C3B;display:inline-block;"></span>
+          Em breve disponível para pedido
+        </div>
+        <p style="font-size:12px;color:#999;line-height:1.6;">Este produto estará disponível em breve. Aguarde novidades!</p>
+      </div>
+
+    </div>
+
+    <!-- ── BONÉ BRASIL ── -->
+    <div style="border-top:1px solid var(--border);padding-top:64px;">
+
+      <div class="sec-header" style="margin-bottom:40px;">
+        <div>
+          <div class="sec-label" style="color:#F5C518;">Coleção Brasil</div>
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+            <h2 class="sec-title" style="margin:0;">Boné <em>Brasil</em></h2>
+            <span style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#009C3B;padding:4px 12px;border-radius:2px;">Em Breve</span>
+          </div>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:8px;">Trucker · Aba Curva</p>
+        </div>
+      </div>
+
+      <!-- Grid 3 fotos -->
+      <div class="produto-foto-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;position:relative;">
+        <div style="overflow:hidden;aspect-ratio:3/4;background:#f0f0f0;display:flex;align-items:center;justify-content:center;">
+          <img src="assets/catalogo/capa-brasil.png" alt="Boné Brasil"
+               style="width:100%;height:100%;object-fit:cover;display:block;opacity:.35;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;background:#f0f0f0;display:flex;align-items:center;justify-content:center;">
+          <img src="assets/catalogo/capa-brasil.png" alt="Boné Brasil"
+               style="width:100%;height:100%;object-fit:cover;display:block;opacity:.35;">
+        </div>
+        <div style="overflow:hidden;aspect-ratio:3/4;background:#f0f0f0;display:flex;align-items:center;justify-content:center;">
+          <img src="assets/catalogo/capa-brasil.png" alt="Boné Brasil"
+               style="width:100%;height:100%;object-fit:cover;display:block;opacity:.35;">
+        </div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;">
+          <span style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:#009C3B;padding:12px 28px;border-radius:2px;">Em Breve</span>
+        </div>
+      </div>
+
+      <!-- Indisponível -->
+      <div style="border:1px solid var(--border);padding:28px 32px;background:#f9f9f9;max-width:1100px;opacity:.7;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#009C3B;margin-bottom:10px;display:flex;align-items:center;gap:10px;">
+          <span style="width:20px;height:1px;background:#009C3B;display:inline-block;"></span>
+          Em breve disponível para pedido
+        </div>
+        <p style="font-size:12px;color:#999;line-height:1.6;">Este produto estará disponível em breve. Aguarde novidades!</p>
       </div>
 
     </div>
@@ -2385,6 +2570,12 @@ const COLLECTIONS = {
     pages: [],
     label: 'Calças',
     title: '<em>Calças</em>'
+  },
+  brasil: {
+    cover: 'capa-brasil',
+    pages: [],
+    label: 'Coleção Brasil',
+    title: 'Coleção <em>Brasil</em>'
   }
 };
 
@@ -2944,6 +3135,59 @@ function openLightboxTS() {
 }
 
 // ── Troca de coleção ───────────────────────────────────────────────
+// ── Camiseta Algodão Egípcio — cores e tamanhos ──────────────────────
+const algodaoCoresMap = {
+  'Chumbo':       { pageNum: 41, src: 'assets/catalogo/41.webp' },
+  'Branco':       { pageNum: 42, src: 'assets/catalogo/42.webp' },
+  'Preto':        { pageNum: 43, src: 'assets/catalogo/43.webp' },
+  'Azul Claro':   { pageNum: 45, src: 'assets/catalogo/45.webp' },
+  'Verde Claro':  { pageNum: 46, src: 'assets/catalogo/46.webp' },
+  'Azul Marinho': { pageNum: 47, src: 'assets/catalogo/47.webp' },
+};
+let algodaoPageAtiva = 41;
+
+function switchAlgodaoCor(cor, pageNum, btn) {
+  const d    = algodaoCoresMap[cor];
+  const wrap = document.getElementById('alg-foto-wrap');
+  wrap.style.opacity = '0';
+  setTimeout(function() {
+    for (var i = 1; i <= 3; i++) {
+      var img = document.getElementById('alg-img-' + i);
+      if (img) { img.src = d.src; img.alt = 'Camiseta Algodão Egípcio — ' + cor; }
+    }
+    document.getElementById('alg-cor-nome').textContent  = cor;
+    document.getElementById('alg-order-cor').textContent = cor;
+    wrap.style.opacity = '1';
+  }, 200);
+  algodaoPageAtiva = pageNum;
+  document.querySelectorAll('.alg-cor-btn').forEach(b => {
+    b.style.border = '2px solid transparent'; b.style.transform = 'scale(1)';
+  });
+  btn.style.border = '2px solid var(--gold)'; btn.style.transform = 'scale(1.1)';
+  renderAlgodaoSizes(pageNum);
+}
+
+function renderAlgodaoSizes(pageNum) {
+  const el = document.getElementById('alg-sizes-wrap');
+  if (!el) return;
+  const sizes = ['P','M','G','GG','XG'];
+  el.innerHTML = sizes.map(sz =>
+    '<div style="display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',-1);updateAlgQty(' + pageNum + ')">−</button>' +
+    '<span class="qty-num" id="qtynum-' + pageNum + '-' + sz + '" style="color:var(--black);">' + ((order[pageNum] && order[pageNum][sz]) || 0) + '</span>' +
+    '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',1);updateAlgQty(' + pageNum + ')">+</button>' +
+    '</div>'
+  ).join('');
+}
+
+function updateAlgQty(pageNum) {
+  ['P','M','G','GG','XG'].forEach(sz => {
+    const el = document.getElementById('qtynum-' + pageNum + '-' + sz);
+    if (el) el.textContent = (order[pageNum] && order[pageNum][sz]) || 0;
+  });
+}
+
 function showCollection(type, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -2958,6 +3202,8 @@ function showCollection(type, btn) {
   const calcasSection        = document.getElementById('calcasSection');
   const alfaiatariaSection   = document.getElementById('alfaiatariaSection');
   const texasSpiritSection   = document.getElementById('texasSpiritSection');
+  const algodaoSection       = document.getElementById('algodaoSection');
+  const brasilSection        = document.getElementById('brasilSection');
 
   if (type === 'all') {
     allCovers.style.display           = '';
@@ -2968,7 +3214,9 @@ function showCollection(type, btn) {
     calcasSection.style.display       = 'none';
     alfaiatariaSection.style.display  = 'none';
     texasSpiritSection.style.display  = 'none';
-    document.getElementById('count').textContent = '6';
+    algodaoSection.style.display      = 'none';
+    brasilSection.style.display       = 'none';
+    document.getElementById('count').textContent = '7';
 
   } else {
     const col = COLLECTIONS[type];
@@ -2978,7 +3226,7 @@ function showCollection(type, btn) {
     // Atualiza capa
     document.getElementById('colLabel').textContent  = col.label;
     document.getElementById('colTitle').innerHTML    = col.title;
-    const coverExt = ['capa-algodao-egipcio', 'capa-knit-evo', 'capa-calcas'].includes(col.cover) ? 'png' : 'svg';
+    const coverExt = ['capa-algodao-egipcio', 'capa-knit-evo', 'capa-calcas', 'capa-brasil'].includes(col.cover) ? 'png' : 'svg';
     const coverSrc = (typeof col.cover === 'string')
       ? `assets/catalogo/${col.cover}.${coverExt}`
       : `assets/catalogo/${col.cover}.svg`;
@@ -2993,6 +3241,8 @@ function showCollection(type, btn) {
       calcasSection.style.display       = 'none';
       alfaiatariaSection.style.display  = 'none';
       texasSpiritSection.style.display  = '';
+      algodaoSection.style.display      = 'none';
+      brasilSection.style.display       = 'none';
       renderTSSizes(300);
       renderTouroSizes(304);
       renderTEUASizes(306);
@@ -3002,6 +3252,27 @@ function showCollection(type, btn) {
       renderCargoSizes();
       renderOpenSizes();
       document.getElementById('count').textContent = '8';
+    } else if (type === 'algodao') {
+      gridSection.style.display         = 'none';
+      poloSection.style.display         = 'none';
+      tenisSection.style.display        = 'none';
+      calcasSection.style.display       = 'none';
+      alfaiatariaSection.style.display  = 'none';
+      texasSpiritSection.style.display  = 'none';
+      algodaoSection.style.display      = '';
+      brasilSection.style.display       = 'none';
+      renderAlgodaoSizes(algodaoPageAtiva);
+      document.getElementById('count').textContent = '6';
+    } else if (type === 'brasil') {
+      gridSection.style.display         = 'none';
+      poloSection.style.display         = 'none';
+      tenisSection.style.display        = 'none';
+      calcasSection.style.display       = 'none';
+      alfaiatariaSection.style.display  = 'none';
+      texasSpiritSection.style.display  = 'none';
+      algodaoSection.style.display      = 'none';
+      brasilSection.style.display       = '';
+      document.getElementById('count').textContent = '2';
     } else if (type === 'nova') {
       gridSection.style.display         = 'none';
       poloSection.style.display         = '';
@@ -3009,6 +3280,8 @@ function showCollection(type, btn) {
       calcasSection.style.display       = 'none';
       alfaiatariaSection.style.display  = 'none';
       texasSpiritSection.style.display  = 'none';
+      algodaoSection.style.display      = 'none';
+      brasilSection.style.display       = 'none';
       document.getElementById('count').textContent = '1';
     } else if (type === 'tenis') {
       gridSection.style.display         = 'none';
@@ -3017,6 +3290,8 @@ function showCollection(type, btn) {
       calcasSection.style.display       = 'none';
       alfaiatariaSection.style.display  = 'none';
       texasSpiritSection.style.display  = 'none';
+      algodaoSection.style.display      = 'none';
+      brasilSection.style.display       = 'none';
       document.getElementById('count').textContent = '1';
     } else if (type === 'calcas') {
       gridSection.style.display         = 'none';
@@ -3025,6 +3300,8 @@ function showCollection(type, btn) {
       calcasSection.style.display       = '';
       alfaiatariaSection.style.display  = '';
       texasSpiritSection.style.display  = 'none';
+      algodaoSection.style.display      = 'none';
+      brasilSection.style.display       = 'none';
       renderCalcasSizes();
       switchCalcasCor(calcasCorAtiva);
       renderAlfaiatariaSizes();
@@ -3037,6 +3314,8 @@ function showCollection(type, btn) {
       calcasSection.style.display       = 'none';
       alfaiatariaSection.style.display  = 'none';
       texasSpiritSection.style.display  = 'none';
+      algodaoSection.style.display      = 'none';
+      brasilSection.style.display       = 'none';
       document.getElementById('gridLabel').textContent = col.label;
       document.getElementById('gridTitle').innerHTML   = col.title + ' — <em>Produtos</em>';
       buildGrid(col.pages, type);
