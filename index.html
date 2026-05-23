@@ -1522,6 +1522,9 @@ footer{
                  style="width:100%;height:100%;object-fit:cover;display:block;">
           </div>
         </div>
+        <!-- Seletor tamanhos Masculino -->
+        <div id="brasil-sizes-masc" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;max-width:1100px;"></div>
+        <p style="font-size:11px;color:var(--gray);margin-top:8px;margin-bottom:0;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
       </div>
 
       <!-- Feminino -->
@@ -1540,6 +1543,9 @@ footer{
                  style="width:100%;height:100%;object-fit:cover;display:block;">
           </div>
         </div>
+        <!-- Seletor tamanhos Feminino -->
+        <div id="brasil-sizes-fem" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;max-width:1100px;"></div>
+        <p style="font-size:11px;color:var(--gray);margin-top:8px;margin-bottom:0;line-height:1.6;">Selecione a quantidade por tamanho. O botão <strong style="color:var(--gold);">Ver Pedido</strong> aparece no canto inferior direito quando houver itens no carrinho.</p>
       </div>
 
     </div>
@@ -2161,6 +2167,8 @@ document.addEventListener('DOMContentLoaded', function() {
   window.scrollTo(0, 0);
   renderCatPoloSizes(50);
   renderCatGoldSizes(55);
+  renderBrasilSizes(400, 'brasil-sizes-masc');
+  renderBrasilSizes(401, 'brasil-sizes-fem');
 
   // Lightbox para fotos das seções Texas
   const sec = document.getElementById('texasSpiritSection');
@@ -2635,9 +2643,12 @@ const PRODUCT_NAMES = {
   306:'Texas EUA — Branco', 307:'Texas EUA — Preto',
   308:'Horse',
   310:'Camisa Cargo',
-  311:'Camiseta Open'
+  311:'Camiseta Open',
+  400:'Camiseta Brasil Copa do Mundo — Masculino',
+  401:'Camiseta Brasil Copa do Mundo — Feminino'
 };
 function getColName(pageNum){
+  if(pageNum >= 400) return 'Coleção Brasil';
   if(pageNum >= 300 && pageNum <= 311) return 'Texas Collection';
   if(pageNum>=200) return 'Calças';
   if(pageNum>=110) return 'Polo Italiana';
@@ -2711,7 +2722,9 @@ const PAGE_SIZES = {
   203: ['38','40','42','44','46','48'],
   204: ['38','40','42','44','46','48'],
   205: ['38','40','42','44','46','48'],
-  206: ['38','40','42','44','46','48']
+  206: ['38','40','42','44','46','48'],
+  400: ['P','M','G','GG','XG'],
+  401: ['P','M','G','GG','XG']
 };
 function getSizes(pg){ return PAGE_SIZES[pg] || SIZES; }
 
@@ -3791,6 +3804,27 @@ function generatePDF(){
     btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Baixar PDF do Pedido`;
     btn.disabled = false;
   }
+}
+
+function renderBrasilSizes(pageNum, containerId) {
+  var sizes = ['P','M','G','GG','XG'];
+  var container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = sizes.map(function(sz) {
+    return '<div style="display:flex;align-items:center;gap:6px;">' +
+      '<span style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);min-width:24px;text-align:center;">' + sz + '</span>' +
+      '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',-1);updateBrasilQty(' + pageNum + ')">−</button>' +
+      '<span class="qty-num" id="qtynum-' + pageNum + '-' + sz + '" style="color:var(--black);">' + ((order[pageNum] && order[pageNum][sz]) || 0) + '</span>' +
+      '<button class="qty-btn" style="color:var(--black);background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.18);" onclick="changeQty(' + pageNum + ',\'' + sz + '\',1);updateBrasilQty(' + pageNum + ')">+</button>' +
+      '</div>';
+  }).join('');
+}
+
+function updateBrasilQty(pageNum) {
+  ['P','M','G','GG','XG'].forEach(function(sz) {
+    var el = document.getElementById('qtynum-' + pageNum + '-' + sz);
+    if (el) el.textContent = (order[pageNum] && order[pageNum][sz]) || 0;
+  });
 }
 
 function brasilTab(variacao) {
