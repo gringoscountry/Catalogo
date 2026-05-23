@@ -315,6 +315,8 @@ header{
 }
 .lightbox.open{display:flex;}
 .lightbox.lb-no-nav .lb-nav{display:none!important;}
+[data-zoom]{cursor:zoom-in;}
+[data-zoom] img{pointer-events:none;cursor:zoom-in;}
 .lb-inner{
   position:relative;
   max-width:600px;
@@ -1070,7 +1072,7 @@ footer{
     </div>
 
     <!-- Grid 3 fotos -->
-    <div id="ts-foto-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+    <div id="ts-foto-grid" data-zoom style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
       <div style="overflow:hidden;aspect-ratio:3/4;">
         <img id="ts-sec-img-1" src="assets/catalogo/ts-branco-frente.svg" alt="Texas Spirit Branco — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
       </div>
@@ -1122,7 +1124,7 @@ footer{
       </div>
 
       <!-- Grid 3 fotos -->
-      <div id="touro-foto-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+      <div id="touro-foto-grid" data-zoom style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
         <div style="overflow:hidden;aspect-ratio:3/4;">
           <img id="touro-img-1" src="assets/catalogo/touro-branco-frente.png" alt="Touro Branco — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
         </div>
@@ -1179,7 +1181,7 @@ footer{
       </div>
 
       <!-- Grid 3 fotos -->
-      <div id="teua-foto-grid" style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+      <div id="teua-foto-grid" data-zoom style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
         <div style="overflow:hidden;aspect-ratio:3/4;">
           <img id="teua-img-1" src="assets/catalogo/teua-branco-frente.png" alt="Texas EUA Branco — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
         </div>
@@ -1217,9 +1219,9 @@ footer{
       </div>
 
       <!-- Grid 3 fotos -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
+      <div data-zoom style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
         <div style="overflow:hidden;aspect-ratio:3/4;">
-          <img src="assets/catalogo/horse-frente.png" alt="Horse — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
+          <img src="assets/catalogo/horse-frente.png" alt="Horse — Frente" style="width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;">
         </div>
         <div style="overflow:hidden;aspect-ratio:3/4;">
           <img src="assets/catalogo/horse-fv.png" alt="Horse — Frente e Verso" style="width:100%;height:100%;object-fit:contain;display:block;">
@@ -1255,7 +1257,7 @@ footer{
       </div>
 
       <!-- Grid 3 fotos -->
-      <div id="ta-foto-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+      <div id="ta-foto-grid" data-zoom style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
         <div style="overflow:hidden;aspect-ratio:3/4;">
           <img src="assets/catalogo/ta-frente.svg" alt="Texas Agro — Frente" style="width:100%;height:100%;object-fit:contain;display:block;">
         </div>
@@ -1291,7 +1293,7 @@ footer{
       </div>
 
       <!-- Grid 3 fotos -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
+      <div data-zoom style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
         <div style="overflow:hidden;aspect-ratio:3/4;">
           <img src="assets/catalogo/ps-costas.svg" alt="Por do Sol — Costas" style="width:100%;height:100%;object-fit:contain;display:block;">
         </div>
@@ -1329,7 +1331,7 @@ footer{
       </div>
 
       <!-- Grid 3 fotos -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
+      <div data-zoom style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
         <div style="overflow:hidden;aspect-ratio:3/4;">
           <img src="assets/catalogo/cargo-frente.png" alt="Camisa Cargo — Frente" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
@@ -1367,7 +1369,7 @@ footer{
       </div>
 
       <!-- Grid 3 fotos -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
+      <div data-zoom style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;">
         <div style="overflow:hidden;aspect-ratio:3/4;">
           <img src="assets/catalogo/open-frente.webp" alt="Camiseta Open — Frente" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
@@ -1437,18 +1439,18 @@ footer{
     </div>
 
     <!-- Fotos do produto -->
-    <div id="alg-foto-wrap" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
-      <div style="overflow:hidden;aspect-ratio:3/4;cursor:zoom-in;" onclick="openSinglePhoto(document.getElementById('alg-img-1').src)">
+    <div id="alg-foto-wrap" data-zoom style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;max-width:1100px;transition:opacity .25s;">
+      <div style="overflow:hidden;aspect-ratio:3/4;">
         <img id="alg-img-1" src="assets/catalogo/41.webp" alt="Camiseta Algodão Egípcio — Chumbo"
-             style="width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;">
+             style="width:100%;height:100%;object-fit:contain;display:block;">
       </div>
-      <div style="overflow:hidden;aspect-ratio:3/4;cursor:zoom-in;" onclick="openSinglePhoto(document.getElementById('alg-img-2').src)">
+      <div style="overflow:hidden;aspect-ratio:3/4;">
         <img id="alg-img-2" src="assets/catalogo/41.webp" alt="Camiseta Algodão Egípcio — Chumbo"
-             style="width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;">
+             style="width:100%;height:100%;object-fit:contain;display:block;">
       </div>
-      <div style="overflow:hidden;aspect-ratio:3/4;cursor:zoom-in;" onclick="openSinglePhoto(document.getElementById('alg-img-3').src)">
+      <div style="overflow:hidden;aspect-ratio:3/4;">
         <img id="alg-img-3" src="assets/catalogo/41.webp" alt="Camiseta Algodão Egípcio — Chumbo"
-             style="width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;">
+             style="width:100%;height:100%;object-fit:contain;display:block;">
       </div>
     </div>
 
@@ -1606,7 +1608,7 @@ footer{
     </div>
 
     <!-- Grid 4 fotos -->
-    <div id="cat-polo-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:24px;width:100vw;position:relative;left:50%;transform:translateX(-50%);transition:opacity .25s;">
+    <div id="cat-polo-grid" data-zoom style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:24px;width:100vw;position:relative;left:50%;transform:translateX(-50%);transition:opacity .25s;">
       <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-polo-img-1" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-1-564a00010a5e03ee8317750822444336-1024-1024.webp" alt="Polo Tech Light Branco 1" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-polo-img-2" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-2-c30e84cc8549a07b1717750822465636-1024-1024.webp" alt="Polo Tech Light Branco 2" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-polo-img-3" src="https://dcdn-us.mitiendanube.com/stores/004/240/847/products/branco-3-820d727b1a606d550517750822448829-1024-1024.webp" alt="Polo Tech Light Branco 3" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
@@ -1681,7 +1683,7 @@ footer{
     </div>
 
     <!-- Grid de fotos (2×2 para Branco, centralizado para outras cores) -->
-    <div id="cat-gold-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:24px;width:100vw;position:relative;left:50%;transform:translateX(-50%);transition:opacity .25s;">
+    <div id="cat-gold-grid" data-zoom style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:24px;width:100vw;position:relative;left:50%;transform:translateX(-50%);transition:opacity .25s;">
       <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-gold-img-1" src="assets/polo-gold/branco-1.webp" alt="Polo Piquet Gold Branco 1" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-gold-img-2" src="assets/polo-gold/branco-2.png" alt="Polo Piquet Gold Branco 2" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img id="cat-gold-img-3" src="assets/polo-gold/branco-3.png" alt="Polo Piquet Gold Branco 3" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
@@ -1716,7 +1718,7 @@ footer{
       </div>
 
       <!-- Grid 3 cores -->
-      <div class="italiana-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-bottom:40px;width:100vw;position:relative;left:50%;transform:translateX(-50%);">
+      <div class="italiana-grid" data-zoom style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-bottom:40px;width:100vw;position:relative;left:50%;transform:translateX(-50%);">
 
         <!-- Verde -->
         <div style="background:var(--white);overflow:hidden;">
@@ -1791,7 +1793,7 @@ footer{
 
       <!-- Marrom Claro -->
       <div style="border:1px solid var(--border);overflow:hidden;">
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
+        <div data-zoom style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
           <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/branco-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Marrom Claro"></div>
           <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/branco-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Marrom Claro 2"></div>
         </div>
@@ -1806,7 +1808,7 @@ footer{
 
       <!-- Azul Marinho -->
       <div style="border:1px solid var(--border);overflow:hidden;">
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
+        <div data-zoom style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
           <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/azul-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Azul Marinho"></div>
           <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/azul-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Azul Marinho 2"></div>
         </div>
@@ -1821,7 +1823,7 @@ footer{
 
       <!-- Cinza -->
       <div style="border:1px solid var(--border);overflow:hidden;">
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
+        <div data-zoom style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
           <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/cinza-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Cinza"></div>
           <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/cinza-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Cinza 2"></div>
         </div>
@@ -1836,7 +1838,7 @@ footer{
 
       <!-- Preto -->
       <div style="border:1px solid var(--border);overflow:hidden;">
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
+        <div data-zoom style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
           <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/preto-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Preto"></div>
           <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:4/3;"><img src="assets/tenis/preto-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Tênis Preto 2"></div>
         </div>
@@ -1894,7 +1896,7 @@ footer{
 
     <!-- PAINEL: Azul Claro -->
     <div id="calcas-panel-200" class="calcas-panel">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+      <div data-zoom style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-claro-1.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Claro 1"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-claro-2.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Claro 2"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/azul-claro-3.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Azul Claro 3"></div>
@@ -1929,7 +1931,7 @@ footer{
 
     <!-- PAINEL: Blue Black Stonada -->
     <div id="calcas-panel-202" class="calcas-panel" style="display:none;">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+      <div data-zoom style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/blue-black-1.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Blue Black Stonada 1"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/blue-black-2.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Blue Black Stonada 2"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/blue-black-3.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Blue Black Stonada 3"></div>
@@ -1946,7 +1948,7 @@ footer{
 
     <!-- PAINEL: Preto -->
     <div id="calcas-panel-203" class="calcas-panel" style="display:none;">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+      <div data-zoom style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/preto-1.png" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Preta 1"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/preto-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Preta 2"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/preto-3.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Preta 3"></div>
@@ -1999,7 +2001,7 @@ footer{
 
     <!-- PAINEL: Alfaiataria Bege -->
     <div id="alfa-panel-204" class="calcas-panel">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+      <div data-zoom style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-bege-1.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Bege 1"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-bege-4.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Bege 4"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-bege-3.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Bege 3"></div>
@@ -2016,7 +2018,7 @@ footer{
 
     <!-- PAINEL: Alfaiataria Preto -->
     <div id="alfa-panel-205" class="calcas-panel" style="display:none;">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+      <div data-zoom style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-preto-1.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Preto 1"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-preto-4.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Preto 4"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-preto-3.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Preto 3"></div>
@@ -2033,7 +2035,7 @@ footer{
 
     <!-- PAINEL: Alfaiataria Cinza Claro -->
     <div id="alfa-panel-206" class="calcas-panel" style="display:none;">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
+      <div data-zoom style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:0;">
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-cinza-claro-1.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Cinza Claro 1"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-cinza-claro-2.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Cinza Claro 2"></div>
         <div style="background:#f4f4f4;overflow:hidden;aspect-ratio:3/4;"><img src="assets/calcas/alfaiataria-cinza-claro-3.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Calça Alfaiataria Cinza Claro 3"></div>
@@ -3371,6 +3373,16 @@ function navLightbox(dir) {
   lbCurrent = (lbCurrent + dir + lbPages.length) % lbPages.length;
   renderLightbox();
 }
+
+// Delegação global: qualquer clique em [data-zoom] abre a foto sem setas
+document.addEventListener('click', function(e) {
+  const grid = e.target.closest('[data-zoom]');
+  if (!grid) return;
+  let node = e.target;
+  while (node.parentElement && node.parentElement !== grid) node = node.parentElement;
+  const img = (node.tagName === 'IMG') ? node : node.querySelector('img');
+  if (img && img.src && img.src !== window.location.href) openSinglePhoto(img.src);
+});
 
 function openSinglePhoto(src) {
   tsLbImages  = [src];
