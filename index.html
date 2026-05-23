@@ -962,7 +962,7 @@ footer{
 
       <!-- Capa -->
       <div>
-        <div class="catalog-item" id="coverItem" style="aspect-ratio:2/3;cursor:pointer;">
+        <div class="catalog-item" id="coverItem" style="aspect-ratio:2/3;cursor:default;">
           <img id="coverImg" src="" alt="Capa" loading="lazy">
           <div class="catalog-overlay">
             <div class="overlay-content">
@@ -3231,7 +3231,7 @@ function showCollection(type, btn) {
       : `assets/catalogo/${col.cover}.svg`;
     document.getElementById('coverImg').src          = coverSrc;
     document.getElementById('coverNum').textContent  = String(col.cover).padStart ? String(col.cover).padStart(2,'0') : '—';
-    document.getElementById('coverItem').onclick     = () => openLightboxCol(type, col.cover);
+    document.getElementById('coverItem').onclick     = null;
 
     if (type === 'texas') {
       gridSection.style.display         = 'none';
